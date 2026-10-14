@@ -1,78 +1,244 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BARAKAT BEAUTY</title>
+<title>BARAKAT SOCIAL</title>
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#fff7fb;color:#432536}
-.ad{background:#97144f;color:white;padding:13px;text-align:center;font-weight:bold}
-header{text-align:center;padding:25px 10px;background:linear-gradient(135deg,#f9c5df,#fff0f6)}
-.logo{font-size:30px;font-weight:bold;color:#97144f}
-.hero{text-align:center;padding:28px 15px;background:#fce7f3}
-h2{color:#97144f;text-align:center}
-button{background:#97144f;color:white;border:0;border-radius:8px;padding:12px;cursor:pointer;font-size:16px}
-.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:12px;max-width:900px;margin:auto}
-.product{background:white;border:1px solid #f0bfd6;border-radius:12px;padding:10px;text-align:center}
-.product img{width:100%;height:160px;object-fit:cover;border-radius:9px}
-.price{color:#b51d60;font-weight:bold;font-size:18px}
-.order{background:white;max-width:600px;margin:25px auto;padding:18px;border-radius:12px;border:1px solid #f0bfd6}
-label{display:block;margin-top:13px;font-weight:bold}
-input,select,textarea{width:100%;padding:12px;margin-top:6px;border:1px solid #ddb4c8;border-radius:7px;font-size:16px;background:#fffafd}
-.submit{width:100%;margin-top:20px}
-footer{background:#48142f;color:white;text-align:center;padding:25px 10px;line-height:2;margin-top:30px}
-@media(min-width:650px){.products{grid-template-columns:repeat(4,minmax(0,1fr))}}
+body{margin:0;background:#f0f2f5;font-family:Arial,sans-serif;color:#222}
+header{background:#1877f2;color:white;padding:15px;position:sticky;top:0;z-index:5}
+.top{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.logo{font-size:22px;font-weight:bold}
+header input{width:45%;padding:10px;border:0;border-radius:20px}
+nav{display:flex;justify-content:space-around;background:white;padding:13px;box-shadow:0 2px 5px #ddd}
+nav a{text-decoration:none;color:#1877f2;font-weight:bold}
+.container{max-width:600px;margin:18px auto;padding:0 10px}
+.card{background:white;border-radius:12px;padding:15px;margin-bottom:15px;box-shadow:0 1px 4px #ddd}
+textarea,input{font-family:Arial;font-size:15px}
+#postText{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;resize:vertical}
+button{border:0;padding:10px 16px;border-radius:8px;cursor:pointer;font-size:15px}
+.primary{background:#1877f2;color:white}
+.post-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.avatar{width:42px;height:42px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:22px}
+.post-image{width:100%;max-height:450px;object-fit:cover;border-radius:10px;margin-top:10px}
+.actions{display:flex;gap:8px;border-top:1px solid #eee;padding-top:10px;margin-top:12px}
+.actions button{background:#f0f2f5;flex:1}
+.comment-box{display:flex;gap:5px;margin-top:10px}
+.comment-box input{min-width:0;flex:1;padding:10px;border:1px solid #ddd;border-radius:20px}
+.comment{background:#f0f2f5;border-radius:12px;padding:8px;margin-top:7px}
+footer{text-align:center;padding:20px;color:#666}
+.hidden{display:none}
 </style>
 </head>
 
 <body>
 
-<div class="ad">
-<marquee>✨ مرحبًا بكم في BARAKAT BEAUTY ✨ اكتشفي جمالك معنا 💄 عروض ومنتجات تجميل مميزة</marquee>
-</div>
-
 <header>
-<div class="logo">BARAKAT BEAUTY 💄</div>
-<p>جمالك يبدأ من هنا 🌸</p>
+<div class="top">
+<div class="logo">🌐 BARAKAT SOCIAL</div>
+<input id="search" placeholder="ابحث عن منشور..." oninput="searchPosts()">
+</div>
 </header>
 
-<section class="hero">
-<h1>مرحبًا بك في عالم الجمال</h1>
-<p>اكتشفي منتجاتنا واختاري ما يناسبك.</p>
-<button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">اكتشفي المنتجات</button>
+<nav>
+<a href="#home">🏠 الرئيسية</a>
+<a href="#create">✍️ نشر</a>
+<a href="#profile">👤 حسابي</a>
+</nav>
+
+<main class="container" id="home">
+
+<section class="card" id="profile">
+<h3>👤 مرحبًا بك في BARAKAT SOCIAL</h3>
+<p>شارك أفكارك وصورك مع الجميع!</p>
+<label>اسمك:</label>
+<input id="username" placeholder="اكتب اسمك" style="padding:10px;width:100%;margin:8px 0">
+<button class="primary" onclick="saveName()">حفظ الاسم</button>
 </section>
 
-<h2 id="products">🌸 منتجاتنا</h2>
+<section class="card" id="create">
+<h3>✍️ ماذا تريد أن تنشر؟</h3>
+<textarea id="postText" rows="3" placeholder="اكتب منشورك هنا..."></textarea>
+<p>
+<label for="imageUrl">رابط صورة (اختياري):</label>
+<input id="imageUrl" placeholder="https://..." style="width:100%;padding:10px;margin-top:8px">
+</p>
+<button class="primary" onclick="createPost()">نشر المنشور</button>
+<p id="status"></p>
+</section>
 
-<section class="products">
+<h3>📰 آخر المنشورات</h3>
+<div id="posts"></div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=500&q=80" alt="أحمر شفاه">
-<h3>أحمر الشفاه</h3>
-<p>إطلالة جميلة</p>
-<p class="price">1200 دج</p>
-<button onclick="chooseProduct('أحمر الشفاه')">اطلبي الآن</button>
-</div>
+</main>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80" alt="مجموعة تجميل">
-<h3>مجموعة تجميل</h3>
-<p>جمالك في كل مناسبة</p>
-<p class="price">2500 دج</p>
-<button onclick="chooseProduct('مجموعة تجميل')">اطلبي الآن</button>
-</div>
+<footer>
+BARAKAT SOCIAL © 2026<br>
+منصة اجتماعية تجمعنا ❤️
+</footer>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80" alt="العناية بالبشرة">
-<h3>العناية بالبشرة</h3>
-<p>عناية يومية</p>
-<p class="price">1800 دج</p>
-<button onclick="chooseProduct('العناية بالبشرة')">اطلبي الآن</button>
-</div>
+<script>
+let username = localStorage.getItem("barakat_username") || "";
+let posts = JSON.parse(localStorage.getItem("barakat_posts") || "[]");
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=500&q=80" alt="كريم">
-<h3>ك
+function saveName(){
+  const name = document.getElementById("username").value.trim();
+  if(!name){alert("اكتب اسمك أولًا");return;}
+  username = name;
+  localStorage.setItem("barakat_username",username);
+  renderPosts();
+  alert("تم حفظ اسمك على هذا الجهاز");
+}
+
+function createPost(){
+  const text = document.getElementById("postText").value.trim();
+  const image = document.getElementById("imageUrl").value.trim();
+
+  if(!username){
+    alert("اكتب اسمك واحفظه أولًا");
+    return;
+  }
+  if(!text && !image){
+    alert("اكتب منشورًا أو أضف رابط صورة");
+    return;
+  }
+
+  posts.unshift({
+    id:Date.now(),
+    name:username,
+    text:text,
+    image:image,
+    likes:0,
+    liked:false,
+    comments:[]
+  });
+
+  savePosts();
+  document.getElementById("postText").value="";
+  document.getElementById("imageUrl").value="";
+  document.getElementById("status").textContent="تم نشر المنشور على هذا الجهاز";
+  renderPosts();
+}
+
+function savePosts(){
+  localStorage.setItem("barakat_posts",JSON.stringify(posts));
+}
+
+function likePost(id){
+  const post=posts.find(p=>p.id===id);
+  if(!post)return;
+  post.liked=!post.liked;
+  post.likes+=post.liked?1:-1;
+  savePosts();
+  renderPosts();
+}
+
+function addComment(id,inputId){
+  const input=document.getElementById(inputId);
+  const text=input.value.trim();
+  if(!text)return;
+  const post=posts.find(p=>p.id===id);
+  if(!post)return;
+  post.comments.push({name:username||"زائر",text:text});
+  savePosts();
+  renderPosts();
+}
+
+function renderPosts(){
+  document.getElementById("username").value=username;
+  const box=document.getElementById("posts");
+  box.innerHTML="";
+
+  if(posts.length===0){
+    box.innerHTML='<div class="card">لا توجد منشورات بعد. كن أول من ينشر! 🌟</div>';
+    return;
+  }
+
+  posts.forEach(post=>{
+    const article=document.createElement("article");
+    article.className="card";
+    article.dataset.text=(post.name+" "+post.text).toLowerCase();
+
+    const head=document.createElement("div");
+    head.className="post-head";
+
+    const avatar=document.createElement("div");
+    avatar.className="avatar";
+    avatar.textContent="👤";
+
+    const info=document.createElement("div");
+    const name=document.createElement("strong");
+    name.textContent=post.name;
+    const date=document.createElement("div");
+    date.style.color="#777";
+    date.style.fontSize="12px";
+    date.textContent=new Date(post.id).toLocaleString("ar-DZ");
+    info.append(name,date);
+    head.append(avatar,info);
+    article.append(head);
+
+    if(post.text){
+      const content=document.createElement("p");
+      content.style.whiteSpace="pre-wrap";
+      content.textContent=post.text;
+      article.append(content);
+    }
+
+    if(post.image){
+      const img=document.createElement("img");
+      img.className="post-image";
+      img.src=post.image;
+      img.alt="صورة المنشور";
+      img.onerror=()=>img.remove();
+      article.append(img);
+    }
+
+    const actions=document.createElement("div");
+    actions.className="actions";
+    const like=document.createElement("button");
+    like.textContent=(post.liked?"❤️":"🤍")+" إعجاب "+post.likes;
+    like.onclick=()=>likePost(post.id);
+    actions.append(like);
+    article.append(actions);
+
+    const comments=document.createElement("div");
+    post.comments.forEach(c=>{
+      const div=document.createElement("div");
+      div.className="comment";
+      const strong=document.createElement("strong");
+      strong.textContent=c.name+": ";
+      div.append(strong,document.createTextNode(c.text));
+      comments.append(div);
+    });
+    article.append(comments);
+
+    const row=document.createElement("div");
+    row.className="comment-box";
+    const input=document.createElement("input");
+    input.id="comment-"+post.id;
+    input.placeholder="اكتب تعليقًا...";
+    const button=document.createElement("button");
+    button.className="primary";
+    button.textContent="تعليق";
+    button.onclick=()=>addComment(post.id,input.id);
+    row.append(input,button);
+    article.append(row);
+
+    box.append(article);
+  });
+}
+
+function searchPosts(){
+  const q=document.getElementById("search").value.toLowerCase();
+  document.querySelectorAll("#posts article").forEach(post=>{
+    post.classList.toggle("hidden",!post.dataset.text.includes(q));
+  });
+}
+
+renderPosts();
+</script>
+
+</body>
+</html>
