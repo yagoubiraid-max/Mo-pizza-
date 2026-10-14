@@ -8,237 +8,79 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#f0f2f5;font-family:Arial,sans-serif;color:#222}
-header{background:#1877f2;color:white;padding:15px;position:sticky;top:0;z-index:5}
-.top{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.logo{font-size:22px;font-weight:bold}
-header input{width:45%;padding:10px;border:0;border-radius:20px}
-nav{display:flex;justify-content:space-around;background:white;padding:13px;box-shadow:0 2px 5px #ddd}
-nav a{text-decoration:none;color:#1877f2;font-weight:bold}
+header{background:#1877f2;color:white;padding:14px;position:sticky;top:0;z-index:5}
+.top{max-width:700px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.logo{font-size:21px;font-weight:bold}
 .container{max-width:600px;margin:18px auto;padding:0 10px}
-.card{background:white;border-radius:12px;padding:15px;margin-bottom:15px;box-shadow:0 1px 4px #ddd}
-textarea,input{font-family:Arial;font-size:15px}
-#postText{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;resize:vertical}
-button{border:0;padding:10px 16px;border-radius:8px;cursor:pointer;font-size:15px}
-.primary{background:#1877f2;color:white}
-.post-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.card{background:white;padding:16px;border-radius:12px;margin-bottom:15px;box-shadow:0 1px 4px #ddd}
+input,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;margin:7px 0;font-size:15px}
+textarea{resize:vertical}
+button{border:0;border-radius:8px;padding:11px 15px;cursor:pointer;font-size:15px}
+.blue{background:#1877f2;color:white}
+.gray{background:#e4e6eb;color:#222}
+.full{width:100%;margin-top:8px}
+.post-head{display:flex;align-items:center;gap:10px}
 .avatar{width:42px;height:42px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:22px}
-.post-image{width:100%;max-height:450px;object-fit:cover;border-radius:10px;margin-top:10px}
-.actions{display:flex;gap:8px;border-top:1px solid #eee;padding-top:10px;margin-top:12px}
-.actions button{background:#f0f2f5;flex:1}
-.comment-box{display:flex;gap:5px;margin-top:10px}
-.comment-box input{min-width:0;flex:1;padding:10px;border:1px solid #ddd;border-radius:20px}
-.comment{background:#f0f2f5;border-radius:12px;padding:8px;margin-top:7px}
-footer{text-align:center;padding:20px;color:#666}
+.post-img{width:100%;max-height:450px;object-fit:contain;margin-top:12px;border-radius:8px}
+.actions{display:flex;gap:8px;margin-top:12px;border-top:1px solid #eee;padding-top:10px}
+.actions button{flex:1}
+.muted{color:#777;font-size:13px}
+#feed:empty:after{content:"لا توجد منشورات حتى الآن. كن أول من ينشر! 🌟";display:block;background:white;padding:20px;border-radius:10px}
 .hidden{display:none}
+footer{text-align:center;padding:20px;color:#666}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="top">
-<div class="logo">🌐 BARAKAT SOCIAL</div>
-<input id="search" placeholder="ابحث عن منشور..." oninput="searchPosts()">
-</div>
+  <div class="top">
+    <div class="logo">🌐 BARAKAT SOCIAL</div>
+    <button class="gray" id="logoutBtn" hidden>خروج</button>
+  </div>
 </header>
 
-<nav>
-<a href="#home">🏠 الرئيسية</a>
-<a href="#create">✍️ نشر</a>
-<a href="#profile">👤 حسابي</a>
-</nav>
+<main class="container">
 
-<main class="container" id="home">
+  <section class="card" id="authBox">
+    <h2>أهلًا بك في BARAKAT SOCIAL ❤️</h2>
+    <p>أنشئ حسابًا وابدأ التواصل مع الآخرين.</p>
 
-<section class="card" id="profile">
-<h3>👤 مرحبًا بك في BARAKAT SOCIAL</h3>
-<p>شارك أفكارك وصورك مع الجميع!</p>
-<label>اسمك:</label>
-<input id="username" placeholder="اكتب اسمك" style="padding:10px;width:100%;margin:8px 0">
-<button class="primary" onclick="saveName()">حفظ الاسم</button>
-</section>
+    <input id="displayName" placeholder="اسمك الكامل">
+    <input id="email" type="email" placeholder="البريد الإلكتروني">
+    <input id="password" type="password" placeholder="كلمة المرور">
 
-<section class="card" id="create">
-<h3>✍️ ماذا تريد أن تنشر؟</h3>
-<textarea id="postText" rows="3" placeholder="اكتب منشورك هنا..."></textarea>
-<p>
-<label for="imageUrl">رابط صورة (اختياري):</label>
-<input id="imageUrl" placeholder="https://..." style="width:100%;padding:10px;margin-top:8px">
-</p>
-<button class="primary" onclick="createPost()">نشر المنشور</button>
-<p id="status"></p>
-</section>
+    <button class="blue full" id="registerBtn">إنشاء حساب جديد</button>
+    <button class="gray full" id="loginBtn">تسجيل الدخول</button>
 
-<h3>📰 آخر المنشورات</h3>
-<div id="posts"></div>
+    <p id="authMessage" class="muted"></p>
+  </section>
+
+  <section id="appBox" class="hidden">
+
+    <section class="card">
+      <h3 id="welcome">مرحبًا بك!</h3>
+      <p>ماذا تريد أن تشارك اليوم؟</p>
+
+      <textarea id="postText" rows="3" placeholder="اكتب منشورك هنا..."></textarea>
+
+      <label for="postImage">📸 اختر صورة من هاتفك (اختياري)</label>
+      <input id="postImage" type="file" accept="image/*">
+
+      <button class="blue full" id="publishBtn">نشر المنشور</button>
+      <p id="postMessage" class="muted"></p>
+    </section>
+
+    <h3>📰 آخر المنشورات</h3>
+    <div id="feed"></div>
+
+  </section>
 
 </main>
 
-<footer>
-BARAKAT SOCIAL © 2026<br>
-منصة اجتماعية تجمعنا ❤️
-</footer>
+<footer>BARAKAT SOCIAL © 2026</footer>
 
-<script>
-let username = localStorage.getItem("barakat_username") || "";
-let posts = JSON.parse(localStorage.getItem("barakat_posts") || "[]");
-
-function saveName(){
-  const name = document.getElementById("username").value.trim();
-  if(!name){alert("اكتب اسمك أولًا");return;}
-  username = name;
-  localStorage.setItem("barakat_username",username);
-  renderPosts();
-  alert("تم حفظ اسمك على هذا الجهاز");
-}
-
-function createPost(){
-  const text = document.getElementById("postText").value.trim();
-  const image = document.getElementById("imageUrl").value.trim();
-
-  if(!username){
-    alert("اكتب اسمك واحفظه أولًا");
-    return;
-  }
-  if(!text && !image){
-    alert("اكتب منشورًا أو أضف رابط صورة");
-    return;
-  }
-
-  posts.unshift({
-    id:Date.now(),
-    name:username,
-    text:text,
-    image:image,
-    likes:0,
-    liked:false,
-    comments:[]
-  });
-
-  savePosts();
-  document.getElementById("postText").value="";
-  document.getElementById("imageUrl").value="";
-  document.getElementById("status").textContent="تم نشر المنشور على هذا الجهاز";
-  renderPosts();
-}
-
-function savePosts(){
-  localStorage.setItem("barakat_posts",JSON.stringify(posts));
-}
-
-function likePost(id){
-  const post=posts.find(p=>p.id===id);
-  if(!post)return;
-  post.liked=!post.liked;
-  post.likes+=post.liked?1:-1;
-  savePosts();
-  renderPosts();
-}
-
-function addComment(id,inputId){
-  const input=document.getElementById(inputId);
-  const text=input.value.trim();
-  if(!text)return;
-  const post=posts.find(p=>p.id===id);
-  if(!post)return;
-  post.comments.push({name:username||"زائر",text:text});
-  savePosts();
-  renderPosts();
-}
-
-function renderPosts(){
-  document.getElementById("username").value=username;
-  const box=document.getElementById("posts");
-  box.innerHTML="";
-
-  if(posts.length===0){
-    box.innerHTML='<div class="card">لا توجد منشورات بعد. كن أول من ينشر! 🌟</div>';
-    return;
-  }
-
-  posts.forEach(post=>{
-    const article=document.createElement("article");
-    article.className="card";
-    article.dataset.text=(post.name+" "+post.text).toLowerCase();
-
-    const head=document.createElement("div");
-    head.className="post-head";
-
-    const avatar=document.createElement("div");
-    avatar.className="avatar";
-    avatar.textContent="👤";
-
-    const info=document.createElement("div");
-    const name=document.createElement("strong");
-    name.textContent=post.name;
-    const date=document.createElement("div");
-    date.style.color="#777";
-    date.style.fontSize="12px";
-    date.textContent=new Date(post.id).toLocaleString("ar-DZ");
-    info.append(name,date);
-    head.append(avatar,info);
-    article.append(head);
-
-    if(post.text){
-      const content=document.createElement("p");
-      content.style.whiteSpace="pre-wrap";
-      content.textContent=post.text;
-      article.append(content);
-    }
-
-    if(post.image){
-      const img=document.createElement("img");
-      img.className="post-image";
-      img.src=post.image;
-      img.alt="صورة المنشور";
-      img.onerror=()=>img.remove();
-      article.append(img);
-    }
-
-    const actions=document.createElement("div");
-    actions.className="actions";
-    const like=document.createElement("button");
-    like.textContent=(post.liked?"❤️":"🤍")+" إعجاب "+post.likes;
-    like.onclick=()=>likePost(post.id);
-    actions.append(like);
-    article.append(actions);
-
-    const comments=document.createElement("div");
-    post.comments.forEach(c=>{
-      const div=document.createElement("div");
-      div.className="comment";
-      const strong=document.createElement("strong");
-      strong.textContent=c.name+": ";
-      div.append(strong,document.createTextNode(c.text));
-      comments.append(div);
-    });
-    article.append(comments);
-
-    const row=document.createElement("div");
-    row.className="comment-box";
-    const input=document.createElement("input");
-    input.id="comment-"+post.id;
-    input.placeholder="اكتب تعليقًا...";
-    const button=document.createElement("button");
-    button.className="primary";
-    button.textContent="تعليق";
-    button.onclick=()=>addComment(post.id,input.id);
-    row.append(input,button);
-    article.append(row);
-
-    box.append(article);
-  });
-}
-
-function searchPosts(){
-  const q=document.getElementById("search").value.toLowerCase();
-  document.querySelectorAll("#posts article").forEach(post=>{
-    post.classList.toggle("hidden",!post.dataset.text.includes(q));
-  });
-}
-
-renderPosts();
-</script>
-
-</body>
-</html>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-
