@@ -2,173 +2,327 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RAÏD EXPRESS | توصيل الطعام</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAÏD EXPRESS - توصيل الطعام</title>
 
 <style>
-:root {
-  --main: #e63946;
-  --dark: #17202a;
-  --yellow: #ffbe0b;
-  --bg: #f5f6fa;
-  --white: #fff;
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f5f5f5;color:#222}
+header{background:#151515;color:white;text-align:center;padding:22px}
+.logo{font-size:30px;color:#ffb703;font-weight:bold}
+nav{background:#ffb703;padding:13px;text-align:center}
+nav a{color:#111;text-decoration:none;font-weight:bold;margin:8px;display:inline-block}
+.hero{background:#292929;color:white;text-align:center;padding:35px 15px}
+button,.btn{background:#e63946;color:white;border:0;border-radius:8px;padding:12px 17px;font-weight:bold;cursor:pointer}
+section{max-width:1100px;margin:auto;padding:22px 12px}
+h2{text-align:center}
+.categories{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:20px}
+.categories button{background:#333}
+.categories button.active{background:#e63946}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px}
+.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 9px #0001}
+.card img{width:100%;height:150px;object-fit:cover;background:#ddd}
+.card div{padding:12px}
+.card h3{margin:5px 0}
+.price{color:#e63946;font-size:19px;font-weight:bold}
+.card button{width:100%}
+.box{background:white;padding:18px;border-radius:12px;margin-top:15px}
+input,select,textarea{width:100%;padding:12px;margin:7px 0 14px;border:1px solid #ccc;border-radius:7px;font-size:16px}
+label{font-weight:bold}
+.cart-row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #ddd}
+.total{font-size:21px;color:#e63946;font-weight:bold}
+.notice{display:none;padding:12px;margin-top:12px;background:#fff3cd;line-height:1.7;border-radius:8px}
+footer{background:#151515;color:white;text-align:center;padding:25px;margin-top:25px}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🚚 RAÏD EXPRESS</div>
+  <h3>شركة توصيل الطعام والوجبات السريعة</h3>
+  <p>من المطعم إلى باب دارك ❤️</p>
+  <p>📍 قسنطينة - الجزائر</p>
+</header>
+
+<nav>
+  <a href="#home">الرئيسية</a>
+  <a href="#menu">قائمة الطعام</a>
+  <a href="#cart">سلة المشتريات 🛒</a>
+  <a href="#order">اطلب الآن</a>
+</nav>
+
+<div class="hero" id="home">
+  <h1>مرحبا بكم في RAÏD EXPRESS 🍕</h1>
+  <p>بيتزا، شاورما، طاكوس، برغر، سندويتشات والمزيد!</p>
+  <p>اختر وجبتك وسجل عنوان التوصيل.</p>
+  <a class="btn" href="#menu" style="text-decoration:none">اكتشف الوجبات</a>
+</div>
+
+<section id="menu">
+  <h2>🍔 قائمة الوجبات</h2>
+  <div class="categories" id="categories"></div>
+  <div class="products" id="products"></div>
+</section>
+
+<section id="cart">
+  <h2>🛒 سلة المشتريات</h2>
+  <div class="box">
+    <div id="cartItems">السلة فارغة. اختر وجبتك أولًا.</div>
+    <p>مجموع الوجبات: <strong id="subtotal">0 دج</strong></p>
+    <p>مصاريف التوصيل: <strong id="delivery">0 دج</strong></p>
+    <p class="total">الإجمالي: <span id="total">0 دج</span></p>
+    <button onclick="goOrder()">متابعة الطلب</button>
+  </div>
+</section>
+
+<section id="order">
+  <h2>📝 معلومات طلب التوصيل</h2>
+  <div class="box">
+    <form id="orderForm">
+
+      <label for="customer">الاسم الكامل</label>
+      <input id="customer" required placeholder="اسم الزبون">
+
+      <label for="phone">رقم الهاتف</label>
+      <input id="phone" type="tel" required placeholder="رقم الهاتف">
+
+      <label for="district">منطقة التوصيل</label>
+      <select id="district" required>
+        <option value="">اختر المنطقة</option>
+        <option>قسنطينة وسط المدينة</option>
+        <option>الخروب</option>
+        <option>عين سمارة</option>
+        <option>حامة بوزيان</option>
+        <option>ديدوش مراد</option>
+        <option>زيغود يوسف</option>
+        <option>عين عبيد</option>
+      </select>
+
+      <label for="address">العنوان بالتفصيل</label>
+      <textarea id="address" required placeholder="الحي والشارع ورقم المنزل"></textarea>
+
+      <label for="notes">ملاحظات</label>
+      <textarea id="notes" placeholder="أي تفاصيل إضافية"></textarea>
+
+      <button type="submit">تأكيد الطلب</button>
+      <div class="notice" id="notice"></div>
+
+    </form>
+  </div>
+</section>
+
+<section>
+  <h2>🚚 خدماتنا</h2>
+  <div class="products">
+    <div class="card"><div><h3>🍕 توصيل المطاعم</h3><p>توصيل طلبات المطاعم المتعاقدة مع الشركة.</p></div></div>
+    <div class="card"><div><h3>🛵 عمال التوصيل</h3><p>إدارة عمليات التوصيل داخل المناطق المتاحة.</p></div></div>
+    <div class="card"><div><h3>📍 خدمة محلية</h3><p>خدمة موجهة لزبائن قسنطينة.</p></div></div>
+  </div>
+</section>
+
+<footer>
+  <h3>RAÏD EXPRESS 🚚</h3>
+  <p>شركة توصيل الأكل السريع</p>
+  <p>قسنطينة - الجزائر</p>
+  <p>© 2026 RAÏD EXPRESS</p>
+</footer>
+
+<script>
+const DELIVERY_FEE = 150;
+
+const foods = [
+  {id:1,name:"بيتزا مارغريتا",category:"بيتزا",size:"صغيرة S",price:400,emoji:"🍕"},
+  {id:2,name:"بيتزا مارغريتا",category:"بيتزا",size:"متوسطة M",price:600,emoji:"🍕"},
+  {id:3,name:"بيتزا مشكلة",category:"بيتزا",size:"كبيرة L",price:900,emoji:"🍕"},
+  {id:4,name:"بيتزا عائلية",category:"بيتزا",size:"XL",price:1200,emoji:"🍕"},
+  {id:5,name:"بيتزا 4 أجبان",category:"بيتزا",size:"متوسطة",price:800,emoji:"🧀"},
+  {id:6,name:"بيتزا دجاج",category:"بيتزا",size:"كبيرة",price:950,emoji:"🍕"},
+  {id:7,name:"شاورما دجاج",category:"شاورما",size:"عادية",price:450,emoji:"🌯"},
+  {id:8,name:"شاورما لحم",category:"شاورما",size:"عادية",price:600,emoji:"🌯"},
+  {id:9,name:"شاورما دبل",category:"شاورما",size:"كبيرة",price:700,emoji:"🌯"},
+  {id:10,name:"طاكوس دجاج",category:"طاكوس",size:"صغير",price:400,emoji:"🌮"},
+  {id:11,name:"طاكوس دجاج",category:"طاكوس",size:"متوسط",price:600,emoji:"🌮"},
+  {id:12,name:"طاكوس مشكل",category:"طاكوس",size:"كبير",price:800,emoji:"🌮"},
+  {id:13,name:"برغر كلاسيكي",category:"برغر",size:"عادي",price:400,emoji:"🍔"},
+  {id:14,name:"تشيز برغر",category:"برغر",size:"بالجبن",price:500,emoji:"🍔"},
+  {id:15,name:"دبل برغر",category:"برغر",size:"دبل",price:700,emoji:"🍔"},
+  {id:16,name:"سندويتش دجاج",category:"سندويتشات",size:"عادي",price:350,emoji:"🥪"},
+  {id:17,name:"بانيني",category:"سندويتشات",size:"دجاج وجبن",price:450,emoji:"🥪"},
+  {id:18,name:"سندويتش تون",category:"سندويتشات",size:"عادي",price:300,emoji:"🥪"},
+  {id:19,name:"دجاج مقلي",category:"دجاج",size:"وجبة",price:700,emoji:"🍗"},
+  {id:20,name:"ناغتس",category:"دجاج",size:"صغير",price:400,emoji:"🍗"},
+  {id:21,name:"بطاطا مقلية",category:"إضافات",size:"عادية",price:200,emoji:"🍟"},
+  {id:22,name:"حلقات البصل",category:"إضافات",size:"وجبة",price:250,emoji:"🧅"},
+  {id:23,name:"كريب شوكولاتة",category:"حلويات",size:"عادي",price:350,emoji:"🥞"},
+  {id:24,name:"بان كيك",category:"حلويات",size:"وجبة",price:400,emoji:"🥞"},
+  {id:25,name:"مشروب غازي",category:"مشروبات",size:"علبة",price:120,emoji:"🥤"},
+  {id:26,name:"عصير طبيعي",category:"مشروبات",size:"كأس",price:200,emoji:"🧃"}
+];
+
+const categories = ["الكل","بيتزا","شاورما","طاكوس","برغر","سندويتشات","دجاج","إضافات","حلويات","مشروبات"];
+let selectedCategory = "الكل";
+let cart = [];
+
+function showCategories(){
+  const box = document.getElementById("categories");
+  box.innerHTML = "";
+
+  categories.forEach(category => {
+    const button = document.createElement("button");
+    button.textContent = category;
+    button.className = selectedCategory === category ? "active" : "";
+    button.onclick = () => {
+      selectedCategory = category;
+      showCategories();
+      showFoods();
+    };
+    box.appendChild(button);
+  });
 }
 
-* {
-  box-sizing: border-box;
+function showFoods(){
+  const box = document.getElementById("products");
+  box.innerHTML = "";
+
+  foods.filter(food =>
+    selectedCategory === "الكل" || food.category === selectedCategory
+  ).forEach(food => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const image = document.createElement("div");
+    image.style.cssText = "height:115px;display:grid;place-items:center;background:#fff0e5;font-size:65px";
+    image.textContent = food.emoji;
+
+    const content = document.createElement("div");
+    const name = document.createElement("h3");
+    name.textContent = food.name;
+
+    const size = document.createElement("p");
+    size.textContent = "الحجم: " + food.size;
+
+    const price = document.createElement("p");
+    price.className = "price";
+    price.textContent = food.price + " دج";
+
+    const button = document.createElement("button");
+    button.textContent = "أضف إلى السلة";
+    button.onclick = () => addToCart(food.id);
+
+    content.append(name,size,price,button);
+    card.append(image,content);
+    box.appendChild(card);
+  });
 }
 
-body {
-  margin: 0;
-  font-family: Arial, Tahoma, sans-serif;
-  background: var(--bg);
-  color: #222;
+function addToCart(id){
+  const food = foods.find(item => item.id === id);
+  const existing = cart.find(item => item.id === id);
+
+  if(existing) existing.quantity++;
+  else cart.push({...food,quantity:1});
+
+  showCart();
 }
 
-header {
-  background: var(--dark);
-  color: white;
-  padding: 20px 12px;
-  text-align: center;
+function updateQuantity(id,amount){
+  const item = cart.find(item => item.id === id);
+  if(!item) return;
+
+  item.quantity += amount;
+  if(item.quantity <= 0) cart = cart.filter(item => item.id !== id);
+  showCart();
 }
 
-.logo {
-  color: var(--yellow);
-  font-size: 29px;
-  font-weight: bold;
+function showCart(){
+  const box = document.getElementById("cartItems");
+  box.innerHTML = "";
+
+  if(cart.length === 0) box.textContent = "السلة فارغة. اختر وجبتك أولًا.";
+
+  cart.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "cart-row";
+
+    const description = document.createElement("span");
+    description.textContent = item.name + " (" + item.size + ") × " + item.quantity;
+
+    const controls = document.createElement("div");
+
+    const minus = document.createElement("button");
+    minus.textContent = "−";
+    minus.onclick = () => updateQuantity(item.id,-1);
+
+    const plus = document.createElement("button");
+    plus.textContent = "+";
+    plus.style.marginRight = "5px";
+    plus.onclick = () => updateQuantity(item.id,1);
+
+    controls.append(minus,plus);
+    row.append(description,controls);
+    box.appendChild(row);
+  });
+
+  const subtotal = cart.reduce((sum,item) => sum + item.price * item.quantity,0);
+  const delivery = cart.length ? DELIVERY_FEE : 0;
+
+  document.getElementById("subtotal").textContent = subtotal + " دج";
+  document.getElementById("delivery").textContent = delivery + " دج";
+  document.getElementById("total").textContent = subtotal + delivery + " دج";
 }
 
-header p {
-  margin-bottom: 0;
+function goOrder(){
+  if(cart.length === 0){
+    alert("أضف وجبة إلى السلة أولًا.");
+    return;
+  }
+  document.getElementById("order").scrollIntoView({behavior:"smooth"});
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-  padding: 14px;
-  background: var(--yellow);
-}
+document.getElementById("orderForm").addEventListener("submit",function(event){
+  event.preventDefault();
 
-nav a {
-  text-decoration: none;
-  color: #111;
-  font-weight: bold;
-}
+  if(cart.length === 0){
+    alert("السلة فارغة. اختر وجبة أولًا.");
+    return;
+  }
 
-.hero {
-  padding: 45px 15px;
-  background: linear-gradient(135deg, #17202a, #5b2333);
-  text-align: center;
-  color: white;
-}
+  const order = {
+    number: Date.now(),
+    name: document.getElementById("customer").value.trim(),
+    phone: document.getElementById("phone").value.trim(),
+    district: document.getElementById("district").value,
+    address: document.getElementById("address").value.trim(),
+    notes: document.getElementById("notes").value.trim(),
+    items: cart.map(item => ({
+      name:item.name,
+      size:item.size,
+      quantity:item.quantity,
+      price:item.price
+    })),
+    total: cart.reduce((sum,item) => sum + item.price * item.quantity,0) + DELIVERY_FEE
+  };
 
-.hero h1 {
-  font-size: 30px;
-}
+  try {
+    const oldOrders = JSON.parse(localStorage.getItem("raidOrdersDemo") || "[]");
+    oldOrders.push(order);
+    localStorage.setItem("raidOrdersDemo",JSON.stringify(oldOrders));
 
-.hero p {
-  line-height: 1.8;
-}
+    const notice = document.getElementById("notice");
+    notice.style.display = "block";
+    notice.textContent =
+      "تم إنشاء طلب تجريبي رقم " + order.number +
+      ". انتبه: الطلب محفوظ في هذا الجهاز فقط ولم يصل إلى الشركة بعد. يجب ربط قاعدة بيانات لاستقبال الطلبات الحقيقية.";
+  } catch(error) {
+    alert("تعذر حفظ الطلب التجريبي.");
+  }
+});
 
-.button {
-  background: var(--main);
-  color: white;
-  padding: 12px 18px;
-  border: none;
-  border-radius: 9px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 15px;
-  display: inline-block;
-  text-decoration: none;
-}
+showCategories();
+showFoods();
+showCart();
+</script>
 
-.button:hover {
-  opacity: .9;
-}
-
-section {
-  max-width: 1150px;
-  margin: auto;
-  padding: 25px 14px;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 22px;
-}
-
-.categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  justify-content: center;
-  margin-bottom: 22px;
-}
-
-.category {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.category.active {
-  background: var(--main);
-  color: white;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 16px;
-}
-
-.card {
-  background: white;
-  border-radius: 13px;
-  overflow: hidden;
-  box-shadow: 0 3px 12px #0000000d;
-}
-
-.card img {
-  width: 100%;
-  height: 165px;
-  object-fit: cover;
-  display: block;
-}
-
-.card-content {
-  padding: 13px;
-}
-
-.card h3 {
-  margin: 5px 0 8px;
-}
-
-.description {
-  color: #666;
-  font-size: 14px;
-  min-height: 36px;
-}
-
-.price {
-  color: var(--main);
-  font-size: 19px;
-  font-weight: bold;
-}
-
-.card .button {
-  width: 100%;
-}
-
-.cart, .order-box, .admin-box {
-  background: white;
-  border-radius: 13px;
-  padding: 20px;
-  box-shadow: 0 3px 12px #0000000d;
-  margin-top:
+</body>
+</html>
