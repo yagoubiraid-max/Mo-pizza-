@@ -2,326 +2,294 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RAÏD EXPRESS - توصيل الطعام</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAÏD EXPRESS | توصيل الطلبات</title>
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f5f5f5;color:#222}
-header{background:#151515;color:white;text-align:center;padding:22px}
-.logo{font-size:30px;color:#ffb703;font-weight:bold}
-nav{background:#ffb703;padding:13px;text-align:center}
-nav a{color:#111;text-decoration:none;font-weight:bold;margin:8px;display:inline-block}
-.hero{background:#292929;color:white;text-align:center;padding:35px 15px}
-button,.btn{background:#e63946;color:white;border:0;border-radius:8px;padding:12px 17px;font-weight:bold;cursor:pointer}
-section{max-width:1100px;margin:auto;padding:22px 12px}
-h2{text-align:center}
-.categories{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:20px}
-.categories button{background:#333}
-.categories button.active{background:#e63946}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px}
-.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 9px #0001}
-.card img{width:100%;height:150px;object-fit:cover;background:#ddd}
-.card div{padding:12px}
-.card h3{margin:5px 0}
-.price{color:#e63946;font-size:19px;font-weight:bold}
-.card button{width:100%}
-.box{background:white;padding:18px;border-radius:12px;margin-top:15px}
-input,select,textarea{width:100%;padding:12px;margin:7px 0 14px;border:1px solid #ccc;border-radius:7px;font-size:16px}
-label{font-weight:bold}
-.cart-row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #ddd}
-.total{font-size:21px;color:#e63946;font-weight:bold}
-.notice{display:none;padding:12px;margin-top:12px;background:#fff3cd;line-height:1.7;border-radius:8px}
-footer{background:#151515;color:white;text-align:center;padding:25px;margin-top:25px}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f5f5;
+  color:#222;
+}
+header{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:22px 10px;
+}
+header h1{color:#ffb800;margin:0 0 8px}
+header p{margin:0}
+.banner{
+  background:#ffb800;
+  color:#111;
+  padding:18px;
+  text-align:center;
+  font-weight:bold;
+}
+.container{padding:12px;max-width:900px;margin:auto}
+h2{color:#111}
+.categories{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:8px 0;
+}
+.categories button{
+  border:0;
+  background:#222;
+  color:white;
+  padding:12px;
+  border-radius:20px;
+  white-space:nowrap;
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.card{
+  background:white;
+  border-radius:12px;
+  padding:12px;
+  text-align:center;
+  box-shadow:0 2px 7px #ddd;
+}
+.pic{font-size:48px}
+.card h3{font-size:16px;margin:8px 0}
+.price{color:#e58b00;font-weight:bold;margin:10px}
+button{
+  cursor:pointer;
+}
+.add{
+  width:100%;
+  background:#ffb800;
+  color:#111;
+  border:0;
+  padding:11px;
+  border-radius:8px;
+  font-weight:bold;
+}
+.cart,.order{
+  background:white;
+  margin-top:20px;
+  padding:15px;
+  border-radius:12px;
+}
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  margin:7px 0;
+  border:1px solid #ccc;
+  border-radius:7px;
+  font-size:16px;
+}
+.submit{
+  width:100%;
+  background:#159447;
+  color:white;
+  padding:14px;
+  border:0;
+  border-radius:8px;
+  font-size:17px;
+  font-weight:bold;
+}
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:25px;
+}
+.notice{font-size:13px;color:#666;line-height:1.7}
+@media(min-width:650px){
+  .products{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">🚚 RAÏD EXPRESS</div>
-  <h3>شركة توصيل الطعام والوجبات السريعة</h3>
-  <p>من المطعم إلى باب دارك ❤️</p>
-  <p>📍 قسنطينة - الجزائر</p>
+  <h1>🚚 RAÏD EXPRESS</h1>
+  <p>خدمة توصيل الطلبات في قسنطينة</p>
 </header>
 
-<nav>
-  <a href="#home">الرئيسية</a>
-  <a href="#menu">قائمة الطعام</a>
-  <a href="#cart">سلة المشتريات 🛒</a>
-  <a href="#order">اطلب الآن</a>
-</nav>
-
-<div class="hero" id="home">
-  <h1>مرحبا بكم في RAÏD EXPRESS 🍕</h1>
-  <p>بيتزا، شاورما، طاكوس، برغر، سندويتشات والمزيد!</p>
-  <p>اختر وجبتك وسجل عنوان التوصيل.</p>
-  <a class="btn" href="#menu" style="text-decoration:none">اكتشف الوجبات</a>
+<div class="banner">
+  🍕 اطلب وجبتك المفضلة وسنساعدك في توصيلها!
 </div>
 
-<section id="menu">
-  <h2>🍔 قائمة الوجبات</h2>
-  <div class="categories" id="categories"></div>
-  <div class="products" id="products"></div>
-</section>
+<div class="container">
 
-<section id="cart">
-  <h2>🛒 سلة المشتريات</h2>
-  <div class="box">
-    <div id="cartItems">السلة فارغة. اختر وجبتك أولًا.</div>
-    <p>مجموع الوجبات: <strong id="subtotal">0 دج</strong></p>
-    <p>مصاريف التوصيل: <strong id="delivery">0 دج</strong></p>
-    <p class="total">الإجمالي: <span id="total">0 دج</span></p>
-    <button onclick="goOrder()">متابعة الطلب</button>
-  </div>
-</section>
+<h2>🍽️ قائمة المأكولات</h2>
 
-<section id="order">
-  <h2>📝 معلومات طلب التوصيل</h2>
-  <div class="box">
-    <form id="orderForm">
+<div class="categories">
+  <button onclick="filter('الكل')">الكل</button>
+  <button onclick="filter('بيتزا')">🍕 بيتزا</button>
+  <button onclick="filter('ساندويتش')">🌯 ساندويتش</button>
+  <button onclick="filter('برغر')">🍔 برغر</button>
+  <button onclick="filter('دجاج')">🍗 دجاج</button>
+  <button onclick="filter('مشروبات')">🥤 مشروبات</button>
+</div>
 
-      <label for="customer">الاسم الكامل</label>
-      <input id="customer" required placeholder="اسم الزبون">
+<div class="products" id="products"></div>
 
-      <label for="phone">رقم الهاتف</label>
-      <input id="phone" type="tel" required placeholder="رقم الهاتف">
+<div class="cart">
+  <h2>🛒 سلة الطلبات</h2>
+  <div id="cart">السلة فارغة</div>
+  <p>مجموع المنتجات: <strong id="subtotal">0</strong> دج</p>
+  <p>التوصيل: <strong id="delivery">150</strong> دج</p>
+  <h3>المجموع النهائي: <span id="total">0</span> دج</h3>
+  <button class="add" onclick="clearCart()">إفراغ السلة</button>
+</div>
 
-      <label for="district">منطقة التوصيل</label>
-      <select id="district" required>
-        <option value="">اختر المنطقة</option>
-        <option>قسنطينة وسط المدينة</option>
-        <option>الخروب</option>
-        <option>عين سمارة</option>
-        <option>حامة بوزيان</option>
-        <option>ديدوش مراد</option>
-        <option>زيغود يوسف</option>
-        <option>عين عبيد</option>
-      </select>
+<div class="order">
+  <h2>📝 معلومات الزبون</h2>
+  <form id="orderForm">
+    <input id="name" placeholder="الاسم واللقب" required>
+    <input id="phone" type="tel" placeholder="رقم الهاتف" required>
+    <select id="district" required>
+      <option value="">اختر منطقة التوصيل</option>
+      <option>وسط قسنطينة</option>
+      <option>الخروب</option>
+      <option>عين سمارة</option>
+      <option>حامة بوزيان</option>
+      <option>ديدوش مراد</option>
+      <option>منطقة أخرى بقسنطينة</option>
+    </select>
+    <textarea id="address" placeholder="العنوان بالتفصيل" required></textarea>
+    <textarea id="notes" placeholder="ملاحظات إضافية (اختياري)"></textarea>
+    <button class="submit" type="submit">تأكيد الطلب</button>
+  </form>
+  <p class="notice">
+    ملاحظة: هذه نسخة تجريبية. إرسال الطلبات إلى صاحب المتجر يحتاج ربط الموقع بخدمة استقبال الطلبات.
+  </p>
+</div>
 
-      <label for="address">العنوان بالتفصيل</label>
-      <textarea id="address" required placeholder="الحي والشارع ورقم المنزل"></textarea>
-
-      <label for="notes">ملاحظات</label>
-      <textarea id="notes" placeholder="أي تفاصيل إضافية"></textarea>
-
-      <button type="submit">تأكيد الطلب</button>
-      <div class="notice" id="notice"></div>
-
-    </form>
-  </div>
-</section>
-
-<section>
-  <h2>🚚 خدماتنا</h2>
-  <div class="products">
-    <div class="card"><div><h3>🍕 توصيل المطاعم</h3><p>توصيل طلبات المطاعم المتعاقدة مع الشركة.</p></div></div>
-    <div class="card"><div><h3>🛵 عمال التوصيل</h3><p>إدارة عمليات التوصيل داخل المناطق المتاحة.</p></div></div>
-    <div class="card"><div><h3>📍 خدمة محلية</h3><p>خدمة موجهة لزبائن قسنطينة.</p></div></div>
-  </div>
-</section>
+</div>
 
 <footer>
   <h3>RAÏD EXPRESS 🚚</h3>
-  <p>شركة توصيل الأكل السريع</p>
-  <p>قسنطينة - الجزائر</p>
-  <p>© 2026 RAÏD EXPRESS</p>
+  <p>خدمة توصيل الطلبات في قسنطينة</p>
 </footer>
 
 <script>
-const DELIVERY_FEE = 150;
-
-const foods = [
-  {id:1,name:"بيتزا مارغريتا",category:"بيتزا",size:"صغيرة S",price:400,emoji:"🍕"},
-  {id:2,name:"بيتزا مارغريتا",category:"بيتزا",size:"متوسطة M",price:600,emoji:"🍕"},
-  {id:3,name:"بيتزا مشكلة",category:"بيتزا",size:"كبيرة L",price:900,emoji:"🍕"},
-  {id:4,name:"بيتزا عائلية",category:"بيتزا",size:"XL",price:1200,emoji:"🍕"},
-  {id:5,name:"بيتزا 4 أجبان",category:"بيتزا",size:"متوسطة",price:800,emoji:"🧀"},
-  {id:6,name:"بيتزا دجاج",category:"بيتزا",size:"كبيرة",price:950,emoji:"🍕"},
-  {id:7,name:"شاورما دجاج",category:"شاورما",size:"عادية",price:450,emoji:"🌯"},
-  {id:8,name:"شاورما لحم",category:"شاورما",size:"عادية",price:600,emoji:"🌯"},
-  {id:9,name:"شاورما دبل",category:"شاورما",size:"كبيرة",price:700,emoji:"🌯"},
-  {id:10,name:"طاكوس دجاج",category:"طاكوس",size:"صغير",price:400,emoji:"🌮"},
-  {id:11,name:"طاكوس دجاج",category:"طاكوس",size:"متوسط",price:600,emoji:"🌮"},
-  {id:12,name:"طاكوس مشكل",category:"طاكوس",size:"كبير",price:800,emoji:"🌮"},
-  {id:13,name:"برغر كلاسيكي",category:"برغر",size:"عادي",price:400,emoji:"🍔"},
-  {id:14,name:"تشيز برغر",category:"برغر",size:"بالجبن",price:500,emoji:"🍔"},
-  {id:15,name:"دبل برغر",category:"برغر",size:"دبل",price:700,emoji:"🍔"},
-  {id:16,name:"سندويتش دجاج",category:"سندويتشات",size:"عادي",price:350,emoji:"🥪"},
-  {id:17,name:"بانيني",category:"سندويتشات",size:"دجاج وجبن",price:450,emoji:"🥪"},
-  {id:18,name:"سندويتش تون",category:"سندويتشات",size:"عادي",price:300,emoji:"🥪"},
-  {id:19,name:"دجاج مقلي",category:"دجاج",size:"وجبة",price:700,emoji:"🍗"},
-  {id:20,name:"ناغتس",category:"دجاج",size:"صغير",price:400,emoji:"🍗"},
-  {id:21,name:"بطاطا مقلية",category:"إضافات",size:"عادية",price:200,emoji:"🍟"},
-  {id:22,name:"حلقات البصل",category:"إضافات",size:"وجبة",price:250,emoji:"🧅"},
-  {id:23,name:"كريب شوكولاتة",category:"حلويات",size:"عادي",price:350,emoji:"🥞"},
-  {id:24,name:"بان كيك",category:"حلويات",size:"وجبة",price:400,emoji:"🥞"},
-  {id:25,name:"مشروب غازي",category:"مشروبات",size:"علبة",price:120,emoji:"🥤"},
-  {id:26,name:"عصير طبيعي",category:"مشروبات",size:"كأس",price:200,emoji:"🧃"}
+const items=[
+ {name:"بيتزا مارغريتا صغيرة",cat:"بيتزا",icon:"🍕",price:400},
+ {name:"بيتزا مارغريتا متوسطة",cat:"بيتزا",icon:"🍕",price:600},
+ {name:"بيتزا مارغريتا كبيرة",cat:"بيتزا",icon:"🍕",price:900},
+ {name:"بيتزا 4 أجبان",cat:"بيتزا",icon:"🧀",price:1000},
+ {name:"بيتزا دجاج",cat:"بيتزا",icon:"🍕",price:900},
+ {name:"بيتزا مشكلة XL",cat:"بيتزا",icon:"🍕",price:1200},
+ {name:"شاورما دجاج",cat:"ساندويتش",icon:"🌯",price:450},
+ {name:"تاكوس دجاج",cat:"ساندويتش",icon:"🌮",price:600},
+ {name:"ساندويتش تونة",cat:"ساندويتش",icon:"🥪",price:350},
+ {name:"بانيني",cat:"ساندويتش",icon:"🥖",price:400},
+ {name:"برغر كلاسيكي",cat:"برغر",icon:"🍔",price:500},
+ {name:"تشيز برغر",cat:"برغر",icon:"🍔",price:650},
+ {name:"برغر دجاج",cat:"برغر",icon:"🍔",price:550},
+ {name:"دجاج مقلي",cat:"دجاج",icon:"🍗",price:700},
+ {name:"ناجتس دجاج",cat:"دجاج",icon:"🍗",price:450},
+ {name:"بطاطا مقلية",cat:"دجاج",icon:"🍟",price:200},
+ {name:"حلقات البصل",cat:"دجاج",icon:"🧅",price:250},
+ {name:"كريب شوكولاتة",cat:"ساندويتش",icon:"🥞",price:350},
+ {name:"عصير برتقال",cat:"مشروبات",icon:"🧃",price:200},
+ {name:"مشروب غازي",cat:"مشروبات",icon:"🥤",price:150}
 ];
 
-const categories = ["الكل","بيتزا","شاورما","طاكوس","برغر","سندويتشات","دجاج","إضافات","حلويات","مشروبات"];
-let selectedCategory = "الكل";
-let cart = [];
+let cart=[];
+let current="الكل";
 
-function showCategories(){
-  const box = document.getElementById("categories");
-  box.innerHTML = "";
+function renderProducts(){
+ const box=document.getElementById("products");
+ box.innerHTML="";
+ items.filter(p=>current==="الكل"||p.cat===current).forEach(p=>{
+  const div=document.createElement("div");
+  div.className="card";
+  const icon=document.createElement("div");
+  icon.className="pic";
+  icon.textContent=p.icon;
+  const title=document.createElement("h3");
+  title.textContent=p.name;
+  const price=document.createElement("div");
+  price.className="price";
+  price.textContent=p.price+" دج";
+  const btn=document.createElement("button");
+  btn.className="add";
+  btn.textContent="أضف إلى السلة";
+  btn.onclick=()=>addToCart(p);
+  div.append(icon,title,price,btn);
+  box.appendChild(div);
+ });
+}
 
-  categories.forEach(category => {
-    const button = document.createElement("button");
-    button.textContent = category;
-    button.className = selectedCategory === category ? "active" : "";
-    button.onclick = () => {
-      selectedCategory = category;
-      showCategories();
-      showFoods();
-    };
-    box.appendChild(button);
+function filter(cat){
+ current=cat;
+ renderProducts();
+}
+
+function addToCart(p){
+ const found=cart.find(x=>x.name===p.name);
+ if(found)found.qty++;
+ else cart.push({...p,qty:1});
+ renderCart();
+}
+
+function renderCart(){
+ const box=document.getElementById("cart");
+ box.innerHTML="";
+ if(cart.length===0){
+  box.textContent="السلة فارغة";
+ }else{
+  cart.forEach((p,i)=>{
+   const row=document.createElement("p");
+   row.textContent=p.name+" — "+p.price+" دج × "+p.qty+" ";
+   const btn=document.createElement("button");
+   btn.textContent="−";
+   btn.onclick=()=>{
+    p.qty--;
+    if(p.qty<=0)cart.splice(i,1);
+    renderCart();
+   };
+   row.appendChild(btn);
+   box.appendChild(row);
   });
+ }
+ const sub=cart.reduce((s,p)=>s+p.price*p.qty,0);
+ document.getElementById("subtotal").textContent=sub;
+ document.getElementById("delivery").textContent=sub>0?150:0;
+ document.getElementById("total").textContent=sub>0?sub+150:0;
 }
 
-function showFoods(){
-  const box = document.getElementById("products");
-  box.innerHTML = "";
-
-  foods.filter(food =>
-    selectedCategory === "الكل" || food.category === selectedCategory
-  ).forEach(food => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    const image = document.createElement("div");
-    image.style.cssText = "height:115px;display:grid;place-items:center;background:#fff0e5;font-size:65px";
-    image.textContent = food.emoji;
-
-    const content = document.createElement("div");
-    const name = document.createElement("h3");
-    name.textContent = food.name;
-
-    const size = document.createElement("p");
-    size.textContent = "الحجم: " + food.size;
-
-    const price = document.createElement("p");
-    price.className = "price";
-    price.textContent = food.price + " دج";
-
-    const button = document.createElement("button");
-    button.textContent = "أضف إلى السلة";
-    button.onclick = () => addToCart(food.id);
-
-    content.append(name,size,price,button);
-    card.append(image,content);
-    box.appendChild(card);
-  });
+function clearCart(){
+ cart=[];
+ renderCart();
 }
 
-function addToCart(id){
-  const food = foods.find(item => item.id === id);
-  const existing = cart.find(item => item.id === id);
-
-  if(existing) existing.quantity++;
-  else cart.push({...food,quantity:1});
-
-  showCart();
-}
-
-function updateQuantity(id,amount){
-  const item = cart.find(item => item.id === id);
-  if(!item) return;
-
-  item.quantity += amount;
-  if(item.quantity <= 0) cart = cart.filter(item => item.id !== id);
-  showCart();
-}
-
-function showCart(){
-  const box = document.getElementById("cartItems");
-  box.innerHTML = "";
-
-  if(cart.length === 0) box.textContent = "السلة فارغة. اختر وجبتك أولًا.";
-
-  cart.forEach(item => {
-    const row = document.createElement("div");
-    row.className = "cart-row";
-
-    const description = document.createElement("span");
-    description.textContent = item.name + " (" + item.size + ") × " + item.quantity;
-
-    const controls = document.createElement("div");
-
-    const minus = document.createElement("button");
-    minus.textContent = "−";
-    minus.onclick = () => updateQuantity(item.id,-1);
-
-    const plus = document.createElement("button");
-    plus.textContent = "+";
-    plus.style.marginRight = "5px";
-    plus.onclick = () => updateQuantity(item.id,1);
-
-    controls.append(minus,plus);
-    row.append(description,controls);
-    box.appendChild(row);
-  });
-
-  const subtotal = cart.reduce((sum,item) => sum + item.price * item.quantity,0);
-  const delivery = cart.length ? DELIVERY_FEE : 0;
-
-  document.getElementById("subtotal").textContent = subtotal + " دج";
-  document.getElementById("delivery").textContent = delivery + " دج";
-  document.getElementById("total").textContent = subtotal + delivery + " دج";
-}
-
-function goOrder(){
-  if(cart.length === 0){
-    alert("أضف وجبة إلى السلة أولًا.");
-    return;
-  }
-  document.getElementById("order").scrollIntoView({behavior:"smooth"});
-}
-
-document.getElementById("orderForm").addEventListener("submit",function(event){
-  event.preventDefault();
-
-  if(cart.length === 0){
-    alert("السلة فارغة. اختر وجبة أولًا.");
-    return;
-  }
-
-  const order = {
-    number: Date.now(),
-    name: document.getElementById("customer").value.trim(),
-    phone: document.getElementById("phone").value.trim(),
-    district: document.getElementById("district").value,
-    address: document.getElementById("address").value.trim(),
-    notes: document.getElementById("notes").value.trim(),
-    items: cart.map(item => ({
-      name:item.name,
-      size:item.size,
-      quantity:item.quantity,
-      price:item.price
-    })),
-    total: cart.reduce((sum,item) => sum + item.price * item.quantity,0) + DELIVERY_FEE
-  };
-
-  try {
-    const oldOrders = JSON.parse(localStorage.getItem("raidOrdersDemo") || "[]");
-    oldOrders.push(order);
-    localStorage.setItem("raidOrdersDemo",JSON.stringify(oldOrders));
-
-    const notice = document.getElementById("notice");
-    notice.style.display = "block";
-    notice.textContent =
-      "تم إنشاء طلب تجريبي رقم " + order.number +
-      ". انتبه: الطلب محفوظ في هذا الجهاز فقط ولم يصل إلى الشركة بعد. يجب ربط قاعدة بيانات لاستقبال الطلبات الحقيقية.";
-  } catch(error) {
-    alert("تعذر حفظ الطلب التجريبي.");
-  }
+document.getElementById("orderForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ if(cart.length===0){
+  alert("أضف المنتجات إلى السلة أولاً");
+  return;
+ }
+ const sub=cart.reduce((s,p)=>s+p.price*p.qty,0);
+ let msg="طلب جديد من RAÏD EXPRESS%0A";
+ msg+="الاسم: "+encodeURIComponent(document.getElementById("name").value)+"%0A";
+ msg+="الهاتف: "+encodeURIComponent(document.getElementById("phone").value)+"%0A";
+ msg+="المنطقة: "+encodeURIComponent(document.getElementById("district").value)+"%0A";
+ msg+="العنوان: "+encodeURIComponent(document.getElementById("address").value)+"%0A";
+ msg+="المنتجات:%0A";
+ cart.forEach(p=>{
+  msg+=encodeURIComponent(p.name+" × "+p.qty+" = "+(p.price*p.qty)+" دج")+"%0A";
+ });
+ msg+="المجموع مع التوصيل: "+(sub+150)+" دج%0A";
+ msg+="ملاحظات: "+encodeURIComponent(document.getElementById("notes").value);
+ alert("هذه نسخة تجريبية. لإرسال الطلب عبر واتساب يجب إضافة رقم واتساب المتجر إلى الكود.");
 });
 
-showCategories();
-showFoods();
-showCart();
+renderProducts();
+renderCart();
 </script>
 
 </body>
