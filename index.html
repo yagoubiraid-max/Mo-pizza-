@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vita Beauty | متجر التجميل</title>
+<title>BARAKAT BEAUTY | متجر التجميل</title>
 
 <style>
 * {
@@ -13,1508 +13,366 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fff7fa;
-  color: #442832;
+  background: #fff8fb;
+  color: #39252f;
 }
 
-header {
-  background: #e96b96;
+.ad-banner {
+  background: #9d174d;
   color: white;
-  padding: 22px 12px;
+  padding: 13px;
   text-align: center;
-}
-
-header h1 {
-  margin: 0 0 8px;
-  font-size: 30px;
-}
-
-nav {
-  background: #fff;
-  padding: 14px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  box-shadow: 0 2px 8px #00000010;
-}
-
-nav a {
-  color: #b83268;
-  text-decoration: none;
-  margin: 0 10px;
   font-weight: bold;
+  overflow: hidden;
 }
 
-.hero {
-  padding: 25px 15px;
-  text-align: center;
-  background: #ffe0eb;
-}
-
-.hero img {
-  width: 100%;
-  max-width: 500px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 18px;
-}
-
-.hero h2 {
-  color: #b83268;
-}
-
-.container {
-  padding: 20px 14px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.product {
-  background: white;
-  border-radius: 15px;
-  padding: 10px;
-  text-align: center;
-  box-shadow: 0 3px 12px #d88ca51c;
-}
-
-.product img {
-  width: 100%;
-  height: 145px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.product h3 {
+.ad-banner marquee {
   font-size: 16px;
-  margin: 12px 0 6px;
 }
 
-.price {
-  color: #c22f69;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-button {
-  border: 0;
-  border-radius: 9px;
-  background: #e75489;
-  color: white;
-  padding: 11px 12px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-button:hover {
-  background: #c83770;
-}
-
-.cart {
-  background: white;
-  padding: 18px;
-  border-radius: 15px;
-  margin-top: 28px;
-}
-
-.cart-item {
-  border-bottom: 1px solid #f4dce5;
-  padding: 10px 0;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 7px 0;
-  border: 1px solid #e9c6d4;
-  border-radius: 8px;
-  font: inherit;
-}
-
-.order-btn {
-  width: 100%;
-  margin-top: 12px;
-  background: #20b85a;
-  font-size: 17px;
-}
-
-footer {
-  text-align: center;
-  background: #e96b96;
-  color: white;
-  padding: 20px;
-  margin-top: 30px;
-}
-
-@media (min-width: 650px) {
-  .products {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-</style>
-</head>
-<style>
-.announcement {
-  background: linear-gradient(90deg, #d4145a, #ff69a8);
-  color: white;
-  text-align: center;
-  padding: 12px 5px;
-  font-size: 15px;
-  font-weight: bold;
-  overflow: hidden;
-}
-.announcement span {
-  display: inline-block;
-  animation: slide 10s linear infinite;
-}
-@keyframes slide {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-</style>
-
-<div class="announcement">
-  <span>💄 مرحباً بكم في متجرنا للتجميل | 🎁 عروض مميزة | 🚚 اطلبوا الآن</span>
-</div>
-<body>
-
-<header>
-  <h1>🌸 Vita Beauty</h1>
-  <p>جمالك يبدأ من هنا</p>
-</header>
-
-<nav>
-  <a href="#products">المنتجات</a>
-  <a href="#cart">سلة المشتريات 🛍️</a>
-</nav>
-
-<section class="hero">
-  <img
-    src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=80"
-    alt="منتجات العناية بالبشرة"
-  >
-  <h2>اكتشفي جمالك مع Vita Beauty ✨</h2>
-  <p>منتجات تجميل وعناية لتتألقي كل يوم</p>
-  <a href="#products">
-    <button>اكتشفي المنتجات</button>
-  </a>
-</section>
-
-<main class="container">
-
-  <h2 id="products">💄 منتجاتنا</h2>
-
-  <section class="products">
-
-    <article class="product">
-      <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80" alt="كريم عناية">
-      <h3>كريم العناية بالبشرة</h3>
-      <p>ترطيب يومي للبشرة</p>
-      <div class="price">1800 دج</div>
-      <button onclick="addProduct('كريم العناية بالبشرة',1800)">أضيفي إلى السلة</button>
-    </article>
-
-    <article class="product">
-      <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=500&q=80" alt="أحمر شفاه">
-      <h3>أحمر شفاه</h3>
-      <p>لمسة جميلة لإطلالتك</p>
-      <div class="price">1200 دج</div>
-      <button onclick="addProduct('أحمر شفاه',1200)">أضيفي إلى السلة</button>
-    </article>
-
-    <article class="product">
-      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80" alt="مستحضرات تجميل">
-      <h3>مجموعة مكياج</h3>
-      <p>لإطلالة متألقة</p>
-      <div class="price">2500 دج</div>
-      <button onclick="addProduct('مجموعة مكياج',2500)">أضيفي إلى السلة</button>
-    </article>
-
-    <article class="product">
-      <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=500&q=80" alt="عطر">
-      <h3>عطر أنيق</h3>
-      <p>رائحة مميزة لكل يوم</p>
-      <div class="price">3000 دج</div>
-      <button onclick="addProduct('عطر أنيق',3000)">أضيفي إلى السلة</button>
-    </article>
-
-  </section>
-
-  <section class="cart" id="cart">
-    <h2>🛍️ سلة مشترياتك</h2>
-    <div id="items">لم تختاري أي منتج بعد.</div>
-    <h3>المجموع: <span id="total">0</span> دج</h3>
-
-    <h3>📦 معلومات التوصيل</h3>
-    <form id="orderForm">
-      <input id="customerName" placeholder="الاسم الكامل" required>
-      <input id="customerPhone" type="tel" placeholder="رقم هاتفك" required>
-      <textarea id="customerAddress" placeholder="عنوان التوصيل" required></textarea>
-      <button class="order-btn" type="submit">
-        تأكيد الطلب عبر واتساب 📱
-      </button>
-    </form>
-  </section>
-
-</main>
-
-<footer>
-  <h3>🌸 Vita Beauty</h3>
-  <p>شكرًا لثقتكم بنا ❤️</p>
-</footer>
-
-<script>
-const cart = [];
-
-function addProduct(name, price) {
-  const existing = cart.find(item => item.name === name);
-
-  if (existing) {
-    existing.quantity++;
-  } else {
-    cart.push({ name, price, quantity: 1 });
-  }
-
-  renderCart();
-
-  document.getElementById("cart").scrollIntoView({
-    behavior: "smooth"
-  });
-}
-
-function removeProduct(name) {
-  const index = cart.findIndex(item => item.name === name);
-
-  if (index !== -1) {
-    cart.splice(index, 1);
-  }
-
-  renderCart();
-}
-
-function renderCart() {
-  const items = document.getElementById("items");
-
-  if (cart.length === 0) {
-    items.innerHTML = "لم تختاري أي منتج بعد.";
-  } else {
-    items.innerHTML = cart.map(item => `
-      <div class="cart-item">
-        <strong>${item.name}</strong><br>
-        ${item.price} دج × ${item.quantity}
-        = ${item.price * item.quantity} دج
-        <br>
-        <button type="button"
-          onclick="removeProduct('${item.name}')">
-          حذف
-        </button>
-      </div>
-    `).join("");
-  }
-
-  const total = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity, 0
-  );
-
-  document.getElementById("total").textContent =
-    total.toLocaleString("fr-FR");
-}
-
-document.getElementById("orderForm").addEventListener(
-  "submit",
-  function(event) {
-    event.preventDefault();
-
-    if (cart.length === 0) {
-      alert("من فضلك أضيفي منتجًا إلى السلة أولًا.");
-      return;
-    }
-
-    const name = document.getElementById("customerName").value.trim();
-    const phone = document.getElementById("customerPhone").value.trim();
-    const address = document.getElementById("customerAddress").value.trim();
-
-    const total = cart.reduce(
-      (sum, item) => sum + item.price * item.quantity, 0
-    );
-
-    let message =
-      "🌸 طلب جديد من Vita Beauty\n\n" +
-      "الاسم: " + name + "\n" +
-      "الهاتف: " + phone + "\n" +
-      "العنوان: " + address + "\n\n" +
-      "المنتجات:\n";
-
-    cart.forEach(item => {
-      message += "- " + item.name +
-        " × " + item.quantity +
-        " = " + (item.price * item.quantity) + " دج\n";
-    });
-
-    message += "\nالمجموع: " + total + " دج";
-
-    const whatsappURL =
-      "https://wa.me/213557509646?text=" +
-      encodeURIComponent(message);
-
-    window.open(whatsappURL, "_blank");
-  }
-);
-</script>
-<!-- إعلان أعلى المتجر -->
-<style>
-.announcement-bar {
-  background: linear-gradient(90deg, #c2185b, #ff69b4);
-  color: white;
-  text-align: center;
-  padding: 12px 5px;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  font-weight: bold;
-  overflow: hidden;
-  direction: rtl;
-}
-.announcement-bar p {
-  margin: 0;
-  animation: moveText 12s linear infinite;
-}
-@keyframes moveText {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-</style>
-
-<div class="announcement-bar">
-  <p>💄 مرحباً بكم في متجر التجميل 🌸 | 🎁 عروض وخصومات مميزة | 🚚 التوصيل متوفر | 🛍️ اطلب الآن</p>
-</div>
-</body>
-      </html>
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>متجر الجمال | Beauty Shop</title>
-
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff7fa;
-  color: #54283d;
-}
-
-/* شريط الإعلانات العلوي */
-.announcement {
-  background: linear-gradient(90deg, #a41652, #f45b91, #a41652);
-  color: white;
-  padding: 12px 0;
-  overflow: hidden;
-  white-space: nowrap;
-  font-weight: bold;
-}
-
-.announcement span {
-  display: inline-block;
-  padding-right: 100%;
-  animation: scroll 15s linear infinite;
-}
-
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(100%); }
-}
-
-/* رأس المتجر */
 header {
-  background: white;
-  padding: 18px 12px;
   text-align: center;
-  border-bottom: 1px solid #f2d4df;
+  padding: 25px 10px;
+  background: linear-gradient(135deg, #fbcfe8, #fff1f2);
 }
 
 .logo {
-  font-size: 27px;
-  color: #bd2864;
+  font-size: 30px;
   font-weight: bold;
+  color: #9d174d;
+  letter-spacing: 1px;
 }
 
 header p {
   margin-bottom: 0;
-  color: #9a667d;
 }
 
-/* القائمة */
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  background: #fce4ed;
-  padding: 14px 5px;
-}
-
-nav a {
-  color: #8c2450;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* واجهة المتجر */
 .hero {
-  padding: 45px 15px;
   text-align: center;
-  background: linear-gradient(135deg, #f9d9e5, #fff1f6, #f5d3a0);
+  padding: 30px 15px;
+  background: #fce7f3;
 }
 
 .hero h1 {
-  font-size: 34px;
-  color: #a51d55;
+  color: #9d174d;
 }
 
-.hero p {
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-.button {
-  display: inline-block;
-  background: #b51f5b;
+.hero button,
+.product button,
+.submit-btn {
+  background: #9d174d;
   color: white;
-  padding: 13px 27px;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: bold;
   border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 16px;
   cursor: pointer;
 }
 
-.button:hover {
-  background: #861443;
-}
-
-/* عناوين الأقسام */
 .section-title {
   text-align: center;
-  color: #ad2058;
+  color: #9d174d;
   margin: 30px 10px 20px;
-  font-size: 25px;
 }
 
-/* المنتجات */
 .products {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  padding: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 15px;
+  padding: 15px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .product {
   background: white;
-  border-radius: 16px;
-  text-align: center;
+  border: 1px solid #f3c4da;
+  border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 3px 12px #dba8bb55;
+  text-align: center;
+  box-shadow: 0 3px 12px #0000000d;
 }
 
 .product img {
   width: 100%;
-  height: 160px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 12px;
-  background: #fce4ed;
+  border-radius: 10px;
 }
 
 .product h3 {
-  font-size: 17px;
-  margin: 12px 0 7px;
+  font-size: 16px;
 }
 
 .price {
-  color: #bd205d;
+  color: #be185d;
   font-weight: bold;
-  font-size: 19px;
-  margin: 10px;
+  font-size: 18px;
 }
 
-.product .button {
-  padding: 10px 15px;
-  font-size: 14px;
+.order-box {
+  background: white;
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 22px;
+  border-radius: 15px;
+  border: 1px solid #f3c4da;
 }
 
-/* التذييل */
+.order-box label {
+  display: block;
+  margin-top: 14px;
+  font-weight: bold;
+}
+
+.order-box input,
+.order-box select,
+.order-box textarea {
+  width: 100%;
+  padding: 13px;
+  margin-top: 7px;
+  border: 1px solid #e8b8cf;
+  border-radius: 8px;
+  background: #fffafd;
+  font-size: 15px;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 22px;
+}
+
+#message {
+  text-align: center;
+  line-height: 1.8;
+  font-weight: bold;
+}
+
 footer {
-  margin-top: 30px;
-  padding: 25px 12px;
-  text-align: center;
-  background: #8e1748;
-  color: white;
-  line-height: 2;
-}
-
-@media (max-width: 360px) {
-  .products {
-    gap: 8px;
-    padding: 8px;
-  }
-
-  .product img {
-    height: 125px;
-  }
-
-  .hero h1 {
-    font-size: 27px;
-  }
-}
-</style>
-</head>
-<section id="order-section" dir="rtl">
-  <h2>🛍️ أكملي طلبك</h2>
-  <p>املئي المعلومات التالية وسنتواصل معك لتأكيد الطلب.</p>
-
-  <form id="orderForm">
-    <label>الاسم الكامل</label>
-    <input name="name" required placeholder="اسمك الكامل">
-
-    <label>رقم الهاتف</label>
-    <input name="phone" type="tel" required placeholder="05 أو 06 أو 07">
-
-    <label>المنتج المطلوب</label>
-    <input name="product" required placeholder="اسم المنتج">
-
-    <label>الكمية</label>
-    <input name="quantity" type="number" min="1" value="1" required>
-
-    <label>الولاية</label>
-    <select name="wilaya" required>
-      <option value="">اختاري ولايتك</option>
-      <option>أدرار</option>
-      <option>الشلف</option>
-      <option>الأغواط</option>
-      <option>أم البواقي</option>
-      <option>باتنة</option>
-      <option>بجاية</option>
-      <option>بسكرة</option>
-      <option>بشار</option>
-      <option>البليدة</option>
-      <option>البويرة</option>
-      <option>تمنراست</option>
-      <option>تبسة</option>
-      <option>تلمسان</option>
-      <option>تيارت</option>
-      <option>تيزي وزو</option>
-      <option>الجزائر</option>
-      <option>الجلفة</option>
-      <option>جيجل</option>
-      <option>سطيف</option>
-      <option>سعيدة</option>
-      <option>سكيكدة</option>
-      <option>سيدي بلعباس</option>
-      <option>عنابة</option>
-      <option>قالمة</option>
-      <option>قسنطينة</option>
-      <option>المدية</option>
-      <option>مستغانم</option>
-      <option>المسيلة</option>
-      <option>معسكر</option>
-      <option>ورقلة</option>
-      <option>وهران</option>
-      <option>البيض</option>
-      <option>إليزي</option>
-      <option>برج بوعريريج</option>
-      <option>بومرداس</option>
-      <option>الطارف</option>
-      <option>تندوف</option>
-      <option>تيسمسيلت</option>
-      <option>الوادي</option>
-      <option>خنشلة</option>
-      <option>سوق أهراس</option>
-      <option>تيبازة</option>
-      <option>ميلة</option>
-      <option>عين الدفلى</option>
-      <option>النعامة</option>
-      <option>عين تموشنت</option>
-      <option>غرداية</option>
-      <option>غليزان</option>
-      <option>تيميمون</option>
-      <option>برج باجي مختار</option>
-      <option>أولاد جلال</option>
-      <option>بني عباس</option>
-      <option>عين صالح</option>
-      <option>عين قزام</option>
-      <option>تقرت</option>
-      <option>جانت</option>
-      <option>المغير</option>
-      <option>المنيعة</option>
-    </select>
-
-    <label>البلدية والعنوان</label>
-    <textarea name="address" required placeholder="البلدية، الحي، الشارع"></textarea>
-
-    <label>شركة التوصيل المفضلة</label>
-    <select name="delivery" required>
-      <option value="">اختاري شركة التوصيل</option>
-      <option>Yalidine</option>
-      <option>ZR Express</option>
-      <option>Ecotrack</option>
-      <option>لا أعرف، اقترحوا عليّ</option>
-    </select>
-
-    <button type="submit">تأكيد الطلب</button>
-    <p id="orderStatus"></p>
-  </form>
-</section>
-
-<style>
-#order-section {
-  max-width: 500px;
-  margin: 25px auto;
-  padding: 20px;
-  background: #fff0f6;
-  border-radius: 16px;
-  font-family: Arial, sans-serif;
-  color: #702044;
-}
-#order-section h2 {
-  text-align: center;
-  color: #b51f5b;
-}
-#order-section label {
-  display: block;
-  margin-top: 12px;
-  font-weight: bold;
-}
-#order-section input,
-#order-section select,
-#order-section textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px;
-  margin-top: 6px;
-  border: 1px solid #e6a8c1;
-  border-radius: 8px;
-  background: white;
-  font-size: 16px;
-}
-#order-section button {
-  width: 100%;
-  margin-top: 18px;
-  padding: 14px;
-  border: 0;
-  border-radius: 10px;
-  background: #b51f5b;
-  color: white;
-  font-size: 17px;
-  font-weight: bold;
-}
-</style>
-
-<script>
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  document.getElementById("orderStatus").textContent =
-    "النموذج جاهز، لكن يجب ربطه بخدمة تخزين الطلبات قبل استقبال الطلبات فعليًا.";
-});
-  <section id="order-section" dir="rtl">
-  <h2>🛍️ أكملي طلبك</h2>
-  <p>املئي المعلومات التالية وسنتواصل معك لتأكيد الطلب.</p>
-
-  <form id="orderForm">
-    <label>الاسم الكامل</label>
-    <input name="name" required placeholder="اسمك الكامل">
-
-    <label>رقم الهاتف</label>
-    <input name="phone" type="tel" required placeholder="05 أو 06 أو 07">
-
-    <label>المنتج المطلوب</label>
-    <input name="product" required placeholder="اسم المنتج">
-
-    <label>الكمية</label>
-    <input name="quantity" type="number" min="1" value="1" required>
-
-    <label>الولاية</label>
-    <select name="wilaya" required>
-      <option value="">اختاري ولايتك</option>
-      <option>أدرار</option>
-      <option>الشلف</option>
-      <option>الأغواط</option>
-      <option>أم البواقي</option>
-      <option>باتنة</option>
-      <option>بجاية</option>
-      <option>بسكرة</option>
-      <option>بشار</option>
-      <option>البليدة</option>
-      <option>البويرة</option>
-      <option>تمنراست</option>
-      <option>تبسة</option>
-      <option>تلمسان</option>
-      <option>تيارت</option>
-      <option>تيزي وزو</option>
-      <option>الجزائر</option>
-      <option>الجلفة</option>
-      <option>جيجل</option>
-      <option>سطيف</option>
-      <option>سعيدة</option>
-      <option>سكيكدة</option>
-      <option>سيدي بلعباس</option>
-      <option>عنابة</option>
-      <option>قالمة</option>
-      <option>قسنطينة</option>
-      <option>المدية</option>
-      <option>مستغانم</option>
-      <option>المسيلة</option>
-      <option>معسكر</option>
-      <option>ورقلة</option>
-      <option>وهران</option>
-      <option>البيض</option>
-      <option>إليزي</option>
-      <option>برج بوعريريج</option>
-      <option>بومرداس</option>
-      <option>الطارف</option>
-      <option>تندوف</option>
-      <option>تيسمسيلت</option>
-      <option>الوادي</option>
-      <option>خنشلة</option>
-      <option>سوق أهراس</option>
-      <option>تيبازة</option>
-      <option>ميلة</option>
-      <option>عين الدفلى</option>
-      <option>النعامة</option>
-      <option>عين تموشنت</option>
-      <option>غرداية</option>
-      <option>غليزان</option>
-      <option>تيميمون</option>
-      <option>برج باجي مختار</option>
-      <option>أولاد جلال</option>
-      <option>بني عباس</option>
-      <option>عين صالح</option>
-      <option>عين قزام</option>
-      <option>تقرت</option>
-      <option>جانت</option>
-      <option>المغير</option>
-      <option>المنيعة</option>
-    </select>
-
-    <label>البلدية والعنوان</label>
-    <textarea name="address" required placeholder="البلدية، الحي، الشارع"></textarea>
-
-    <label>شركة التوصيل المفضلة</label>
-    <select name="delivery" required>
-      <option value="">اختاري شركة التوصيل</option>
-      <option>Yalidine</option>
-      <option>ZR Express</option>
-      <option>Ecotrack</option>
-      <option>لا أعرف، اقترحوا عليّ</option>
-    </select>
-
-    <button type="submit">تأكيد الطلب</button>
-    <p id="orderStatus"></p>
-  </form>
-</section>
-
-<style>
-#order-section {
-  max-width: 500px;
-  margin: 25px auto;
-  padding: 20px;
-  background: #fff0f6;
-  border-radius: 16px;
-  font-family: Arial, sans-serif;
-  color: #702044;
-}
-#order-section h2 {
-  text-align: center;
-  color: #b51f5b;
-}
-#order-section label {
-  display: block;
-  margin-top: 12px;
-  font-weight: bold;
-}
-#order-section input,
-#order-section select,
-#order-section textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px;
-  margin-top: 6px;
-  border: 1px solid #e6a8c1;
-  border-radius: 8px;
-  background: white;
-  font-size: 16px;
-}
-#order-section button {
-  width: 100%;
-  margin-top: 18px;
-  padding: 14px;
-  border: 0;
-  border-radius: 10px;
-  background: #b51f5b;
-  color: white;
-  font-size: 17px;
-  font-weight: bold;
-}
-</style>
-
-<script>
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  document.getElementById("orderStatus").textContent =
-    "النموذج جاهز، لكن يجب ربطه بخدمة تخزين الطلبات قبل استقبال الطلبات فعليًا.";
-});
-</script>
-<body>
-
-<!-- شريط الإعلانات -->
-<div class="announcement">
-  <span>
-    🎁 عروض حصرية على منتجات التجميل
-    &nbsp; ✨ اكتشفي جمالك معنا
-    &nbsp; 💄 منتجات رائعة بأسعار مميزة
-    &nbsp; 🛍️ اطلبي الآن
-  </span>
-</div>
-
-<!-- اسم المتجر -->
-<header>
-  <div class="logo">🌸 متجر الجمال 🌸</div>
-  <p>كل ما تحتاجينه لجمالك في مكان واحد</p>
-</header>
-
-<!-- القائمة الرئيسية -->
-<nav>
-  <a href="#home">الرئيسية</a>
-  <a href="#makeup">المكياج</a>
-  <a href="#skincare">العناية بالبشرة</a>
-  <a href="#contact">اتصلي بنا</a>
-</nav>
-
-<!-- الواجهة الرئيسية -->
-<section class="hero" id="home">
-  <h1>جمالك يبدأ من هنا 💗</h1>
-  <p>
-    اكتشفي عالم الجمال والأناقة<br>
-    اختاري منتجاتك المفضلة واطلبيها بسهولة
-  </p>
-  <a href="#makeup" class="button">🛍️ تسوقي الآن</a>
-</section>
-
-<h2 class="section-title" id="makeup">
-  ✨ منتجاتنا المميزة ✨
-</h2>
-
-<div class="products">
-
-  <!-- المنتج الأول -->
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=500&q=80"
-         alt="أحمر شفاه">
-    <h3>أحمر شفاه</h3>
-    <p>لمسة جمال وأناقة</p>
-    <div class="price">1300 دج</div>
-    <button class="button" onclick="order('أحمر شفاه', 1300)">
-      اطلبي الآن
-    </button>
-  </div>
-
-  <!-- المنتج الثاني -->
-  <div class="product" id="skincare">
-    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80"
-         alt="منتجات العناية بالبشرة">
-    <h3>العناية بالبشرة</h3>
-    <p>اهتمي بجمال بشرتك</p>
-    <div class="price">1800 دج</div>
-    <button class="button" onclick="order('العناية بالبشرة', 1800)">
-      اطلبي الآن
-    </button>
-  </div>
-
-  <!-- المنتج الثالث -->
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80"
-         alt="مستحضرات مكياج">
-    <h3>مجموعة مكياج</h3>
-    <p>إطلالة متكاملة</p>
-    <div class="price">2500 دج</div>
-    <button class="button" onclick="order('مجموعة مكياج', 2500)">
-      اطلبي الآن
-    </button>
-  </div>
-
-  <!-- المنتج الرابع -->
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=500&q=80"
-         alt="عطر">
-    <h3>عطر أنيق</h3>
-    <p>رائحة تترك أثرًا جميلًا</p>
-    <div class="price">2200 دج</div>
-    <button class="button" onclick="order('عطر أنيق', 2200)">
-      اطلبي الآن
-    </button>
-  </div>
-
-</div>
-
-<!-- معلومات الاتصال --><section style="background:#fff0f6;padding:20px;border-radius:15px;margin:15px;">
-  <h2 style="color:#b51f5b;text-align:center;">
-    🚚 معلومات التوصيل
-  </h2>
-
-  <label>الاسم الكامل:</label>
-  <input id="customerName" type="text" placeholder="اكتب اسمك"
-  style="width:100%;padding:12px;margin:8px 0;">
-
-  <label>رقم الهاتف:</label>
-  <input id="customerPhone" type="tel" placeholder="رقم هاتفك"
-  style="width:100%;padding:12px;margin:8px 0;">
-
-  <label>اختر الولاية:</label>
-  <select id="wilaya" style="width:100%;padding:12px;margin:8px 0;">
-    <option value="">اختر ولايتك</option>
-    <option>01 - أدرار</option>
-    <option>02 - الشلف</option>
-    <option>03 - الأغواط</option>
-    <option>04 - أم البواقي</option>
-    <option>05 - باتنة</option>
-    <option>06 - بجاية</option>
-    <option>07 - بسكرة</option>
-    <option>08 - بشار</option>
-    <option>09 - البليدة</option>
-    <option>10 - البويرة</option>
-    <option>11 - تمنراست</option>
-    <option>12 - تبسة</option>
-    <option>13 - تلمسان</option>
-    <option>14 - تيارت</option>
-    <option>15 - تيزي وزو</option>
-    <option>16 - الجزائر</option>
-    <option>17 - الجلفة</option>
-    <option>18 - جيجل</option>
-    <option>19 - سطيف</option>
-    <option>20 - سعيدة</option>
-    <option>21 - سكيكدة</option>
-    <option>22 - سيدي بلعباس</option>
-    <option>23 - عنابة</option>
-    <option>24 - قالمة</option>
-    <option>25 - قسنطينة</option>
-    <option>26 - المدية</option>
-    <option>27 - مستغانم</option>
-    <option>28 - المسيلة</option>
-    <option>29 - معسكر</option>
-    <option>30 - ورقلة</option>
-    <option>31 - وهران</option>
-    <option>32 - البيض</option>
-    <option>33 - إليزي</option>
-    <option>34 - برج بوعريريج</option>
-    <option>35 - بومرداس</option>
-    <option>36 - الطارف</option>
-    <option>37 - تندوف</option>
-    <option>38 - تيسمسيلت</option>
-    <option>39 - الوادي</option>
-    <option>40 - خنشلة</option>
-    <option>41 - سوق أهراس</option>
-    <option>42 - تيبازة</option>
-    <option>43 - ميلة</option>
-    <option>44 - عين الدفلى</option>
-    <option>45 - النعامة</option>
-    <option>46 - عين تموشنت</option>
-    <option>47 - غرداية</option>
-    <option>48 - غليزان</option>
-    <option>49 - تيميمون</option>
-    <option>50 - برج باجي مختار</option>
-    <option>51 - أولاد جلال</option>
-    <option>52 - بني عباس</option>
-    <option>53 - عين صالح</option>
-    <option>54 - عين قزام</option>
-    <option>55 - تقرت</option>
-    <option>56 - جانت</option>
-    <option>57 - المغير</option>
-    <option>58 - المنيعة</option>
-  </select>
-
-  <label>البلدية والعنوان:</label>
-  <input id="address" type="text" placeholder="البلدية، الحي، الشارع"
-  style="width:100%;padding:12px;margin:8px 0;">
-
-  <label>شركة التوصيل المفضلة:</label>
-  <select id="delivery" style="width:100%;padding:12px;margin:8px 0;">
-    <option value="Yalidine">Yalidine</option>
-    <option value="ZR Express">ZR Express</option>
-    <option value="Ecotrack">Ecotrack</option>
-    <option value="لا أعرف، اقترحوا عليّ">لا أعرف، اقترحوا عليّ</option>
-  </select>
-
-  <button onclick="sendOrder()"
-  style="width:100%;padding:15px;background:#b51f5b;color:white;border:0;border-radius:10px;font-size:17px;">
-    تأكيد الطلب عبر واتساب
-  </button>
-</section>
-
-<script>
-function sendOrder() {
-  const name = document.getElementById("customerName").value.trim();
-  const phone = document.getElementById("customerPhone").value.trim();
-  const wilaya = document.getElementById("wilaya").value;
-  const address = document.getElementById("address").value.trim();
-  const delivery = document.getElementById("delivery").value;
-
-  if (!name || !phone || !wilaya || !address) {
-    alert("يرجى ملء جميع معلومات التوصيل.");
-    return;
-  }
-
-  const message =
-    "السلام عليكم، أريد تأكيد طلب من المتجر.\n" +
-    "الاسم: " + name + "\n" +
-    "الهاتف: " + phone + "\n" +
-    "الولاية: " + wilaya + "\n" +
-    "العنوان: " + address + "\n" +
-    "شركة التوصيل المفضلة: " + delivery;
-
-  window.open(
-    "https://wa.me/213557509646?text=" + encodeURIComponent(message),
-    "_blank"
-  );
-}
-</script>
-<footer id="contact">
-  <h2>🌸 متجر الجمال 🌸</h2>
-  <p>شكرًا لزيارتك متجرنا</p>
-  <p>للطلب والاستفسار تواصلي معنا عبر واتساب</p>
-  <p>© جميع الحقوق محفوظة</p>
-</footer>
-
-<script>
-function order(product, price) {
-  const phone = "213557509646";
-
-  const message =
-    "السلام عليكم، أريد طلب المنتج التالي:\n" +
-    "المنتج: " + product + "\n" +
-    "السعر: " + price + " دج\n" +
-    "الرجاء تأكيد الطلب ومعلومات التوصيل.";
-
-  const url =
-    "https://wa.me/" + phone +
-    "?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
-}
-</script>
-<label for="wilaya" style="display:block;margin:10px 0;color:#b51f5b;font-weight:bold;">
-📍 اختر ولايتك:
-</label>
-
-<select id="wilaya" name="wilaya" required
-style="width:100%;padding:12px;border:2px solid #f3b5ce;border-radius:10px;background:#fff7fa;font-size:16px;">
-
-<option value="">-- اختر الولاية --</option>
-<option value="01 - أدرار">01 - أدرار</option>
-<option value="02 - الشلف">02 - الشلف</option>
-<option value="03 - الأغواط">03 - الأغواط</option>
-<option value="04 - أم البواقي">04 - أم البواقي</option>
-<option value="05 - باتنة">05 - باتنة</option>
-<option value="06 - بجاية">06 - بجاية</option>
-<option value="07 - بسكرة">07 - بسكرة</option>
-<option value="08 - بشار">08 - بشار</option>
-<option value="09 - البليدة">09 - البليدة</option>
-<option value="10 - البويرة">10 - البويرة</option>
-<option value="11 - تمنراست">11 - تمنراست</option>
-<option value="12 - تبسة">12 - تبسة</option>
-<option value="13 - تلمسان">13 - تلمسان</option>
-<option value="14 - تيارت">14 - تيارت</option>
-<option value="15 - تيزي وزو">15 - تيزي وزو</option>
-<option value="16 - الجزائر">16 - الجزائر</option>
-<option value="17 - الجلفة">17 - الجلفة</option>
-<option value="18 - جيجل">18 - جيجل</option>
-<option value="19 - سطيف">19 - سطيف</option>
-<option value="20 - سعيدة">20 - سعيدة</option>
-<option value="21 - سكيكدة">21 - سكيكدة</option>
-<option value="22 - سيدي بلعباس">22 - سيدي بلعباس</option>
-<option value="23 - عنابة">23 - عنابة</option>
-<option value="24 - قالمة">24 - قالمة</option>
-<option value="25 - قسنطينة">25 - قسنطينة</option>
-<option value="26 - المدية">26 - المدية</option>
-<option value="27 - مستغانم">27 - مستغانم</option>
-<option value="28 - المسيلة">28 - المسيلة</option>
-<option value="29 - معسكر">29 - معسكر</option>
-<option value="30 - ورقلة">30 - ورقلة</option>
-<option value="31 - وهران">31 - وهران</option>
-<option value="32 - البيض">32 - البيض</option>
-<option value="33 - إليزي">33 - إليزي</option>
-<option value="34 - برج بوعريريج">34 - برج بوعريريج</option>
-<option value="35 - بومرداس">35 - بومرداس</option>
-<option value="36 - الطارف">36 - الطارف</option>
-<option value="37 - تندوف">37 - تندوف</option>
-<option value="38 - تيسمسيلت">38 - تيسمسيلت</option>
-<option value="39 - الوادي">39 - الوادي</option>
-<option value="40 - خنشلة">40 - خنشلة</option>
-<option value="41 - سوق أهراس">41 - سوق أهراس</option>
-<option value="42 - تيبازة">42 - تيبازة</option>
-<option value="43 - ميلة">43 - ميلة</option>
-<option value="44 - عين الدفلى">44 - عين الدفلى</option>
-<option value="45 - النعامة">45 - النعامة</option>
-<option value="46 - عين تموشنت">46 - عين تموشنت</option>
-<option value="47 - غرداية">47 - غرداية</option>
-<option value="48 - غليزان">48 - غليزان</option>
-<option value="49 - تيميمون">49 - تيميمون</option>
-<option value="50 - برج باجي مختار">50 - برج باجي مختار</option>
-<option value="51 - أولاد جلال">51 - أولاد جلال</option>
-<option value="52 - بني عباس">52 - بني عباس</option>
-<option value="53 - عين صالح">53 - عين صالح</option>
-<option value="54 - عين قزام">54 - عين قزام</option>
-<option value="55 - تقرت">55 - تقرت</option>
-<option value="56 - جانت">56 - جانت</option>
-<option value="57 - المغير">57 - المغير</option>
-<option value="58 - المنيعة">58 - المنيعة</option>
-
-</select><section id="order-section" dir="rtl">
-  <h2>🛍️ أكملي طلبك</h2>
-  <p>املئي المعلومات التالية وسنتواصل معك لتأكيد الطلب.</p>
-
-  <form id="orderForm">
-    <label>الاسم الكامل</label>
-    <input name="name" required placeholder="اسمك الكامل">
-
-    <label>رقم الهاتف</label>
-    <input name="phone" type="tel" required placeholder="05 أو 06 أو 07">
-
-    <label>المنتج المطلوب</label>
-    <input name="product" required placeholder="اسم المنتج">
-
-    <label>الكمية</label>
-    <input name="quantity" type="number" min="1" value="1" required>
-
-    <label>الولاية</label>
-    <select name="wilaya" required>
-      <option value="">اختاري ولايتك</option>
-      <option>أدرار</option>
-      <option>الشلف</option>
-      <option>الأغواط</option>
-      <option>أم البواقي</option>
-      <option>باتنة</option>
-      <option>بجاية</option>
-      <option>بسكرة</option>
-      <option>بشار</option>
-      <option>البليدة</option>
-      <option>البويرة</option>
-      <option>تمنراست</option>
-      <option>تبسة</option>
-      <option>تلمسان</option>
-      <option>تيارت</option>
-      <option>تيزي وزو</option>
-      <option>الجزائر</option>
-      <option>الجلفة</option>
-      <option>جيجل</option>
-      <option>سطيف</option>
-      <option>سعيدة</option>
-      <option>سكيكدة</option>
-      <option>سيدي بلعباس</option>
-      <option>عنابة</option>
-      <option>قالمة</option>
-      <option>قسنطينة</option>
-      <option>المدية</option>
-      <option>مستغانم</option>
-      <option>المسيلة</option>
-      <option>معسكر</option>
-      <option>ورقلة</option>
-      <option>وهران</option>
-      <option>البيض</option>
-      <option>إليزي</option>
-      <option>برج بوعريريج</option>
-      <option>بومرداس</option>
-      <option>الطارف</option>
-      <option>تندوف</option>
-      <option>تيسمسيلت</option>
-      <option>الوادي</option>
-      <option>خنشلة</option>
-      <option>سوق أهراس</option>
-      <option>تيبازة</option>
-      <option>ميلة</option>
-      <option>عين الدفلى</option>
-      <option>النعامة</option>
-      <option>عين تموشنت</option>
-      <option>غرداية</option>
-      <option>غليزان</option>
-      <option>تيميمون</option>
-      <option>برج باجي مختار</option>
-      <option>أولاد جلال</option>
-      <option>بني عباس</option>
-      <option>عين صالح</option>
-      <option>عين قزام</option>
-      <option>تقرت</option>
-      <option>جانت</option>
-      <option>المغير</option>
-      <option>المنيعة</option>
-    </select>
-
-    <label>البلدية والعنوان</label>
-    <textarea name="address" required placeholder="البلدية، الحي، الشارع"></textarea>
-
-    <label>شركة التوصيل المفضلة</label>
-    <select name="delivery" required>
-      <option value="">اختاري شركة التوصيل</option>
-      <option>Yalidine</option>
-      <option>ZR Express</option>
-      <option>Ecotrack</option>
-      <option>لا أعرف، اقترحوا عليّ</option>
-    </select>
-
-    <button type="submit">تأكيد الطلب</button>
-    <p id="orderStatus"></p>
-  </form>
-</section>
-
-<style>
-#order-section {
-  max-width: 500px;
-  margin: 25px auto;
-  padding: 20px;
-  background: #fff0f6;
-  border-radius: 16px;
-  font-family: Arial, sans-serif;
-  color: #702044;
-}
-#order-section h2 {
-  text-align: center;
-  color: #b51f5b;
-}
-#order-section label {
-  display: block;
-  margin-top: 12px;
-  font-weight: bold;
-}
-#order-section input,
-#order-section select,
-#order-section textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px;
-  margin-top: 6px;
-  border: 1px solid #e6a8c1;
-  border-radius: 8px;
-  background: white;
-  font-size: 16px;
-}
-#order-section button {
-  width: 100%;
-  margin-top: 18px;
-  padding: 14px;
-  border: 0;
-  border-radius: 10px;
-  background: #b51f5b;
-  color: white;
-  font-size: 17px;
-  font-weight: bold;
-}
-</style>
-
-<script>
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  document.getElementById("orderStatus").textContent =
-    "النموذج جاهز، لكن يجب ربطه بخدمة تخزين الطلبات قبل استقبال الطلبات فعليًا.";
-});
-</script>
-</body><section id="order-section" dir="rtl" style="max-width:500px;margin:30px auto;padding:20px;background:#fff0f6;border-radius:15px;font-family:Arial">
-  <h2 style="text-align:center;color:#c2185b">🛍️ اطلب الآن</h2>
-
-  <form id="orderForm">
-    <label>الاسم الكامل</label>
-    <input name="name" required placeholder="أدخل اسمك"
-      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
-
-    <label>رقم الهاتف</label>
-    <input name="phone" type="tel" required placeholder="05 أو 06 أو 07"
-      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
-
-    <label>المنتج</label>
-    <input name="product" required placeholder="اسم المنتج"
-      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
-
-    <label>الكمية</label>
-    <input name="quantity" type="number" min="1" value="1" required
-      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
-
-    <label>الولاية</label>
-    <select name="wilaya" required
-      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
-      <option value="">اختر ولايتك</option>
-      <option>أدرار</option>
-      <option>الشلف</option>
-      <option>الأغواط</option>
-      <option>أم البواقي</option>
-      <option>باتنة</option>
-      <option>بجاية</option>
-      <option>بسكرة</option>
-      <option>بشار</option>
-      <option>البليدة</option>
-      <option>البويرة</option>
-      <option>تمنراست</option>
-      <option>تبسة</option>
-      <option>تلمسان</option>
-      <option>تيارت</option>
-      <option>تيزي وزو</option>
-      <option>الجزائر</option>
-      <option>الجلفة</option>
-      <option>جيجل</option>
-      <option>سطيف</option>
-      <option>سعيدة</option>
-      <option>سكيكدة</option>
-      <option>سيدي بلعباس</option>
-      <option>عنابة</option>
-      <option>قالمة</option>
-      <option>قسنطينة</option>
-      <option>المدية</option>
-      <option>مستغانم</option>
-      <option>المسيلة</option>
-      <option>معسكر</option>
-      <option>ورقلة</option>
-      <option>وهران</option>
-      <option>البيض</option>
-      <option>إليزي</option>
-      <option>برج بوعريريج</option>
-      <option>بومرداس</option>
-      <option>الطارف</option>
-      <option>تندوف</option>
-      <option>تيسمسيلت</option>
-      <option>الوادي</option>
-      <option>خنشلة</option>
-      <option>سوق أهراس</option>
-      <option>تيبازة</option>
-      <option>ميلة</option>
-      <option>عين الدفلى</option>
-      <option>النعامة</option>
-      <option>عين تموشنت</option>
-      <option>غرداية</option>
-      <option>غليزان</option>
-      <option>تيميمون</option>
-      <option>برج باجي مختار</option>
-      <option>أولاد جلال</option>
-      <option>بني عباس</option>
-      <option>عين صالح</option>
-      <option>عين قزام</option>
-      <option>تقرت</option>
-      <option>جانت</option>
-      <option>المغير</option>
-      <option>المنيعة</option>
-    </select>
-
-    <label>العنوان بالتفصيل</label>
-    <input name="address" required placeholder="البلدية والحي والعنوان"
-      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
-
-    <label>شركة التوصيل</label>
-    <select name="delivery" required
-      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
-      <option value="">اختر شركة التوصيل</option>
-      <option>Yalidine</option>
-      <option>ZR Express</option>
-      <option>Ecotrack</option>
-      <option>لا أعرف، اقترحوا عليّ</option>
-    </select>
-
-    <button type="submit"
-      style="width:100%;padding:14px;background:#c2185b;color:white;border:0;border-radius:8px;font-size:18px">
-      إرسال الطلب
-    </button>
-
-    <p id="orderMessage" style="text-align:center"></p>
-  </form>
-</section>
-
-<script>
-const form = document.getElementById("orderForm");
-
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const message = document.getElementById("orderMessage");
-  message.textContent = "جارٍ إرسال الطلب...";
-
-  const data = new URLSearchParams(new FormData(form));
-
-  try {
-    await fetch("ضع_رابط_استقبال_الطلبات_هنا", {
-      method: "POST",
-      mode: "no-cors",
-      body: data
-    });
-
-    message.textContent =
-      "تم إرسال الطلب. يرجى انتظار تأكيد المتجر.";
-    form.reset();
-  } catch (error) {
-    message.textContent =
-      "تعذر الإرسال. تحقق من اتصال الإنترنت.";
-  }
-});
-</script>
-<style>
-.announcement-bar {
-  background: linear-gradient(90deg, #a41652, #ff69b4, #d4af37);
-  color: white;
-  padding: 13px 0;
-  text-align: center;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-}
-
-.announcement-bar span {
-  display: inline-block;
-  white-space: nowrap;
-  animation: move 15s linear infinite;
-}
-
-@keyframes move {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
-}
-
-.company-footer {
+  margin-top: 35px;
+  padding: 25px 15px;
   background: #4a1730;
   color: white;
   text-align: center;
-  padding: 22px 10px;
-  font-family: Arial, sans-serif;
-  margin-top: 30px;
+  line-height: 2;
 }
 
-.company-footer h3 {
-  color: #ffd1e2;
-}
-
-.company-footer p {
-  line-height: 1.8;
+footer strong {
+  color: #fbcfe8;
 }
 </style>
+</head>
 
-<!-- شريط الإعلانات -->
-<div class="announcement-bar">
-  <span>
-    💄 مرحباً بكم في متجرنا |
-    🎁 عروض وخصومات مميزة |
-    🚚 التوصيل متوفر |
-    🛍️ تسوقوا الآن
-  </span>
+<body>
+
+<div class="ad-banner">
+  <marquee direction="right">
+    ✨ مرحبًا بكم في BARAKAT BEAUTY ✨
+    اكتشفي جمالك معنا 💄 منتجات التجميل في انتظارك
+  </marquee>
 </div>
 
-<!-- اسم الشركة -->
-<div class="company-footer">
-  <h3>شركة بركات رائد</h3>
-  <p>لتطوير المواقع الإلكترونية</p>
-  <p>تصميم وتطوير مواقع الويب باحترافية 💻</p>
-  <p>© 2026 جميع الحقوق محفوظة</p>
-</div>         </html>
+<header>
+  <div class="logo">BARAKAT BEAUTY</div>
+  <p>جمالك يبدأ من هنا 🌸</p>
+</header>
+
+<section class="hero">
+  <h1>مرحبًا بك في عالم الجمال</h1>
+  <p>اكتشفي منتجات التجميل واختاري ما يناسبك.</p>
+  <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+    اكتشفي المنتجات
+  </button>
+</section>
+
+<h2 class="section-title" id="products">🌸 منتجاتنا</h2>
+
+<section class="products">
+
+  <article class="product">
+    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=500&q=80"
+         alt="أحمر شفاه">
+    <h3>أحمر الشفاه</h3>
+    <p>لمسة جميلة لإطلالتك</p>
+    <p class="price">1200 دج</p>
+    <button onclick="chooseProduct('أحمر الشفاه',1200)">اطلبي الآن</button>
+  </article>
+
+  <article class="product">
+    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80"
+         alt="مستحضرات تجميل">
+    <h3>مجموعة تجميل</h3>
+    <p>لإطلالة مميزة</p>
+    <p class="price">2500 دج</p>
+    <button onclick="chooseProduct('مجموعة تجميل',2500)">اطلبي الآن</button>
+  </article>
+
+  <article class="product">
+    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80"
+         alt="منتجات العناية بالبشرة">
+    <h3>العناية بالبشرة</h3>
+    <p>عناية يومية ببشرتك</p>
+    <p class="price">1800 دج</p>
+    <button onclick="chooseProduct('العناية بالبشرة',1800)">اطلبي الآن</button>
+  </article>
+
+  <article class="product">
+    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=500&q=80"
+         alt="كريم تجميل">
+    <h3>كريم تجميل</h3>
+    <p>اختاري ما يناسب احتياجاتك</p>
+    <p class="price">1500 دج</p>
+    <button onclick="chooseProduct('كريم تجميل',1500)">اطلبي الآن</button>
+  </article>
+
+</section>
+
+<h2 class="section-title" id="order">🛍️ استمارة الطلب المباشر</h2>
+
+<section class="order-box">
+
+  <form id="orderForm">
+
+    <label for="customerName">الاسم الكامل</label>
+    <input id="customerName" name="name" required
+           placeholder="اكتبي اسمك الكامل">
+
+    <label for="customerPhone">رقم الهاتف</label>
+    <input id="customerPhone" name="phone" type="tel"
+           required placeholder="05 أو 06 أو 07">
+
+    <label for="productName">المنتج</label>
+    <select id="productName" name="product" required>
+      <option value="">اختاري المنتج</option>
+      <option value="أحمر الشفاه">أحمر الشفاه</option>
+      <option value="مجموعة تجميل">مجموعة تجميل</option>
+      <option value="العناية بالبشرة">العناية بالبشرة</option>
+      <option value="كريم تجميل">كريم تجميل</option>
+    </select>
+
+    <label for="quantity">الكمية</label>
+    <input id="quantity" name="quantity" type="number"
+           min="1" value="1" required>
+
+    <label for="wilaya">الولاية</label>
+    <select id="wilaya" name="wilaya" required>
+      <option value="">اختاري ولايتك</option>
+      <option>أدرار</option>
+      <option>الشلف</option>
+      <option>الأغواط</option>
+      <option>أم البواقي</option>
+      <option>باتنة</option>
+      <option>بجاية</option>
+      <option>بسكرة</option>
+      <option>بشار</option>
+      <option>البليدة</option>
+      <option>البويرة</option>
+      <option>تمنراست</option>
+      <option>تبسة</option>
+      <option>تلمسان</option>
+      <option>تيارت</option>
+      <option>تيزي وزو</option>
+      <option>الجزائر</option>
+      <option>الجلفة</option>
+      <option>جيجل</option>
+      <option>سطيف</option>
+      <option>سعيدة</option>
+      <option>سكيكدة</option>
+      <option>سيدي بلعباس</option>
+      <option>عنابة</option>
+      <option>قالمة</option>
+      <option>قسنطينة</option>
+      <option>المدية</option>
+      <option>مستغانم</option>
+      <option>المسيلة</option>
+      <option>معسكر</option>
+      <option>ورقلة</option>
+      <option>وهران</option>
+      <option>البيض</option>
+      <option>إليزي</option>
+      <option>برج بوعريريج</option>
+      <option>بومرداس</option>
+      <option>الطارف</option>
+      <option>تندوف</option>
+      <option>تيسمسيلت</option>
+      <option>الوادي</option>
+      <option>خنشلة</option>
+      <option>سوق أهراس</option>
+      <option>تيبازة</option>
+      <option>ميلة</option>
+      <option>عين الدفلى</option>
+      <option>النعامة</option>
+      <option>عين تموشنت</option>
+      <option>غرداية</option>
+      <option>غليزان</option>
+      <option>تيميمون</option>
+      <option>برج باجي مختار</option>
+      <option>أولاد جلال</option>
+      <option>بني عباس</option>
+      <option>عين صالح</option>
+      <option>عين قزام</option>
+      <option>تقرت</option>
+      <option>جانت</option>
+      <option>المغير</option>
+      <option>المنيعة</option>
+    </select>
+
+    <label for="address">العنوان بالتفصيل</label>
+    <textarea id="address" name="address" rows="3"
+              required placeholder="البلدية، الحي، والعنوان"></textarea>
+
+    <label for="delivery">شركة التوصيل</label>
+    <select id="delivery" name="delivery" required>
+      <option value="">اختاري شركة التوصيل</option>
+      <option>Yalidine</option>
+      <option>ZR Express</option>
+      <option>Ecotrack</option>
+      <option>اقترحوا عليّ شركة مناسبة</option>
+    </select>
+
+    <button class="submit-btn" type="submit">
+      تأكيد وإرسال الطلب
+    </button>
+
+    <p id="message" role="status"></p>
+
+  </form>
+
+</section>
+
+<footer>
+  <strong>BARAKAT BEAUTY</strong>
+  <br>
+  شركة بركات رائد لتطوير المواقع الإلكترونية
+  <br>
+  © جميع الحقوق محفوظة
+</footer>
+
+<script>
+const prices = {
+  "أحمر الشفاه": 1200,
+  "مجموعة تجميل": 2500,
+  "العناية بالبشرة": 1800,
+  "كريم تجميل": 1500
+};
+
+function chooseProduct(product, price) {
+  document.getElementById("productName").value = product;
+  document.getElementById("order").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+document.getElementById("orderForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const message = document.getElementById("message");
+
+  message.style.color = "#9d174d";
+  message.textContent =
+    "النموذج جاهز، لكن لم يتم ربطه بخدمة حفظ الطلبات بعد. لم يُرسل طلبك إلى المتجر.";
+});
+</script>
+
+</body>
+</html>
