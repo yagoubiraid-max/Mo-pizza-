@@ -158,7 +158,29 @@ footer {
 }
 </style>
 </head>
+<style>
+.announcement {
+  background: linear-gradient(90deg, #d4145a, #ff69a8);
+  color: white;
+  text-align: center;
+  padding: 12px 5px;
+  font-size: 15px;
+  font-weight: bold;
+  overflow: hidden;
+}
+.announcement span {
+  display: inline-block;
+  animation: slide 10s linear infinite;
+}
+@keyframes slide {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
 
+<div class="announcement">
+  <span>💄 مرحباً بكم في متجرنا للتجميل | 🎁 عروض مميزة | 🚚 اطلبوا الآن</span>
+</div>
 <body>
 
 <header>
