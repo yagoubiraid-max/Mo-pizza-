@@ -6,129 +6,169 @@
 <title>RAÏD EXPRESS | توصيل الطعام</title>
 
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f4f6f8;
-  color:#222;
+:root {
+  --main: #e63946;
+  --dark: #17202a;
+  --yellow: #ffbe0b;
+  --bg: #f5f6fa;
+  --white: #fff;
 }
-header{
-  background:#111827;
-  color:white;
-  padding:25px 15px;
-  text-align:center;
-}
-.logo{font-size:30px;font-weight:bold;color:#ffb703}
-header p{margin-bottom:0}
-nav{
-  background:#ffb703;
-  padding:12px;
-  text-align:center;
-}
-nav a{
-  color:#111;
-  text-decoration:none;
-  font-weight:bold;
-  margin:0 10px;
-}
-.hero{
-  padding:35px 15px;
-  text-align:center;
-  background:linear-gradient(135deg,#111827,#374151);
-  color:white;
-}
-.hero h1{font-size:27px}
-.btn{
-  display:inline-block;
-  background:#ffb703;
-  color:#111;
-  padding:13px 22px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-  border:0;
-  cursor:pointer;
-}
-section{padding:22px 15px;max-width:1000px;margin:auto}
-h2{text-align:center}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:15px;
-}
-.card{
-  background:white;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 3px 12px #0001;
-  padding-bottom:15px;
-  text-align:center;
-}
-.card img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-}
-.card h3{margin:12px}
-.price{color:#e76f00;font-weight:bold}
-.card button{margin:5px}
-form{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 3px 12px #0001;
-}
-input,select,textarea{
-  width:100%;
-  padding:12px;
-  margin:8px 0 14px;
-  border:1px solid #ccc;
-  border-radius:7px;
-  font-size:16px;
-}
-label{font-weight:bold}
-footer{
-  text-align:center;
-  padding:25px;
-  background:#111827;
-  color:white;
-  margin-top:30px;
-}
-#notice{
-  padding:12px;
-  border-radius:8px;
-  margin-top:12px;
-  display:none;
-}
-</style>
-</head>
 
-<body>
+* {
+  box-sizing: border-box;
+}
 
-<header>
-  <div class="logo">🚚 RAÏD EXPRESS</div>
-  <p>خدمة توصيل الطعام في قسنطينة</p>
-</header>
+body {
+  margin: 0;
+  font-family: Arial, Tahoma, sans-serif;
+  background: var(--bg);
+  color: #222;
+}
 
-<nav>
-  <a href="#home">الرئيسية</a>
-  <a href="#restaurants">الوجبات</a>
-  <a href="#order">اطلب الآن</a>
-</nav>
+header {
+  background: var(--dark);
+  color: white;
+  padding: 20px 12px;
+  text-align: center;
+}
 
-<div class="hero" id="home">
-  <h1>جوعان؟ RAÏD EXPRESS يوصلك! 🍔</h1>
-  <p>اطلب من مطعمك المفضل ودع التوصيل علينا.</p>
-  <p>📍 نخدمو قسنطينة والمناطق المتاحة للتوصيل</p>
-  <a href="#restaurants" class="btn">شاهد الوجبات</a>
-</div>
+.logo {
+  color: var(--yellow);
+  font-size: 29px;
+  font-weight: bold;
+}
 
-<section id="restaurants">
-  <h2>🍕 الوجبات المتاحة</h2>
-  <div class="cards">
+header p {
+  margin-bottom: 0;
+}
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80" alt="بيتزا">
-      <h3>بيتزا</h3>
-      <p>بيتزا ل
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 14px;
+  background: var(--yellow);
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+}
+
+.hero {
+  padding: 45px 15px;
+  background: linear-gradient(135deg, #17202a, #5b2333);
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 30px;
+}
+
+.hero p {
+  line-height: 1.8;
+}
+
+.button {
+  background: var(--main);
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.button:hover {
+  opacity: .9;
+}
+
+section {
+  max-width: 1150px;
+  margin: auto;
+  padding: 25px 14px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.category {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.category.active {
+  background: var(--main);
+  color: white;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border-radius: 13px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px #0000000d;
+}
+
+.card img {
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 13px;
+}
+
+.card h3 {
+  margin: 5px 0 8px;
+}
+
+.description {
+  color: #666;
+  font-size: 14px;
+  min-height: 36px;
+}
+
+.price {
+  color: var(--main);
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.card .button {
+  width: 100%;
+}
+
+.cart, .order-box, .admin-box {
+  background: white;
+  border-radius: 13px;
+  padding: 20px;
+  box-shadow: 0 3px 12px #0000000d;
+  margin-top:
