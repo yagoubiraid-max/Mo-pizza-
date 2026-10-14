@@ -2,85 +2,133 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BARAKAT SOCIAL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAÏD EXPRESS | توصيل الطعام</title>
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#f0f2f5;font-family:Arial,sans-serif;color:#222}
-header{background:#1877f2;color:white;padding:14px;position:sticky;top:0;z-index:5}
-.top{max-width:700px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:8px}
-.logo{font-size:21px;font-weight:bold}
-.container{max-width:600px;margin:18px auto;padding:0 10px}
-.card{background:white;padding:16px;border-radius:12px;margin-bottom:15px;box-shadow:0 1px 4px #ddd}
-input,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;margin:7px 0;font-size:15px}
-textarea{resize:vertical}
-button{border:0;border-radius:8px;padding:11px 15px;cursor:pointer;font-size:15px}
-.blue{background:#1877f2;color:white}
-.gray{background:#e4e6eb;color:#222}
-.full{width:100%;margin-top:8px}
-.post-head{display:flex;align-items:center;gap:10px}
-.avatar{width:42px;height:42px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:22px}
-.post-img{width:100%;max-height:450px;object-fit:contain;margin-top:12px;border-radius:8px}
-.actions{display:flex;gap:8px;margin-top:12px;border-top:1px solid #eee;padding-top:10px}
-.actions button{flex:1}
-.muted{color:#777;font-size:13px}
-#feed:empty:after{content:"لا توجد منشورات حتى الآن. كن أول من ينشر! 🌟";display:block;background:white;padding:20px;border-radius:10px}
-.hidden{display:none}
-footer{text-align:center;padding:20px;color:#666}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f6f8;
+  color:#222;
+}
+header{
+  background:#111827;
+  color:white;
+  padding:25px 15px;
+  text-align:center;
+}
+.logo{font-size:30px;font-weight:bold;color:#ffb703}
+header p{margin-bottom:0}
+nav{
+  background:#ffb703;
+  padding:12px;
+  text-align:center;
+}
+nav a{
+  color:#111;
+  text-decoration:none;
+  font-weight:bold;
+  margin:0 10px;
+}
+.hero{
+  padding:35px 15px;
+  text-align:center;
+  background:linear-gradient(135deg,#111827,#374151);
+  color:white;
+}
+.hero h1{font-size:27px}
+.btn{
+  display:inline-block;
+  background:#ffb703;
+  color:#111;
+  padding:13px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  border:0;
+  cursor:pointer;
+}
+section{padding:22px 15px;max-width:1000px;margin:auto}
+h2{text-align:center}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:15px;
+}
+.card{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 3px 12px #0001;
+  padding-bottom:15px;
+  text-align:center;
+}
+.card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+}
+.card h3{margin:12px}
+.price{color:#e76f00;font-weight:bold}
+.card button{margin:5px}
+form{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 3px 12px #0001;
+}
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  margin:8px 0 14px;
+  border:1px solid #ccc;
+  border-radius:7px;
+  font-size:16px;
+}
+label{font-weight:bold}
+footer{
+  text-align:center;
+  padding:25px;
+  background:#111827;
+  color:white;
+  margin-top:30px;
+}
+#notice{
+  padding:12px;
+  border-radius:8px;
+  margin-top:12px;
+  display:none;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="top">
-    <div class="logo">🌐 BARAKAT SOCIAL</div>
-    <button class="gray" id="logoutBtn" hidden>خروج</button>
-  </div>
+  <div class="logo">🚚 RAÏD EXPRESS</div>
+  <p>خدمة توصيل الطعام في قسنطينة</p>
 </header>
 
-<main class="container">
+<nav>
+  <a href="#home">الرئيسية</a>
+  <a href="#restaurants">الوجبات</a>
+  <a href="#order">اطلب الآن</a>
+</nav>
 
-  <section class="card" id="authBox">
-    <h2>أهلًا بك في BARAKAT SOCIAL ❤️</h2>
-    <p>أنشئ حسابًا وابدأ التواصل مع الآخرين.</p>
+<div class="hero" id="home">
+  <h1>جوعان؟ RAÏD EXPRESS يوصلك! 🍔</h1>
+  <p>اطلب من مطعمك المفضل ودع التوصيل علينا.</p>
+  <p>📍 نخدمو قسنطينة والمناطق المتاحة للتوصيل</p>
+  <a href="#restaurants" class="btn">شاهد الوجبات</a>
+</div>
 
-    <input id="displayName" placeholder="اسمك الكامل">
-    <input id="email" type="email" placeholder="البريد الإلكتروني">
-    <input id="password" type="password" placeholder="كلمة المرور">
+<section id="restaurants">
+  <h2>🍕 الوجبات المتاحة</h2>
+  <div class="cards">
 
-    <button class="blue full" id="registerBtn">إنشاء حساب جديد</button>
-    <button class="gray full" id="loginBtn">تسجيل الدخول</button>
-
-    <p id="authMessage" class="muted"></p>
-  </section>
-
-  <section id="appBox" class="hidden">
-
-    <section class="card">
-      <h3 id="welcome">مرحبًا بك!</h3>
-      <p>ماذا تريد أن تشارك اليوم؟</p>
-
-      <textarea id="postText" rows="3" placeholder="اكتب منشورك هنا..."></textarea>
-
-      <label for="postImage">📸 اختر صورة من هاتفك (اختياري)</label>
-      <input id="postImage" type="file" accept="image/*">
-
-      <button class="blue full" id="publishBtn">نشر المنشور</button>
-      <p id="postMessage" class="muted"></p>
-    </section>
-
-    <h3>📰 آخر المنشورات</h3>
-    <div id="feed"></div>
-
-  </section>
-
-</main>
-
-<footer>BARAKAT SOCIAL © 2026</footer>
-
-<!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80" alt="بيتزا">
+      <h3>بيتزا</h3>
+      <p>بيتزا ل
