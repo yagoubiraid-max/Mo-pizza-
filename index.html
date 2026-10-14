@@ -670,7 +670,127 @@ footer {
 
 </div>
 
-<!-- معلومات الاتصال -->
+<!-- معلومات الاتصال --><section style="background:#fff0f6;padding:20px;border-radius:15px;margin:15px;">
+  <h2 style="color:#b51f5b;text-align:center;">
+    🚚 معلومات التوصيل
+  </h2>
+
+  <label>الاسم الكامل:</label>
+  <input id="customerName" type="text" placeholder="اكتب اسمك"
+  style="width:100%;padding:12px;margin:8px 0;">
+
+  <label>رقم الهاتف:</label>
+  <input id="customerPhone" type="tel" placeholder="رقم هاتفك"
+  style="width:100%;padding:12px;margin:8px 0;">
+
+  <label>اختر الولاية:</label>
+  <select id="wilaya" style="width:100%;padding:12px;margin:8px 0;">
+    <option value="">اختر ولايتك</option>
+    <option>01 - أدرار</option>
+    <option>02 - الشلف</option>
+    <option>03 - الأغواط</option>
+    <option>04 - أم البواقي</option>
+    <option>05 - باتنة</option>
+    <option>06 - بجاية</option>
+    <option>07 - بسكرة</option>
+    <option>08 - بشار</option>
+    <option>09 - البليدة</option>
+    <option>10 - البويرة</option>
+    <option>11 - تمنراست</option>
+    <option>12 - تبسة</option>
+    <option>13 - تلمسان</option>
+    <option>14 - تيارت</option>
+    <option>15 - تيزي وزو</option>
+    <option>16 - الجزائر</option>
+    <option>17 - الجلفة</option>
+    <option>18 - جيجل</option>
+    <option>19 - سطيف</option>
+    <option>20 - سعيدة</option>
+    <option>21 - سكيكدة</option>
+    <option>22 - سيدي بلعباس</option>
+    <option>23 - عنابة</option>
+    <option>24 - قالمة</option>
+    <option>25 - قسنطينة</option>
+    <option>26 - المدية</option>
+    <option>27 - مستغانم</option>
+    <option>28 - المسيلة</option>
+    <option>29 - معسكر</option>
+    <option>30 - ورقلة</option>
+    <option>31 - وهران</option>
+    <option>32 - البيض</option>
+    <option>33 - إليزي</option>
+    <option>34 - برج بوعريريج</option>
+    <option>35 - بومرداس</option>
+    <option>36 - الطارف</option>
+    <option>37 - تندوف</option>
+    <option>38 - تيسمسيلت</option>
+    <option>39 - الوادي</option>
+    <option>40 - خنشلة</option>
+    <option>41 - سوق أهراس</option>
+    <option>42 - تيبازة</option>
+    <option>43 - ميلة</option>
+    <option>44 - عين الدفلى</option>
+    <option>45 - النعامة</option>
+    <option>46 - عين تموشنت</option>
+    <option>47 - غرداية</option>
+    <option>48 - غليزان</option>
+    <option>49 - تيميمون</option>
+    <option>50 - برج باجي مختار</option>
+    <option>51 - أولاد جلال</option>
+    <option>52 - بني عباس</option>
+    <option>53 - عين صالح</option>
+    <option>54 - عين قزام</option>
+    <option>55 - تقرت</option>
+    <option>56 - جانت</option>
+    <option>57 - المغير</option>
+    <option>58 - المنيعة</option>
+  </select>
+
+  <label>البلدية والعنوان:</label>
+  <input id="address" type="text" placeholder="البلدية، الحي، الشارع"
+  style="width:100%;padding:12px;margin:8px 0;">
+
+  <label>شركة التوصيل المفضلة:</label>
+  <select id="delivery" style="width:100%;padding:12px;margin:8px 0;">
+    <option value="Yalidine">Yalidine</option>
+    <option value="ZR Express">ZR Express</option>
+    <option value="Ecotrack">Ecotrack</option>
+    <option value="لا أعرف، اقترحوا عليّ">لا أعرف، اقترحوا عليّ</option>
+  </select>
+
+  <button onclick="sendOrder()"
+  style="width:100%;padding:15px;background:#b51f5b;color:white;border:0;border-radius:10px;font-size:17px;">
+    تأكيد الطلب عبر واتساب
+  </button>
+</section>
+
+<script>
+function sendOrder() {
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.trim();
+  const wilaya = document.getElementById("wilaya").value;
+  const address = document.getElementById("address").value.trim();
+  const delivery = document.getElementById("delivery").value;
+
+  if (!name || !phone || !wilaya || !address) {
+    alert("يرجى ملء جميع معلومات التوصيل.");
+    return;
+  }
+
+  const message =
+    "السلام عليكم، أريد تأكيد طلب من المتجر.\n" +
+    "الاسم: " + name + "\n" +
+    "الهاتف: " + phone + "\n" +
+    "الولاية: " + wilaya + "\n" +
+    "العنوان: " + address + "\n" +
+    "شركة التوصيل المفضلة: " + delivery;
+
+  window.open(
+    "https://wa.me/213557509646?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+}
+</script>
 <footer id="contact">
   <h2>🌸 متجر الجمال 🌸</h2>
   <p>شكرًا لزيارتك متجرنا</p>
