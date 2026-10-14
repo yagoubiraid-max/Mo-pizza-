@@ -9,7 +9,21 @@
     * {
       box-sizing: border-box;
     }
-
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("button").forEach(function (button) {
+    if (button.textContent.toLowerCase().includes("commander")) {
+      button.addEventListener("click", function () {
+        const message = "Bonjour Vita Pizza ! Je voudrais passer une commande.";
+        window.open(
+          "https://wa.me/213557509646?text=" + encodeURIComponent(message),
+          "_blank"
+        );
+      });
+    }
+  });
+});
+</script>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
