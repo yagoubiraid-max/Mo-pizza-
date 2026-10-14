@@ -1,243 +1,349 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>veney | الخدمات الإلكترونية</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vita Beauty | متجر التجميل</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("button").forEach(function (button) {
-    if (button.textContent.toLowerCase().includes("commander")) {
-      button.addEventListener("click", function () {
-        const message = "Bonjour Vita Pizza ! Je voudrais passer une commande.";
-        window.open(
-          "https://wa.me/213557509646?text=" + encodeURIComponent(message),
-          "_blank"
-        );
-      });
-    }
-  });
-});
-</script>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #071b33;
-      color: white;
-      text-align: center;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    header {
-      padding: 22px;
-      background: #0c2746;
-      border-bottom: 2px solid #d8b45a;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff7fa;
+  color: #442832;
+}
 
-    header h1 {
-      color: #e5c46a;
-      margin: 0;
-      font-size: 38px;
-    }
+header {
+  background: #e96b96;
+  color: white;
+  padding: 22px 12px;
+  text-align: center;
+}
 
-    header p {
-      margin-bottom: 0;
-    }
+header h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
 
-    nav {
-      padding: 14px;
-      background: #102f50;
-    }
+nav {
+  background: #fff;
+  padding: 14px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 8px #00000010;
+}
 
-    nav a {
-      color: #e5c46a;
-      text-decoration: none;
-      margin: 0 10px;
-    }
+nav a {
+  color: #b83268;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
 
-    .hero {
-      padding: 55px 20px;
-      background: linear-gradient(135deg, #123d63, #071b33);
-    }
+.hero {
+  padding: 25px 15px;
+  text-align: center;
+  background: #ffe0eb;
+}
 
-    .hero h2 {
-      color: #e5c46a;
-      font-size: 29px;
-    }
+.hero img {
+  width: 100%;
+  max-width: 500px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+}
 
-    .hero p {
-      line-height: 1.9;
-    }
+.hero h2 {
+  color: #b83268;
+}
 
-    .button {
-      display: inline-block;
-      background: #e5c46a;
-      color: #071b33;
-      padding: 13px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 10px;
-    }
+.container {
+  padding: 20px 14px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-    .services {
-      padding: 35px 15px;
-    }
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
 
-    .services h2,
-    #contact h2 {
-      color: #e5c46a;
-    }
+.product {
+  background: white;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 3px 12px #d88ca51c;
+}
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 18px;
-      margin-top: 25px;
-    }
+.product img {
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
-    .card {
-      background: #103253;
-      border: 1px solid #d8b45a;
-      border-radius: 12px;
-      padding: 22px;
-      width: 270px;
-    }
+.product h3 {
+  font-size: 16px;
+  margin: 12px 0 6px;
+}
 
-    .card h3 {
-      color: #e5c46a;
-    }
+.price {
+  color: #c22f69;
+  font-weight: bold;
+  margin: 10px 0;
+}
 
-    .price {
-      font-size: 21px;
-      color: #e5c46a;
-      font-weight: bold;
-    }
+button {
+  border: 0;
+  border-radius: 9px;
+  background: #e75489;
+  color: white;
+  padding: 11px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
 
-    #contact {
-      padding: 35px 20px;
-      background: #0c2746;
-    }
+button:hover {
+  background: #c83770;
+}
 
-    footer {
-      padding: 20px;
-      color: #e5c46a;
-    }
-  </style>
+.cart {
+  background: white;
+  padding: 18px;
+  border-radius: 15px;
+  margin-top: 28px;
+}
+
+.cart-item {
+  border-bottom: 1px solid #f4dce5;
+  padding: 10px 0;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 7px 0;
+  border: 1px solid #e9c6d4;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.order-btn {
+  width: 100%;
+  margin-top: 12px;
+  background: #20b85a;
+  font-size: 17px;
+}
+
+footer {
+  text-align: center;
+  background: #e96b96;
+  color: white;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+@media (min-width: 650px) {
+  .products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>veney</h1>
-    <p>متجرك للخدمات الإلكترونية والتصميم</p>
-  </header>
+<header>
+  <h1>🌸 Vita Beauty</h1>
+  <p>جمالك يبدأ من هنا</p>
+</header>
 
-  <nav>
-    <a href="#home">الرئيسية</a>
-    <a href="#services">خدماتنا</a>
-    <a href="#contact">اتصل بنا</a>
-  </nav>
+<nav>
+  <a href="#products">المنتجات</a>
+  <a href="#cart">سلة المشتريات 🛍️</a>
+</nav>
 
-  <section class="hero" id="home">
-    <h2>أفكارك تستحق تصميماً مميزاً ✨</h2>
-    <p>
-      نقدم لك تصاميم إعلانية احترافية لمشروعك.<br>
-      اجعل منتجاتك أكثر جاذبية مع veney.
-    </p>
-    <a class="button" href="#services">اكتشف خدماتنا</a>
-  </section>
-
-  <section class="services" id="services">
-    <h2>خدماتنا الإلكترونية</h2>
-    <p>اختر الخدمة التي تناسبك وتواصل معنا لطلبها.</p>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>🎨 تصميم الصور الإعلانية</h3>
-        <p>صور إعلانية جذابة لمنتجاتك ومشروعك.</p>
-        <p class="price">ابتداءً من 500 دج</p>
-        <a class="button" href="#contact">اطلب الآن</a>
-      </div>
-
-      <div class="card">
-        <h3>📱 منشورات التواصل الاجتماعي</h3>
-        <p>تصاميم لفيسبوك وإنستغرام لجذب العملاء.</p>
-        <p class="price">ابتداءً من 500 دج</p>
-        <a class="button" href="#contact">اطلب الآن</a>
-      </div>
-
-      <div class="card">
-        <h3>✨ تصميم الشعارات</h3>
-        <p>شعار مميز لهوية مشروعك أو متجرك.</p>
-        <p class="price">ابتداءً من 1000 دج</p>
-        <a class="button" href="#contact">اطلب الآن</a>
-      </div>
-
-      <div class="card">
-        <h3>🛍️ إعلانات المنتجات</h3>
-        <p>تصاميم ترويجية لعرض منتجاتك بطريقة احترافية.</p>
-        <p class="price">ابتداءً من 700 دج</p>
-        <a class="button" href="#contact">اطلب الآن</a>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>اطلب خدمتك الآن 💙</h2>
-    <p>تواصل معنا عبر واتساب لتحديد تفاصيل الخدمة والسعر النهائي.</p>
-
-    <a class="button"
-       href="https://wa.me/213XXXXXXXXX"
-       target="_blank"
-       rel="noopener">
-       اطلب عبر واتساب
-    </a>
-  </section>
-
-  <footer>
-    <p>© 2026 veney — جميع الحقوق محفوظة</p>
-  </footer>
-<section dir="rtl" style="background:#071b3b;color:white;padding:25px;margin:20px;border-radius:15px;text-align:center">
-  <h2 style="color:#d4af37">🛍️ اطلب خدمتك من veney</h2>
-
-  <form action="https://formsubmit.co/yagoubiraid@gmail.com" method="POST">
-    <input type="text" name="الاسم" required
-      placeholder="اكتب اسمك"
-      style="width:90%;padding:12px;margin:8px"><br>
-
-    <label>رقم الهاتف:</label><br>
-    <input type="tel" name="الهاتف" required
-      placeholder="رقم هاتفك"
-      style="width:90%;padding:12px;margin:8px"><br>
-
-    <label>اختر الخدمة:</label><br>
-    <select name="الخدمة" required
-      style="width:90%;padding:12px;margin:8px">
-      <option value="">اختر خدمة</option>
-      <option>تصميم إعلان</option>
-      <option>تصميم منشورات</option>
-      <option>تصميم شعار</option>
-      <option>إعلان منتج</option>
-    </select><br>
-
-    <label>تفاصيل الطلب:</label><br>
-    <textarea name="التفاصيل" rows="4"
-      placeholder="اكتب تفاصيل طلبك"
-      style="width:90%;padding:12px;margin:8px"></textarea><br>
-
-    <button type="submit"
-      style="background:#d4af37;color:#071b3b;padding:14px 30px;border:0;border-radius:8px;font-weight:bold">
-      إرسال الطلب
-    </button>
-  </form>
+<section class="hero">
+  <img
+    src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=80"
+    alt="منتجات العناية بالبشرة"
+  >
+  <h2>اكتشفي جمالك مع Vita Beauty ✨</h2>
+  <p>منتجات تجميل وعناية لتتألقي كل يوم</p>
+  <a href="#products">
+    <button>اكتشفي المنتجات</button>
+  </a>
 </section>
+
+<main class="container">
+
+  <h2 id="products">💄 منتجاتنا</h2>
+
+  <section class="products">
+
+    <article class="product">
+      <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=80" alt="كريم عناية">
+      <h3>كريم العناية بالبشرة</h3>
+      <p>ترطيب يومي للبشرة</p>
+      <div class="price">1800 دج</div>
+      <button onclick="addProduct('كريم العناية بالبشرة',1800)">أضيفي إلى السلة</button>
+    </article>
+
+    <article class="product">
+      <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=500&q=80" alt="أحمر شفاه">
+      <h3>أحمر شفاه</h3>
+      <p>لمسة جميلة لإطلالتك</p>
+      <div class="price">1200 دج</div>
+      <button onclick="addProduct('أحمر شفاه',1200)">أضيفي إلى السلة</button>
+    </article>
+
+    <article class="product">
+      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80" alt="مستحضرات تجميل">
+      <h3>مجموعة مكياج</h3>
+      <p>لإطلالة متألقة</p>
+      <div class="price">2500 دج</div>
+      <button onclick="addProduct('مجموعة مكياج',2500)">أضيفي إلى السلة</button>
+    </article>
+
+    <article class="product">
+      <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=500&q=80" alt="عطر">
+      <h3>عطر أنيق</h3>
+      <p>رائحة مميزة لكل يوم</p>
+      <div class="price">3000 دج</div>
+      <button onclick="addProduct('عطر أنيق',3000)">أضيفي إلى السلة</button>
+    </article>
+
+  </section>
+
+  <section class="cart" id="cart">
+    <h2>🛍️ سلة مشترياتك</h2>
+    <div id="items">لم تختاري أي منتج بعد.</div>
+    <h3>المجموع: <span id="total">0</span> دج</h3>
+
+    <h3>📦 معلومات التوصيل</h3>
+    <form id="orderForm">
+      <input id="customerName" placeholder="الاسم الكامل" required>
+      <input id="customerPhone" type="tel" placeholder="رقم هاتفك" required>
+      <textarea id="customerAddress" placeholder="عنوان التوصيل" required></textarea>
+      <button class="order-btn" type="submit">
+        تأكيد الطلب عبر واتساب 📱
+      </button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <h3>🌸 Vita Beauty</h3>
+  <p>شكرًا لثقتكم بنا ❤️</p>
+</footer>
+
+<script>
+const cart = [];
+
+function addProduct(name, price) {
+  const existing = cart.find(item => item.name === name);
+
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({ name, price, quantity: 1 });
+  }
+
+  renderCart();
+
+  document.getElementById("cart").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function removeProduct(name) {
+  const index = cart.findIndex(item => item.name === name);
+
+  if (index !== -1) {
+    cart.splice(index, 1);
+  }
+
+  renderCart();
+}
+
+function renderCart() {
+  const items = document.getElementById("items");
+
+  if (cart.length === 0) {
+    items.innerHTML = "لم تختاري أي منتج بعد.";
+  } else {
+    items.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <strong>${item.name}</strong><br>
+        ${item.price} دج × ${item.quantity}
+        = ${item.price * item.quantity} دج
+        <br>
+        <button type="button"
+          onclick="removeProduct('${item.name}')">
+          حذف
+        </button>
+      </div>
+    `).join("");
+  }
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity, 0
+  );
+
+  document.getElementById("total").textContent =
+    total.toLocaleString("fr-FR");
+}
+
+document.getElementById("orderForm").addEventListener(
+  "submit",
+  function(event) {
+    event.preventDefault();
+
+    if (cart.length === 0) {
+      alert("من فضلك أضيفي منتجًا إلى السلة أولًا.");
+      return;
+    }
+
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const address = document.getElementById("customerAddress").value.trim();
+
+    const total = cart.reduce(
+      (sum, item) => sum + item.price * item.quantity, 0
+    );
+
+    let message =
+      "🌸 طلب جديد من Vita Beauty\n\n" +
+      "الاسم: " + name + "\n" +
+      "الهاتف: " + phone + "\n" +
+      "العنوان: " + address + "\n\n" +
+      "المنتجات:\n";
+
+    cart.forEach(item => {
+      message += "- " + item.name +
+        " × " + item.quantity +
+        " = " + (item.price * item.quantity) + " دج\n";
+    });
+
+    message += "\nالمجموع: " + total + " دج";
+
+    const whatsappURL =
+      "https://wa.me/213557509646?text=" +
+      encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+  }
+);
+</script>
+
 </body>
-</html>
+      </html>
