@@ -725,7 +725,155 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
   document.getElementById("orderStatus").textContent =
     "النموذج جاهز، لكن يجب ربطه بخدمة تخزين الطلبات قبل استقبال الطلبات فعليًا.";
 });
-  </script>
+  <section id="order-section" dir="rtl">
+  <h2>🛍️ أكملي طلبك</h2>
+  <p>املئي المعلومات التالية وسنتواصل معك لتأكيد الطلب.</p>
+
+  <form id="orderForm">
+    <label>الاسم الكامل</label>
+    <input name="name" required placeholder="اسمك الكامل">
+
+    <label>رقم الهاتف</label>
+    <input name="phone" type="tel" required placeholder="05 أو 06 أو 07">
+
+    <label>المنتج المطلوب</label>
+    <input name="product" required placeholder="اسم المنتج">
+
+    <label>الكمية</label>
+    <input name="quantity" type="number" min="1" value="1" required>
+
+    <label>الولاية</label>
+    <select name="wilaya" required>
+      <option value="">اختاري ولايتك</option>
+      <option>أدرار</option>
+      <option>الشلف</option>
+      <option>الأغواط</option>
+      <option>أم البواقي</option>
+      <option>باتنة</option>
+      <option>بجاية</option>
+      <option>بسكرة</option>
+      <option>بشار</option>
+      <option>البليدة</option>
+      <option>البويرة</option>
+      <option>تمنراست</option>
+      <option>تبسة</option>
+      <option>تلمسان</option>
+      <option>تيارت</option>
+      <option>تيزي وزو</option>
+      <option>الجزائر</option>
+      <option>الجلفة</option>
+      <option>جيجل</option>
+      <option>سطيف</option>
+      <option>سعيدة</option>
+      <option>سكيكدة</option>
+      <option>سيدي بلعباس</option>
+      <option>عنابة</option>
+      <option>قالمة</option>
+      <option>قسنطينة</option>
+      <option>المدية</option>
+      <option>مستغانم</option>
+      <option>المسيلة</option>
+      <option>معسكر</option>
+      <option>ورقلة</option>
+      <option>وهران</option>
+      <option>البيض</option>
+      <option>إليزي</option>
+      <option>برج بوعريريج</option>
+      <option>بومرداس</option>
+      <option>الطارف</option>
+      <option>تندوف</option>
+      <option>تيسمسيلت</option>
+      <option>الوادي</option>
+      <option>خنشلة</option>
+      <option>سوق أهراس</option>
+      <option>تيبازة</option>
+      <option>ميلة</option>
+      <option>عين الدفلى</option>
+      <option>النعامة</option>
+      <option>عين تموشنت</option>
+      <option>غرداية</option>
+      <option>غليزان</option>
+      <option>تيميمون</option>
+      <option>برج باجي مختار</option>
+      <option>أولاد جلال</option>
+      <option>بني عباس</option>
+      <option>عين صالح</option>
+      <option>عين قزام</option>
+      <option>تقرت</option>
+      <option>جانت</option>
+      <option>المغير</option>
+      <option>المنيعة</option>
+    </select>
+
+    <label>البلدية والعنوان</label>
+    <textarea name="address" required placeholder="البلدية، الحي، الشارع"></textarea>
+
+    <label>شركة التوصيل المفضلة</label>
+    <select name="delivery" required>
+      <option value="">اختاري شركة التوصيل</option>
+      <option>Yalidine</option>
+      <option>ZR Express</option>
+      <option>Ecotrack</option>
+      <option>لا أعرف، اقترحوا عليّ</option>
+    </select>
+
+    <button type="submit">تأكيد الطلب</button>
+    <p id="orderStatus"></p>
+  </form>
+</section>
+
+<style>
+#order-section {
+  max-width: 500px;
+  margin: 25px auto;
+  padding: 20px;
+  background: #fff0f6;
+  border-radius: 16px;
+  font-family: Arial, sans-serif;
+  color: #702044;
+}
+#order-section h2 {
+  text-align: center;
+  color: #b51f5b;
+}
+#order-section label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+#order-section input,
+#order-section select,
+#order-section textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #e6a8c1;
+  border-radius: 8px;
+  background: white;
+  font-size: 16px;
+}
+#order-section button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  border: 0;
+  border-radius: 10px;
+  background: #b51f5b;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+}
+</style>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  document.getElementById("orderStatus").textContent =
+    "النموذج جاهز، لكن يجب ربطه بخدمة تخزين الطلبات قبل استقبال الطلبات فعليًا.";
+});
+</script>
 <body>
 
 <!-- شريط الإعلانات -->
