@@ -1327,7 +1327,140 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
     "النموذج جاهز، لكن يجب ربطه بخدمة تخزين الطلبات قبل استقبال الطلبات فعليًا.";
 });
 </script>
-</body>
+</body><section id="order-section" dir="rtl" style="max-width:500px;margin:30px auto;padding:20px;background:#fff0f6;border-radius:15px;font-family:Arial">
+  <h2 style="text-align:center;color:#c2185b">🛍️ اطلب الآن</h2>
+
+  <form id="orderForm">
+    <label>الاسم الكامل</label>
+    <input name="name" required placeholder="أدخل اسمك"
+      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+
+    <label>رقم الهاتف</label>
+    <input name="phone" type="tel" required placeholder="05 أو 06 أو 07"
+      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+
+    <label>المنتج</label>
+    <input name="product" required placeholder="اسم المنتج"
+      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+
+    <label>الكمية</label>
+    <input name="quantity" type="number" min="1" value="1" required
+      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+
+    <label>الولاية</label>
+    <select name="wilaya" required
+      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+      <option value="">اختر ولايتك</option>
+      <option>أدرار</option>
+      <option>الشلف</option>
+      <option>الأغواط</option>
+      <option>أم البواقي</option>
+      <option>باتنة</option>
+      <option>بجاية</option>
+      <option>بسكرة</option>
+      <option>بشار</option>
+      <option>البليدة</option>
+      <option>البويرة</option>
+      <option>تمنراست</option>
+      <option>تبسة</option>
+      <option>تلمسان</option>
+      <option>تيارت</option>
+      <option>تيزي وزو</option>
+      <option>الجزائر</option>
+      <option>الجلفة</option>
+      <option>جيجل</option>
+      <option>سطيف</option>
+      <option>سعيدة</option>
+      <option>سكيكدة</option>
+      <option>سيدي بلعباس</option>
+      <option>عنابة</option>
+      <option>قالمة</option>
+      <option>قسنطينة</option>
+      <option>المدية</option>
+      <option>مستغانم</option>
+      <option>المسيلة</option>
+      <option>معسكر</option>
+      <option>ورقلة</option>
+      <option>وهران</option>
+      <option>البيض</option>
+      <option>إليزي</option>
+      <option>برج بوعريريج</option>
+      <option>بومرداس</option>
+      <option>الطارف</option>
+      <option>تندوف</option>
+      <option>تيسمسيلت</option>
+      <option>الوادي</option>
+      <option>خنشلة</option>
+      <option>سوق أهراس</option>
+      <option>تيبازة</option>
+      <option>ميلة</option>
+      <option>عين الدفلى</option>
+      <option>النعامة</option>
+      <option>عين تموشنت</option>
+      <option>غرداية</option>
+      <option>غليزان</option>
+      <option>تيميمون</option>
+      <option>برج باجي مختار</option>
+      <option>أولاد جلال</option>
+      <option>بني عباس</option>
+      <option>عين صالح</option>
+      <option>عين قزام</option>
+      <option>تقرت</option>
+      <option>جانت</option>
+      <option>المغير</option>
+      <option>المنيعة</option>
+    </select>
+
+    <label>العنوان بالتفصيل</label>
+    <input name="address" required placeholder="البلدية والحي والعنوان"
+      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+
+    <label>شركة التوصيل</label>
+    <select name="delivery" required
+      style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+      <option value="">اختر شركة التوصيل</option>
+      <option>Yalidine</option>
+      <option>ZR Express</option>
+      <option>Ecotrack</option>
+      <option>لا أعرف، اقترحوا عليّ</option>
+    </select>
+
+    <button type="submit"
+      style="width:100%;padding:14px;background:#c2185b;color:white;border:0;border-radius:8px;font-size:18px">
+      إرسال الطلب
+    </button>
+
+    <p id="orderMessage" style="text-align:center"></p>
+  </form>
+</section>
+
+<script>
+const form = document.getElementById("orderForm");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const message = document.getElementById("orderMessage");
+  message.textContent = "جارٍ إرسال الطلب...";
+
+  const data = new URLSearchParams(new FormData(form));
+
+  try {
+    await fetch("ضع_رابط_استقبال_الطلبات_هنا", {
+      method: "POST",
+      mode: "no-cors",
+      body: data
+    });
+
+    message.textContent =
+      "تم إرسال الطلب. يرجى انتظار تأكيد المتجر.";
+    form.reset();
+  } catch (error) {
+    message.textContent =
+      "تعذر الإرسال. تحقق من اتصال الإنترنت.";
+  }
+});
+</script>
 <style>
 .announcement-bar {
   background: linear-gradient(90deg, #a41652, #ff69b4, #d4af37);
