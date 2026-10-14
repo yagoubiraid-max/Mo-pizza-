@@ -366,6 +366,31 @@ document.getElementById("orderForm").addEventListener(
   }
 );
 </script>
+<!-- إعلان أعلى المتجر -->
+<style>
+.announcement-bar {
+  background: linear-gradient(90deg, #c2185b, #ff69b4);
+  color: white;
+  text-align: center;
+  padding: 12px 5px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  overflow: hidden;
+  direction: rtl;
+}
+.announcement-bar p {
+  margin: 0;
+  animation: moveText 12s linear infinite;
+}
+@keyframes moveText {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+</style>
 
+<div class="announcement-bar">
+  <p>💄 مرحباً بكم في متجر التجميل 🌸 | 🎁 عروض وخصومات مميزة | 🚚 التوصيل متوفر | 🛍️ اطلب الآن</p>
+</div>
 </body>
       </html>
