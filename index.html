@@ -2,8 +2,9 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>لمسة فخامة | إكسسوارات نسائية</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>لمسة فخامة | متجر الإكسسوارات</title>
 
 <style>
 * {
@@ -13,8 +14,8 @@
 :root {
   --black: #080808;
   --gold: #d4af37;
-  --white: #ffffff;
-  --gray: #bcbcbc;
+  --white: #fff;
+  --gray: #bdbdbd;
 }
 
 body {
@@ -24,12 +25,22 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.topbar {
+  background: var(--gold);
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
 header {
-  background: #000;
-  padding: 20px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
+  padding: 18px 14px;
+  background: #000;
   border-bottom: 1px solid var(--gold);
 }
 
@@ -37,40 +48,33 @@ header {
   color: var(--gold);
   font-size: 21px;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
-.cart-button, .gold-button {
+button, a {
+  cursor: pointer;
+}
+
+.gold-button {
+  display: inline-block;
+  padding: 12px 18px;
   background: var(--gold);
   color: #000;
-  border: none;
-  padding: 12px 16px;
+  border: 0;
   border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .hero {
   text-align: center;
-  padding: 65px 20px;
-  background:
-    linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.9)),
-    url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1200&q=85");
-  background-size: cover;
-  background-position: center;
-  border-bottom: 1px solid #4b3b12;
-}
-
-.hero small {
-  color: var(--gold);
-  letter-spacing: 3px;
+  padding: 50px 18px;
+  background: linear-gradient(135deg, #191919, #000, #30230c);
+  border-bottom: 1px solid var(--gold);
 }
 
 .hero h1 {
-  font-size: 36px;
-  line-height: 1.5;
-  margin: 20px 0;
+  font-size: 34px;
+  line-height: 1.6;
 }
 
 .hero h1 span {
@@ -80,7 +84,86 @@ header {
 .hero p {
   color: #ddd;
   line-height: 2;
-  font-size: 15px;
+}
+
+/* قسم الإعلانات */
+.ads {
+  padding: 25px 12px;
+  background: #0b0b0b;
+}
+
+.ads-title {
+  color: var(--gold);
+  text-align: center;
+  font-size: 27px;
+  margin-bottom: 8px;
+}
+
+.ads-description {
+  color: #bbb;
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.ad-card {
+  max-width: 1000px;
+  margin: 20px auto;
+  overflow: hidden;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  background: #151515;
+}
+
+.ad-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ad-caption {
+  text-align: center;
+  padding: 18px;
+}
+
+.ad-caption h3 {
+  color: var(--gold);
+  font-size: 23px;
+  margin: 5px;
+}
+
+.ad-caption p {
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.ad-link {
+  display: inline-block;
+  background: var(--gold);
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 22px;
+  border-radius: 4px;
+}
+
+.empty-ad {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 35px 15px;
+  text-align: center;
+  border: 1px dashed var(--gold);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #151515, #080808);
+}
+
+.empty-ad h3 {
+  color: var(--gold);
+}
+
+.empty-ad p {
+  color: #ccc;
+  line-height: 1.8;
 }
 
 .section-title {
@@ -94,24 +177,23 @@ header {
   text-align: center;
   color: var(--gray);
   font-size: 13px;
-  margin-bottom: 25px;
+  margin: 0 12px 22px;
 }
 
 .categories {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  padding: 10px;
   flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
 }
 
 .category {
   background: #111;
-  border: 1px solid var(--gold);
   color: var(--gold);
-  padding: 10px 15px;
+  border: 1px solid var(--gold);
   border-radius: 25px;
-  cursor: pointer;
+  padding: 10px 15px;
 }
 
 .category.active {
@@ -123,15 +205,15 @@ header {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  padding: 14px;
   max-width: 1100px;
   margin: auto;
+  padding: 12px;
 }
 
 .product {
+  border: 1px solid #4b3b19;
   background: #111;
-  border: 1px solid #3d3218;
-  border-radius: 5px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
@@ -140,8 +222,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 65px;
-  background: linear-gradient(145deg, #1c1c1c, #090909);
+  font-size: 60px;
+  background: linear-gradient(135deg, #242424, #090909);
 }
 
 .product-info {
@@ -150,12 +232,12 @@ header {
 
 .product h3 {
   font-size: 15px;
-  margin: 0 0 8px;
 }
 
 .product p {
-  color: var(--gray);
+  color: #bbb;
   font-size: 12px;
+  line-height: 1.7;
 }
 
 .price {
@@ -169,19 +251,18 @@ header {
   width: 100%;
   background: var(--gold);
   color: #000;
-  border: none;
+  border: 0;
   padding: 11px 5px;
-  cursor: pointer;
-  font-weight: bold;
   border-radius: 3px;
+  font-weight: bold;
 }
 
 .panel {
-  margin: 20px 14px;
+  margin: 20px 12px;
   padding: 18px;
+  background: #111;
   border: 1px solid #5a471a;
-  background: #101010;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 .panel h2 {
@@ -201,25 +282,23 @@ header {
   background: #222;
   color: var(--gold);
   border: 1px solid var(--gold);
-  padding: 5px 9px;
-  cursor: pointer;
+  padding: 5px 10px;
 }
 
 .total {
   color: var(--gold);
   font-size: 21px;
   font-weight: bold;
-  margin: 20px 0;
 }
 
 input, textarea, select {
   width: 100%;
   background: #080808;
-  color: white;
+  color: #fff;
   border: 1px solid #66521e;
   padding: 13px;
   margin: 7px 0 13px;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 textarea {
@@ -228,26 +307,25 @@ textarea {
 
 .submit-button {
   width: 100%;
+  padding: 15px;
   background: var(--gold);
   color: #000;
-  border: none;
-  padding: 15px;
+  border: 0;
   font-weight: bold;
-  cursor: pointer;
 }
 
-.notice {
-  color: #bbb;
+.note {
+  color: #aaa;
   font-size: 12px;
   line-height: 1.8;
 }
 
 footer {
+  margin-top: 35px;
+  padding: 28px 12px;
   text-align: center;
   background: #000;
   border-top: 1px solid var(--gold);
-  padding: 30px 12px;
-  margin-top: 40px;
   color: #ccc;
   line-height: 2;
 }
@@ -264,49 +342,133 @@ footer strong {
   .product-image {
     height: 190px;
   }
+
+  .hero h1 {
+    font-size: 45px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<div class="topbar">
+  ✨ مرحبًا بكِ في متجر لمسة فخامة ✨
+</div>
+
 <header>
   <div class="logo">✦ لمسة فخامة ✦</div>
-  <button class="cart-button"
+  <button class="gold-button"
     onclick="document.getElementById('cart').scrollIntoView()">
     🛍️ السلة <span id="count">0</span>
   </button>
 </header>
 
 <section class="hero">
-  <small>LUXURY • BEAUTY • ELEGANCE</small>
-  <h1>
-    أناقتك تبدأ من <span>التفاصيل</span>
-  </h1>
+  <h1>أناقتك تبدأ من <span>التفاصيل</span></h1>
   <p>
-    اكتشفي عالم الإكسسوارات النسائية الفاخرة<br>
-    لأنك تستحقين دائمًا الأجمل.
+    اكتشفي أجمل الإكسسوارات النسائية<br>
+    فخامة وأناقة بالأسود والذهبي.
   </p>
-  <a href="#shop" class="gold-button">اكتشفي المجموعة</a>
+  <a href="#shop" class="gold-button">تسوقي الآن</a>
 </section>
 
-<h2 class="section-title" id="shop">مجموعتنا الفاخرة</h2>
-<p class="subtitle">اختاري قطعتك المفضلة وتألقّي بأسلوبك الخاص</p>
+<!-- الإعلانات الكبيرة -->
+<section class="ads" id="advertisements">
+
+  <h2 class="ads-title">📢 شركاؤنا الإعلانيون</h2>
+  <p class="ads-description">
+    مساحة إعلانية للشركات والعلامات التجارية
+  </p>
+
+  <!-- إعلان أوريدو: ارفعي الصورة باسم ooredoo-ad.png -->
+  <div class="ad-card">
+    <img
+      src="ooredoo-ad.png"
+      alt="إعلان أوريدو"
+      onerror="this.style.display='none';
+      document.getElementById('ooredoo-placeholder').style.display='block';">
+
+    <div id="ooredoo-placeholder" style="display:none">
+      <div class="ad-caption">
+        <h3>إعلان أوريدو</h3>
+        <p>
+          ستظهر صورة الإعلان هنا بعد رفعها إلى ملفات موقعك
+          باسم ooredoo-ad.png
+        </p>
+        <a class="ad-link"
+          href="https://www.ooredoo.dz/"
+          target="_blank" rel="noopener">
+          زيارة موقع أوريدو الرسمي
+        </a>
+      </div>
+    </div>
+
+    <div class="ad-caption">
+      <h3>Ooredoo | أوريدو</h3>
+      <p>اكتشفي خدمات وعروض أوريدو من الموقع الرسمي.</p>
+      <a class="ad-link"
+        href="https://www.ooredoo.dz/"
+        target="_blank" rel="noopener">
+        اكتشفي المزيد
+      </a>
+    </div>
+  </div>
+
+  <!-- مساحة إعلان جيزي -->
+  <div class="ad-card">
+    <div class="ad-caption">
+      <h3>إعلان جيزي | Djezzy</h3>
+      <p>
+        مساحة مخصصة لإعلانات وعروض جيزي.
+        يمكن إضافة صورة الإعلان الرسمية هنا.
+      </p>
+      <a class="ad-link"
+        href="https://www.djezzy.dz/"
+        target="_blank" rel="noopener">
+        زيارة موقع جيزي الرسمي
+      </a>
+    </div>
+  </div>
+
+  <!-- مساحة للشركات الأخرى -->
+  <div class="empty-ad">
+    <h3>هل تريد الإعلان عن شركتك هنا؟</h3>
+    <p>
+      تتوفر مساحة إعلانية للشركات والمتاجر والعلامات التجارية.
+    </p>
+    <a class="ad-link"
+      href="#contact-ads">
+      الاستفسار عن الإعلانات
+    </a>
+  </div>
+
+</section>
+
+<h2 class="section-title" id="shop">مجموعة الإكسسوارات</h2>
+<p class="subtitle">اختاري قطعتك المفضلة</p>
 
 <div class="categories">
-  <button class="category active" onclick="filterProducts('الكل',this)">الكل</button>
-  <button class="category" onclick="filterProducts('قلائد',this)">القلائد</button>
-  <button class="category" onclick="filterProducts('أقراط',this)">الأقراط</button>
-  <button class="category" onclick="filterProducts('أساور',this)">الأساور</button>
-  <button class="category" onclick="filterProducts('حقائب',this)">الحقائب</button>
+  <button class="category active"
+    onclick="filterProducts('الكل',this)">الكل</button>
+  <button class="category"
+    onclick="filterProducts('قلائد',this)">قلائد</button>
+  <button class="category"
+    onclick="filterProducts('أقراط',this)">أقراط</button>
+  <button class="category"
+    onclick="filterProducts('أساور',this)">أساور</button>
+  <button class="category"
+    onclick="filterProducts('حقائب',this)">حقائب</button>
 </div>
 
 <div class="products" id="products"></div>
 
 <section class="panel" id="cart">
-  <h2>🛍️ سلة مشترياتك</h2>
-  <div id="cart-items">السلة فارغة حاليًا.</div>
-  <p class="total">المجموع: <span id="total">0</span> دج</p>
+  <h2>🛍️ سلة المشتريات</h2>
+  <div id="cart-items">السلة فارغة.</div>
+  <p class="total">
+    المجموع: <span id="total">0</span> دج
+  </p>
 </section>
 
 <section class="panel" id="order">
@@ -314,14 +476,14 @@ footer strong {
 
   <form id="order-form">
     <label>الاسم الكامل</label>
-    <input id="customer-name" required placeholder="اكتبي اسمك الكامل">
+    <input id="customer-name" required placeholder="الاسم الكامل">
 
     <label>رقم الهاتف</label>
-    <input id="customer-phone" required type="tel"
-      placeholder="مثال: 0550000000">
+    <input id="customer-phone" type="tel" required
+      placeholder="رقم الهاتف">
 
     <label>الولاية</label>
-    <input id="customer-city" required placeholder="اكتبي ولايتك">
+    <input id="customer-city" required placeholder="ولايتك">
 
     <label>العنوان بالتفصيل</label>
     <textarea id="customer-address" required
@@ -332,180 +494,124 @@ footer strong {
     </button>
   </form>
 
-  <p class="notice">
-    ملاحظة: يجب ربط الطلبات برقم واتساب الخاص بالمتجر قبل استقبال الطلبات.
+  <p class="note">
+    يتم تجهيز رسالة الطلب على واتساب. تأكدي من صحة رقم الاتصال
+    قبل نشر المتجر لاستقبال الطلبات.
   </p>
+</section>
+
+<section class="panel" id="contact-ads">
+  <h2>📣 الإعلانات والشراكات</h2>
+  <p>للشركات التي ترغب في الاستفسار عن مساحة إعلانية.</p>
+  <a class="gold-button"
+    href="https://wa.me/213557509646?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA"
+    target="_blank" rel="noopener">
+    تواصل للاستفسار
+  </a>
 </section>
 
 <footer>
   <strong>✦ لمسة فخامة ✦</strong><br>
-  إكسسوارات نسائية بلمسة من الذهب<br>
-  <small>الأناقة ليست اختيارًا، بل أسلوب حياة.</small>
+  متجر الإكسسوارات النسائية<br>
+  <small>الأناقة أسلوب حياة.</small>
 </footer>
 
 <script>
 const productsData = [
-  {
-    id: 1,
-    name: "قلادة ذهبية أنيقة",
-    category: "قلائد",
-    price: 1800,
-    emoji: "📿",
-    description: "تصميم أنيق لإطلالة مميزة"
-  },
-  {
-    id: 2,
-    name: "أقراط فاخرة",
-    category: "أقراط",
-    price: 1200,
-    emoji: "✨",
-    description: "لمسة ذهبية ناعمة"
-  },
-  {
-    id: 3,
-    name: "سوار ذهبي",
-    category: "أساور",
-    price: 1500,
-    emoji: "💫",
-    description: "أناقة تناسب كل المناسبات"
-  },
-  {
-    id: 4,
-    name: "حقيبة سوداء",
-    category: "حقائب",
-    price: 3500,
-    emoji: "👜",
-    description: "أسلوب كلاسيكي فاخر"
-  },
-  {
-    id: 5,
-    name: "قلادة قلب",
-    category: "قلائد",
-    price: 1600,
-    emoji: "💛",
-    description: "هدية جميلة لمن تحبين"
-  },
-  {
-    id: 6,
-    name: "أقراط دائرية",
-    category: "أقراط",
-    price: 1000,
-    emoji: "💎",
-    description: "تصميم عصري وجذاب"
-  },
-  {
-    id: 7,
-    name: "سوار أنيق",
-    category: "أساور",
-    price: 1300,
-    emoji: "🌟",
-    description: "تفاصيل تضيف التألق"
-  },
-  {
-    id: 8,
-    name: "حقيبة صغيرة",
-    category: "حقائب",
-    price: 2800,
-    emoji: "👛",
-    description: "عملية وأنيقة"
-  }
+  {id:1,name:"قلادة ذهبية",category:"قلائد",price:1800,emoji:"📿"},
+  {id:2,name:"أقراط فاخرة",category:"أقراط",price:1200,emoji:"✨"},
+  {id:3,name:"سوار أنيق",category:"أساور",price:1500,emoji:"💫"},
+  {id:4,name:"حقيبة سوداء",category:"حقائب",price:3500,emoji:"👜"},
+  {id:5,name:"قلادة قلب",category:"قلائد",price:1600,emoji:"💛"},
+  {id:6,name:"أقراط دائرية",category:"أقراط",price:1000,emoji:"💎"},
+  {id:7,name:"سوار ذهبي",category:"أساور",price:1300,emoji:"🌟"},
+  {id:8,name:"حقيبة صغيرة",category:"حقائب",price:2800,emoji:"👛"}
 ];
 
 let cart = [];
 
-function renderProducts(category = "الكل") {
-  const list = document.getElementById("products");
-
-  const filtered = productsData.filter(product =>
-    category === "الكل" || product.category === category
+function renderProducts(category="الكل") {
+  const filtered = productsData.filter(p =>
+    category === "الكل" || p.category === category
   );
 
-  list.innerHTML = filtered.map(product => `
-    <article class="product">
-      <div class="product-image">${product.emoji}</div>
-      <div class="product-info">
-        <h3>${product.name}</h3>
-        <p>${product.description}</p>
-        <div class="price">${product.price.toLocaleString("fr-FR")} دج</div>
-        <button class="add-button" onclick="addToCart(${product.id})">
-          أضيفي إلى السلة +
-        </button>
-      </div>
-    </article>
-  `).join("");
+  document.getElementById("products").innerHTML =
+    filtered.map(p => `
+      <article class="product">
+        <div class="product-image">${p.emoji}</div>
+        <div class="product-info">
+          <h3>${p.name}</h3>
+          <p>تصميم أنيق بلمسة فاخرة</p>
+          <div class="price">${p.price} دج</div>
+          <button class="add-button"
+            onclick="addToCart(${p.id})">
+            أضيفي إلى السلة +
+          </button>
+        </div>
+      </article>
+    `).join("");
 }
 
 function filterProducts(category, button) {
-  document.querySelectorAll(".category").forEach(item =>
-    item.classList.remove("active")
+  document.querySelectorAll(".category").forEach(b =>
+    b.classList.remove("active")
   );
-
   button.classList.add("active");
   renderProducts(category);
 }
 
 function addToCart(id) {
-  const product = productsData.find(item => item.id === id);
-  const existing = cart.find(item => item.id === id);
+  const product = productsData.find(p => p.id === id);
+  const item = cart.find(p => p.id === id);
 
-  if (existing) {
-    existing.quantity++;
-  } else {
-    cart.push({...product, quantity: 1});
-  }
+  if (item) item.quantity++;
+  else cart.push({...product, quantity:1});
 
   renderCart();
 }
 
 function changeQuantity(id, amount) {
-  const item = cart.find(product => product.id === id);
-
+  const item = cart.find(p => p.id === id);
   if (!item) return;
 
   item.quantity += amount;
 
   if (item.quantity <= 0) {
-    cart = cart.filter(product => product.id !== id);
+    cart = cart.filter(p => p.id !== id);
   }
 
   renderCart();
 }
 
 function renderCart() {
-  const container = document.getElementById("cart-items");
-  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const total = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity, 0
-  );
+  const count = cart.reduce((s,p) => s+p.quantity, 0);
+  const total = cart.reduce((s,p) => s+p.price*p.quantity, 0);
 
   document.getElementById("count").textContent = count;
   document.getElementById("total").textContent =
     total.toLocaleString("fr-FR");
 
   if (cart.length === 0) {
-    container.textContent = "السلة فارغة حاليًا.";
+    document.getElementById("cart-items").textContent =
+      "السلة فارغة.";
     return;
   }
 
-  container.innerHTML = cart.map(item => `
-    <div class="cart-item">
-      <div>
-        ${item.name}<br>
-        <strong style="color:#d4af37">
-          ${(item.price * item.quantity).toLocaleString("fr-FR")} دج
-        </strong>
+  document.getElementById("cart-items").innerHTML =
+    cart.map(p => `
+      <div class="cart-item">
+        <span>${p.name}<br>${p.price*p.quantity} دج</span>
+        <span>
+          <button onclick="changeQuantity(${p.id},-1)">−</button>
+          ${p.quantity}
+          <button onclick="changeQuantity(${p.id},1)">+</button>
+        </span>
       </div>
-      <div>
-        <button onclick="changeQuantity(${item.id},-1)">−</button>
-        ${item.quantity}
-        <button onclick="changeQuantity(${item.id},1)">+</button>
-      </div>
-    </div>
-  `).join("");
+    `).join("");
 }
 
-document.getElementById("order-form").addEventListener("submit", function(event) {
-  event.preventDefault();
+document.getElementById("order-form").addEventListener("submit", e => {
+  e.preventDefault();
 
   if (cart.length === 0) {
     alert("أضيفي منتجًا إلى السلة أولًا.");
@@ -517,39 +623,23 @@ document.getElementById("order-form").addEventListener("submit", function(event)
   const city = document.getElementById("customer-city").value.trim();
   const address = document.getElementById("customer-address").value.trim();
 
-  const items = cart.map(item =>
-    `${item.name} × ${item.quantity} = ${item.price * item.quantity} دج`
+  const items = cart.map(p =>
+    `${p.name} × ${p.quantity} = ${p.price*p.quantity} دج`
   ).join("\n");
 
-  const total = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity, 0
-  );
-
-  /*
-    استبدلي 213XXXXXXXXX برقم واتساب متجرك،
-    مع رمز الجزائر 213 وبدون علامة +.
-  */
-  const whatsappNumber = "213XXXXXXXXX";
-
-  if (whatsappNumber.includes("X")) {
-    alert("المتجر جاهز، لكن يجب وضع رقم واتساب المتجر في الكود أولًا.");
-    return;
-  }
+  const total = cart.reduce((s,p) => s+p.price*p.quantity, 0);
 
   const message =
-    `طلب جديد من متجر لمسة فخامة\n\n` +
-    `الاسم: ${name}\n` +
-    `الهاتف: ${phone}\n` +
-    `الولاية: ${city}\n` +
-    `العنوان: ${address}\n\n` +
-    `المنتجات:\n${items}\n\n` +
-    `المجموع: ${total} دج`;
+    `طلب جديد من متجر لمسة فخامة\n` +
+    `الاسم: ${name}\nالهاتف: ${phone}\n` +
+    `الولاية: ${city}\nالعنوان: ${address}\n\n` +
+    `المنتجات:\n${items}\n\nالمجموع: ${total} دج`;
 
-  const url =
-    "https://wa.me/" + whatsappNumber + "?text=" +
-    encodeURIComponent(message);
-
-  window.open(url, "_blank");
+  window.open(
+    "https://wa.me/213557509646?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
 });
 
 renderProducts();
