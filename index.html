@@ -3,269 +3,774 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مؤسسة الأناقة العصرية</title>
+
+<title>RAÏD DELIVERY | شركة توصيل رائد</title>
+
+<meta name="description" content="شركة رائد للتوصيل في قسنطينة، الجزائر. خدمات توصيل الطرود وطلبات المتاجر.">
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#050505;color:white;font-family:Arial,Tahoma,sans-serif}
-.gold{color:#e8b83f}
-
-/* شريط الإعلانات المتحرك */
-.marquee{
-overflow:hidden;white-space:nowrap;
-background:#000;border-top:3px solid #e8b83f;
-border-bottom:3px solid #e8b83f;padding:15px 0
-}
-.marquee div{
-display:inline-block;padding-right:100%;
-animation:move 22s linear infinite;
-font-size:18px;font-weight:bold;color:#ffd700
-}
-.marquee span{margin:0 30px}
-@keyframes move{
-from{transform:translateX(0)}
-to{transform:translateX(-100%)}
+:root {
+  --gold: #d4af37;
+  --gold-light: #f5df91;
+  --black: #101010;
+  --dark: #1b1b1b;
+  --white: #fff;
 }
 
-/* إعلانات الشركات */
-.ads{display:grid;grid-template-columns:1fr 1fr}
-.ad{padding:25px;text-align:center;min-height:120px}
-.ooredoo{background:#ed001b}
-.djezzy{background:#111;border-right:2px solid #e8b83f}
-.ad h2{font-size:30px;margin:5px}
-.ad p{font-size:16px}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Tahoma, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* شريط الإعلانات */
+.announcement {
+  background: var(--gold);
+  color: #111;
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.announcement-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 25s linear infinite;
+}
+
+.announcement-track span {
+  padding: 0 35px;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(50%); }
+}
 
 /* رأس الموقع */
-header{text-align:center;padding:22px 10px;border-bottom:2px solid #e8b83f}
-header h1{color:#e8b83f;margin:0 0 10px}
-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:15px}
-nav a{color:white;text-decoration:none}
-nav a:hover{color:#e8b83f}
+header {
+  background: var(--black);
+  color: white;
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  border-bottom: 3px solid var(--gold);
+}
+
+.logo {
+  color: var(--gold);
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.logo small {
+  display: block;
+  color: white;
+  font-size: 12px;
+}
+
+nav {
+  display: flex;
+  gap: 17px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
 
 /* الواجهة الرئيسية */
-.hero{
-text-align:center;padding:65px 15px;
-background:linear-gradient(#0009,#000b),
-url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=80') center/cover
-}
-.hero h2{font-size:40px;color:#e8b83f}
-.hero p{font-size:19px;line-height:1.8}
-button,.button{
-background:#e8b83f;color:#111;border:0;
-padding:12px 20px;border-radius:7px;font-weight:bold;
-cursor:pointer;text-decoration:none;display:inline-block
+.hero {
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 65px 20px;
+  color: white;
+  background:
+    radial-gradient(ellipse at top, #393021 0%, transparent 60%),
+    linear-gradient(135deg, #080808, #202020, #080808);
+  border-bottom: 5px solid var(--gold);
 }
 
-/* الفئات والمنتجات */
-section{padding:25px 15px}
-h2.section-title{text-align:center;color:#e8b83f}
-.categories,.products{
-display:grid;grid-template-columns:repeat(4,1fr);
-gap:15px;max-width:1100px;margin:20px auto
+.hero-content {
+  max-width: 850px;
 }
-.category{
-text-align:center;padding:22px 5px;
-border:1px solid #e8b83f;border-radius:10px;background:#111
-}
-.category strong{display:block;font-size:25px;margin-bottom:8px}
-.card{background:white;color:#111;border-radius:9px;overflow:hidden}
-.card img{width:100%;height:200px;object-fit:cover;display:block}
-.card .details{padding:12px;text-align:center}
-.price{font-weight:bold;color:#9a6b00;font-size:18px}
-.card button{width:100%;margin-top:8px;background:#050505;color:#e8b83f;border:1px solid #e8b83f}
 
-/* الطلب */
-.order{
-max-width:650px;margin:20px auto;
-background:#111;border:1px solid #e8b83f;
-border-radius:12px;padding:22px
+.badge {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  padding: 5px 18px;
+  border-radius: 30px;
+  margin-bottom: 20px;
 }
-label{display:block;margin:12px 0 6px}
-input,select,textarea{
-width:100%;padding:12px;border-radius:6px;
-border:1px solid #777;font-size:16px
-}
-.order button{width:100%;margin-top:18px}
-footer{text-align:center;padding:25px;border-top:2px solid #e8b83f;color:#ddd}
 
-@media(max-width:700px){
-.ads{grid-template-columns:1fr}
-.categories,.products{grid-template-columns:repeat(2,1fr)}
-.hero h2{font-size:30px}
-.card img{height:150px}
+.hero h1 {
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.hero h1 strong {
+  color: var(--gold);
+}
+
+.hero p {
+  color: #ddd;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 7px;
+  padding: 12px 23px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #111;
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid var(--gold);
+  color: white;
+  background: transparent;
+}
+
+/* الأقسام */
+section {
+  padding: 60px 6%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.section-title span {
+  color: #b28b18;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 35px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px #0000000d;
+  border-bottom: 3px solid var(--gold);
+}
+
+.icon {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* خطوات الخدمة */
+.dark-section {
+  background: var(--black);
+  color: white;
+}
+
+.dark-section .section-title {
+  color: white;
+}
+
+.dark-section .section-subtitle {
+  color: #ccc;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.step {
+  text-align: center;
+  padding: 18px;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #111;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* الاستمارات */
+.form-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 5px 25px #0000000b;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  background: white;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid #e5ce7d;
+  border-color: var(--gold);
+}
+
+.form-submit {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 17px;
+}
+
+.notice {
+  background: #fff8df;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-top: 15px;
+  color: #555;
+}
+
+/* مساحة الإعلانات */
+.ad-box {
+  max-width: 1100px;
+  margin: 20px auto 0;
+  padding: 35px 20px;
+  background: linear-gradient(120deg, #111, #393021);
+  border: 2px dashed var(--gold);
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+}
+
+.ad-box h3 {
+  color: var(--gold);
+  font-size: 25px;
+}
+
+.ad-box p {
+  margin: 10px 0 18px;
+}
+
+/* التذييل */
+footer {
+  background: #080808;
+  color: white;
+  padding: 35px 6%;
+  text-align: center;
+  border-top: 3px solid var(--gold);
+}
+
+.footer-logo {
+  color: var(--gold);
+  font-size: 26px;
+  font-weight: bold;
+}
+
+footer p {
+  color: #ccc;
+  margin: 5px 0;
+}
+
+.copyright {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero {
+    min-height: 420px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  section {
+    padding: 45px 5%;
+  }
+
+  .form-container {
+    padding: 20px 15px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- شريط الإعلانات المتحرك -->
-<div class="marquee">
-<div>
-<span>📢 إعلانات شركائنا</span>
-<span>🔴 Ooredoo — اكتشف عروضنا</span>
-<span>⚫ Djezzy — ابقَ على اتصال</span>
-<span>✨ مؤسسة الأناقة العصرية</span>
-<span>👗 أحدث الملابس النسائية والرجالية</span>
-</div>
-</div>
-
-<!-- مساحات إعلانية -->
-<div class="ads">
-<div class="ad ooredoo">
-<h2>Ooredoo</h2>
-<p>عيش الإنترنت واستمتع بالعروض</p>
-<strong>📱 اكتشف عروض Ooredoo</strong>
+<!-- شريط إعلاني متحرك -->
+<div class="announcement">
+  <div class="announcement-track">
+    <span>🚚 RAÏD DELIVERY — شريكك في التوصيل</span>
+    <span>📦 خدمات توصيل الطرود في قسنطينة</span>
+    <span>🏪 هل تملك متجرًا؟ تواصل معنا للتعاون</span>
+    <span>⭐ رائد للتوصيل — طلبك يبدأ من هنا</span>
+    <span>🚚 RAÏD DELIVERY — شريكك في التوصيل</span>
+    <span>📦 خدمات توصيل الطرود في قسنطينة</span>
+    <span>🏪 هل تملك متجرًا؟ تواصل معنا للتعاون</span>
+    <span>⭐ رائد للتوصيل — طلبك يبدأ من هنا</span>
+  </div>
 </div>
 
-<div class="ad djezzy">
-<h2>DJEZZY جازي</h2>
-<p>ابقَ دائمًا على اتصال</p>
-<strong>📱 عروض وخدمات الهاتف</strong>
-</div>
-</div>
-
+<!-- رأس الموقع -->
 <header>
-<h1>♛ مؤسسة الأناقة العصرية</h1>
-<p>بيع الملابس النسائية والرجالية</p>
-<nav>
-<a href="#home">الرئيسية</a>
-<a href="#products">المنتجات</a>
-<a href="#order">اطلب الآن</a>
-<a href="#about">من نحن</a>
-</nav>
+  <a href="#home" class="logo">
+    RAÏD DELIVERY
+    <small>شركة توصيل رائد | قسنطينة</small>
+  </a>
+
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#order">طلب توصيل</a>
+    <a href="#partners">التجار</a>
+    <a href="#ads">الإعلانات</a>
+    <a href="#contact">اتصل بنا</a>
+  </nav>
 </header>
 
-<div class="hero" id="home">
-<h2>أناقتك تبدأ من هنا</h2>
-<p>اكتشف أحدث صيحات الموضة<br>
-ملابس نسائية ورجالية وحقائب وأحذية</p>
-<a class="button" href="#products">تسوّق الآن</a>
-</div>
+<main>
 
-<section>
-<h2 class="section-title">تسوّق حسب الفئة</h2>
-<div class="categories">
-<div class="category"><strong>👗</strong>فساتين</div>
-<div class="category"><strong>👔</strong>ملابس رجالية</div>
-<div class="category"><strong>👜</strong>حقائب</div>
-<div class="category"><strong>👟</strong>أحذية</div>
-</div>
+<!-- الواجهة الرئيسية -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="badge">خدمات التوصيل في قسنطينة — الجزائر</div>
+
+    <h1>
+      طلبك بأمان<br>
+      مع <strong>RAÏD DELIVERY</strong>
+    </h1>
+
+    <p>
+      خدمات توصيل الطرود وطلبات المتاجر.
+      أرسل طلبك وسنتواصل معك لتأكيد التفاصيل.
+    </p>
+
+    <div class="buttons">
+      <a href="#order" class="btn btn-gold">📦 اطلب التوصيل الآن</a>
+      <a href="#partners" class="btn btn-outline">🤝 كن شريكًا معنا</a>
+    </div>
+  </div>
 </section>
 
-<section id="products">
-<h2 class="section-title">أحدث المنتجات</h2>
-<div class="products">
+<!-- الخدمات -->
+<section id="services">
+  <h2 class="section-title">خدمات <span>التوصيل</span></h2>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="جاكيت">
-<div class="details">
-<h3>جاكيت رجالي</h3>
-<p class="price">3500 دج</p>
-<button onclick="selectProduct('جاكيت رجالي')">اطلب الآن</button>
-</div>
-</div>
+  <p class="section-subtitle">
+    حلول توصيل للمتاجر والأفراد حسب المناطق المتاحة.
+  </p>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80" alt="فستان">
-<div class="details">
-<h3>فستان نسائي</h3>
-<p class="price">4500 دج</p>
-<button onclick="selectProduct('فستان نسائي')">اطلب الآن</button>
-</div>
-</div>
+  <div class="services">
+    <article class="card">
+      <div class="icon">📦</div>
+      <h3>توصيل الطرود</h3>
+      <p>استلام الطرود وتسليمها وفق العنوان والموعد المتفق عليهما.</p>
+    </article>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="حقيبة">
-<div class="details">
-<h3>حقيبة نسائية</h3>
-<p class="price">3200 دج</p>
-<button onclick="selectProduct('حقيبة نسائية')">اطلب الآن</button>
-</div>
-</div>
+    <article class="card">
+      <div class="icon">🛍️</div>
+      <h3>طلبات المتاجر</h3>
+      <p>خدمات توصيل لأصحاب المتاجر الإلكترونية والمشاريع.</p>
+    </article>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="حذاء">
-<div class="details">
-<h3>حذاء رياضي</h3>
-<p class="price">2800 دج</p>
-<button onclick="selectProduct('حذاء رياضي')">اطلب الآن</button>
-</div>
-</div>
+    <article class="card">
+      <div class="icon">🏪</div>
+      <h3>التعاون التجاري</h3>
+      <p>إمكانية طلب التعاون لتوصيل طلبات نشاطك التجاري.</p>
+    </article>
 
-</div>
+    <article class="card">
+      <div class="icon">📍</div>
+      <h3>قسنطينة</h3>
+      <p>التوصيل داخل المناطق التي تؤكد الشركة إمكانية تغطيتها.</p>
+    </article>
+  </div>
 </section>
 
+<!-- خطوات العمل -->
+<section class="dark-section">
+  <h2 class="section-title">كيف <span>تعمل الخدمة؟</span></h2>
+
+  <p class="section-subtitle">
+    أربع خطوات لإرسال طلب التوصيل.
+  </p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <h3>أرسل طلبك</h3>
+      <p>املأ الاستمارة بمعلومات الاستلام والتسليم.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <h3>تأكيد الطلب</h3>
+      <p>نتواصل معك لتأكيد السعر والتفاصيل.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <h3>استلام الطرد</h3>
+      <p>تحديد موعد الاستلام بعد الاتفاق.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">4</div>
+      <h3>تسليم الطرد</h3>
+      <p>تنفيذ عملية التسليم حسب الاتفاق.</p>
+    </div>
+  </div>
+</section>
+
+<!-- طلب توصيل -->
 <section id="order">
-<div class="order">
-<h2 class="section-title">🛍️ طلب منتج</h2>
+  <h2 class="section-title">طلب <span>خدمة التوصيل</span></h2>
 
-<form id="orderForm">
-<label>الاسم الكامل</label>
-<input name="name" required placeholder="اكتب اسمك">
+  <p class="section-subtitle">
+    املأ المعلومات التالية لإرسال طلبك عبر واتساب.
+  </p>
 
-<label>رقم الهاتف</label>
-<input name="phone" type="tel" required placeholder="رقم هاتفك">
+  <div class="form-container">
+    <form id="deliveryForm">
+      <div class="form-grid">
 
-<label>الولاية</label>
-<select name="wilaya" required>
-<option value="">اختر الولاية</option>
-<option>قسنطينة</option>
-<option>الجزائر</option>
-<option>وهران</option>
-<option>سطيف</option>
-<option>باتنة</option>
-<option>عنابة</option>
-<option>البليدة</option>
-<option>تيزي وزو</option>
-<option>بجاية</option>
-<option>ولاية أخرى</option>
-</select>
+        <div class="field">
+          <label for="customer">الاسم واللقب *</label>
+          <input id="customer" required autocomplete="name"
+                 placeholder="اكتب اسمك الكامل">
+        </div>
 
-<label>عنوان التوصيل</label>
-<input name="address" placeholder="البلدية والحي">
+        <div class="field">
+          <label for="phone">رقم هاتفك *</label>
+          <input id="phone" type="tel" required autocomplete="tel"
+                 placeholder="رقم هاتفك">
+        </div>
 
-<label>المنتج المطلوب</label>
-<input id="product" name="product" required placeholder="اسم المنتج">
+        <div class="field">
+          <label for="pickup">عنوان استلام الطرد *</label>
+          <input id="pickup" required placeholder="الحي والبلدية">
+        </div>
 
-<label>المقاس أو اللون</label>
-<input name="size" placeholder="مثلاً L أو أسود">
+        <div class="field">
+          <label for="destination">عنوان التسليم *</label>
+          <input id="destination" required placeholder="الحي والبلدية">
+        </div>
 
-<label>الكمية</label>
-<input name="quantity" type="number" min="1" value="1" required>
+        <div class="field">
+          <label for="parcel">نوع الطرد *</label>
+          <select id="parcel" required>
+            <option value="">اختر نوع الطرد</option>
+            <option>ملابس</option>
+            <option>إكسسوارات</option>
+            <option>منتجات تجارية</option>
+            <option>وثائق</option>
+            <option>طرد آخر</option>
+          </select>
+        </div>
 
-<button type="submit">تأكيد الطلب</button>
-</form>
+        <div class="field">
+          <label for="quantity">عدد الطرود</label>
+          <input id="quantity" type="number" min="1"
+                 max="100" value="1">
+        </div>
 
-<p style="font-size:13px;color:#ccc;line-height:1.8">
-ملاحظة: استمارة الطلب تجريبية في الوقت الحالي، وتحتاج إلى ربط بخدمة استقبال الطلبات حتى تصلك طلبات الزبائن.
-</p>
-</div>
+        <div class="field full">
+          <label for="notes">ملاحظات إضافية</label>
+          <textarea id="notes" rows="3"
+                    placeholder="أي معلومات إضافية عن الطلب"></textarea>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn btn-gold form-submit">
+        📲 إرسال طلب التوصيل
+      </button>
+
+      <div class="notice">
+        إرسال الطلب لا يعني تأكيد الحجز. يجب تأكيد السعر وموعد
+        الاستلام وتوفر الخدمة مع الشركة.
+      </div>
+    </form>
+  </div>
 </section>
 
-<section id="about">
-<h2 class="section-title">من نحن</h2>
-<p style="text-align:center;line-height:2">
-مؤسسة الأناقة العصرية متخصصة في عرض الملابس النسائية والرجالية،
-والحقائب والأحذية والإكسسوارات.
-</p>
+<!-- التعاون مع التجار -->
+<section class="dark-section" id="partners">
+  <h2 class="section-title">أصحاب <span>المتاجر</span></h2>
+
+  <p class="section-subtitle">
+    هل تملك متجرًا وتبحث عن خدمة توصيل؟ أرسل معلوماتك.
+  </p>
+
+  <div class="form-container">
+    <form id="partnerForm">
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="businessName">اسم المتجر *</label>
+          <input id="businessName" required placeholder="اسم المتجر">
+        </div>
+
+        <div class="field">
+          <label for="partnerName">اسم صاحب المتجر *</label>
+          <input id="partnerName" required placeholder="الاسم الكامل">
+        </div>
+
+        <div class="field">
+          <label for="partnerPhone">رقم الهاتف *</label>
+          <input id="partnerPhone" type="tel" required placeholder="رقم الهاتف">
+        </div>
+
+        <div class="field">
+          <label for="businessType">نوع النشاط *</label>
+          <select id="businessType" required>
+            <option value="">اختر النشاط</option>
+            <option>ملابس</option>
+            <option>إكسسوارات</option>
+            <option>مستحضرات تجميل</option>
+            <option>إلكترونيات</option>
+            <option>نشاط آخر</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="partnerNotes">تفاصيل التعاون</label>
+          <textarea id="partnerNotes" rows="3"
+                    placeholder="عدد الطلبات أو أي تفاصيل أخرى"></textarea>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn btn-gold form-submit">
+        🤝 إرسال طلب الشراكة
+      </button>
+    </form>
+  </div>
 </section>
 
-<footer>
-<strong style="color:#e8b83f">مؤسسة الأناقة العصرية</strong><br>
-جميع الحقوق محفوظة © 2026
+<!-- مساحة إعلانية -->
+<section id="ads">
+  <h2 class="section-title">الإعلانات <span>التجارية</span></h2>
+
+  <p class="section-subtitle">
+    مساحة لعرض إعلانات المتاجر والشركات.
+  </p>
+
+  <div class="ad-box">
+    <h3>أعلن عن نشاطك التجاري معنا</h3>
+    <p>
+      مساحة إعلانية مخصصة للمتاجر والعلامات التجارية.
+    </p>
+    <a href="#contact" class="btn btn-gold">
+      تواصل للاستفسار
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- تذييل الموقع -->
+<footer id="contact">
+  <div class="footer-logo">RAÏD DELIVERY</div>
+
+  <p>شركة توصيل رائد</p>
+  <p>قسنطينة — الجزائر 🇩🇿</p>
+  <p>خدمات توصيل الطرود وطلبات المتاجر.</p>
+
+  <a href="#order" class="btn btn-gold" style="margin-top:15px">
+    اطلب خدمة التوصيل
+  </a>
+
+  <p class="copyright">
+    © <span id="year"></span> RAÏD DELIVERY — جميع الحقوق محفوظة.
+  </p>
 </footer>
 
 <script>
-function selectProduct(name){
-document.getElementById('product').value=name;
-document.getElementById('order').scrollIntoView({behavior:'smooth'});
+/*
+  رقم واتساب الشركة:
+  تم تحويل 0798171593 إلى الصيغة الدولية الجزائرية.
+*/
+const WHATSAPP_NUMBER = "213798171593";
+
+function sendToWhatsApp(data, title) {
+  const message = title + "\n\n" +
+    Object.entries(data)
+      .filter(([key, value]) => value !== "")
+      .map(([key, value]) => key + ": " + value)
+      .join("\n");
+
+  const url =
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.location.href = url;
 }
 
-document.getElementById('orderForm').addEventListener('submit',function(e){
-e.preventDefault();
-alert('هذه نسخة تجريبية: لم يتم إرسال الطلب إلى المؤسسة. يجب ربط النموذج بخدمة استقبال الطلبات.');
+/* إرسال طلب التوصيل */
+document.getElementById("deliveryForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = {
+    "الاسم واللقب": document.getElementById("customer").value.trim(),
+    "رقم الهاتف": document.getElementById("phone").value.trim(),
+    "عنوان الاستلام": document.getElementById("pickup").value.trim(),
+    "عنوان التسليم": document.getElementById("destination").value.trim(),
+    "نوع الطرد": document.getElementById("parcel").value,
+    "عدد الطرود": document.getElementById("quantity").value,
+    "ملاحظات": document.getElementById("notes").value.trim()
+  };
+
+  sendToWhatsApp(data, "📦 طلب توصيل جديد - RAÏD DELIVERY");
 });
+
+/* إرسال طلب الشراكة */
+document.getElementById("partnerForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = {
+    "اسم المتجر": document.getElementById("businessName").value.trim(),
+    "صاحب المتجر": document.getElementById("partnerName").value.trim(),
+    "رقم الهاتف": document.getElementById("partnerPhone").value.trim(),
+    "نوع النشاط": document.getElementById("businessType").value,
+    "تفاصيل التعاون": document.getElementById("partnerNotes").value.trim()
+  };
+
+  sendToWhatsApp(data, "🤝 طلب شراكة تجارية - RAÏD DELIVERY");
+});
+
+/* السنة الحالية */
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
