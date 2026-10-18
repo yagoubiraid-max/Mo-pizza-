@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>لوحة تحكم الطلبات</title>
-<style>
-body {
-  background: #111;
-  color: #d4af37;
-  font-family: Arial;
-  text-align: center;
-  padding: 20px;
-}
-.box {
-  background: #222;
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 12px;
-  max-width: 500px;
-}
-input, button {
-  padding: 12px;
-  margin: 8px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة تحكم الطلبات</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #d4af37;
+      text-align: center;
+      padding: 20px;
+    }
+    .box {
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: 20px auto;
+    }
+    input, button {
+      width: 90%;
+      padding: 12px;
+      margin: 8px;
+      border-radius: 6px;
+      border: none;
+      box-sizing: border-box;
+    }
+    button {
+      background: #d4af37;
+      color: #111;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-<h1>لوحة تحكم الطلبات</h1>
-<div class="box">
-  <h3>تسجيل الدخول</h3>
-  <input type="password" id="password" placeholder="كلمة المرور">
-  <button onclick="login()">دخول</button>
-  <p id="message"></p>
-</div>
-<script>
-function login() {
-  document.getElementById("message").textContent =
-  "سنكمل ربط قاعدة البيانات في الخطوة التالية.";
-}
-</script>
+  <div class="box">
+    <h2>لوحة تحكم الطلبات</h2>
+    <p>شركة بركات رائد</p>
+    <input type="password" id="password" placeholder="أدخل كلمة المرور">
+    <button onclick="login()">دخول</button>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function login() {
+      document.getElementById("message").textContent =
+        "تم إنشاء الواجهة فقط. يجب ربطها بقاعدة البيانات وتأمينها لعرض الطلبات.";
+    }
+  </script>
 </body>
 </html>
