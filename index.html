@@ -21,83 +21,76 @@ header {
   background: #000;
   padding: 22px 12px;
   text-align: center;
-  border-bottom: 2px solid #d4af37;
+  border-bottom: 3px solid #d4af37;
 }
 
-.logo {
+header h1 {
   color: #d4af37;
-  font-size: 29px;
-  font-weight: bold;
+  margin: 0 0 10px;
 }
 
 header p {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .adbar {
   background: #d4af37;
   color: #000;
   padding: 12px;
-  font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
+  font-weight: bold;
 }
 
 .adbar span {
   display: inline-block;
-  animation: move 14s linear infinite;
+  animation: move 15s linear infinite;
 }
 
 @keyframes move {
   from { transform: translateX(-100%); }
-  to { transform: translateX(100vw); }
+  to { transform: translateX(100%); }
 }
 
 .hero {
-  padding: 35px 18px;
   text-align: center;
-  background: linear-gradient(135deg, #171717, #29200b);
+  padding: 35px 15px;
+  background: linear-gradient(135deg, #252525, #000);
 }
 
-.hero h1 {
-  color: #e3c45c;
+.hero h2 {
+  color: #d4af37;
   font-size: 27px;
-}
-
-.hero p {
-  line-height: 1.9;
-  color: #eee;
 }
 
 .container {
   max-width: 650px;
-  margin: auto;
+  margin: 25px auto;
   padding: 20px;
 }
 
 .card {
-  background: #1b1b1b;
+  background: #1c1c1c;
   padding: 22px;
-  border: 1px solid #6d5821;
-  border-radius: 14px;
   margin-bottom: 20px;
+  border: 1px solid #9c7b19;
+  border-radius: 12px;
 }
 
-h2 {
-  color: #e3c45c;
-  text-align: center;
+h3 {
+  color: #d4af37;
+  margin-top: 0;
 }
 
 label {
   display: block;
-  margin-top: 14px;
-  margin-bottom: 7px;
+  margin: 14px 0 7px;
 }
 
 input, select, textarea {
   width: 100%;
   padding: 13px;
-  border: 1px solid #555;
+  border: 1px solid #777;
   border-radius: 7px;
   background: #fff;
   color: #111;
@@ -109,11 +102,11 @@ button {
   margin-top: 20px;
   padding: 15px;
   background: #d4af37;
-  border: none;
-  border-radius: 8px;
   color: #000;
-  font-weight: bold;
+  border: none;
+  border-radius: 7px;
   font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -121,32 +114,18 @@ button:disabled {
   opacity: .6;
 }
 
-.features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  text-align: center;
-}
-
-.feature {
-  background: #242424;
-  padding: 18px 8px;
-  border-radius: 10px;
-  border: 1px solid #55451e;
-}
-
-#result {
+#message {
   margin-top: 15px;
-  text-align: center;
   line-height: 1.8;
+  overflow-wrap: anywhere;
 }
 
 footer {
-  background: #000;
-  padding: 25px 10px;
   text-align: center;
-  color: #d4af37;
-  border-top: 1px solid #d4af37;
+  padding: 25px;
+  background: #000;
+  border-top: 2px solid #d4af37;
+  color: #ddd;
 }
 </style>
 </head>
@@ -154,48 +133,42 @@ footer {
 <body>
 
 <header>
-  <div class="logo">RAED DELIVERY</div>
-  <p>شركة رائد للتوصيل السريع</p>
-  <p>قسنطينة • الجزائر</p>
+  <h1>شركة رائد للتوصيل</h1>
+  <p>خدمات التوصيل في قسنطينة وضواحيها</p>
 </header>
 
 <div class="adbar">
-  <span>🚚 رائد للتوصيل • سرعة • أمان • ثقة • نستقبل طلباتكم الآن • 🚚</span>
+  <span>★ شركة رائد للتوصيل ★ السرعة والأمان والثقة ★ اطلب خدمة التوصيل الآن ★</span>
 </div>
 
 <section class="hero">
-  <h1>خدمات توصيل سريعة وموثوقة</h1>
-  <p>
-    مرحبًا بكم في شركة رائد للتوصيل بقسنطينة.<br>
-    املأ استمارة الطلب وسنتواصل معك لتأكيد تفاصيل الخدمة.
-  </p>
+  <h2>توصيل سريع وآمن</h2>
+  <p>نستقبل طلباتكم ونعمل على توصيلها بكل عناية.</p>
+  <p>📍 قسنطينة، الجزائر</p>
 </section>
 
 <div class="container">
 
   <section class="card">
-    <h2>⭐ لماذا تختار رائد؟</h2>
-    <div class="features">
-      <div class="feature">🚚<br>توصيل سريع</div>
-      <div class="feature">📍<br>قسنطينة</div>
-      <div class="feature">📞<br>تأكيد الطلب</div>
-      <div class="feature">🤝<br>خدمة موثوقة</div>
-    </div>
+    <h3>خدماتنا</h3>
+    <p>🚚 توصيل الطلبيات</p>
+    <p>📦 نقل وتسليم المنتجات</p>
+    <p>🏙️ خدمات التوصيل داخل قسنطينة</p>
   </section>
 
   <section class="card">
-    <h2>📝 اطلب خدمة التوصيل</h2>
+    <h3>اطلب خدمة التوصيل</h3>
 
     <form id="deliveryForm">
 
       <label for="customer">الاسم واللقب</label>
-      <input id="customer" name="customer_name"
-             type="text" required maxlength="100"
+      <input id="customer" name="customer"
+             type="text" required
              placeholder="أدخل اسمك الكامل">
 
       <label for="phone">رقم الهاتف</label>
       <input id="phone" name="phone"
-             type="tel" required maxlength="20"
+             type="tel" required
              placeholder="أدخل رقم هاتفك">
 
       <label for="wilaya">الولاية</label>
@@ -206,47 +179,45 @@ footer {
 
       <label for="address">العنوان بالتفصيل</label>
       <textarea id="address" name="address"
-                rows="3" required maxlength="500"
+                rows="3" required
                 placeholder="البلدية والحي والعنوان"></textarea>
 
       <button id="submitButton" type="submit">
-        تأكيد وإرسال الطلب
+        إرسال طلب التوصيل
       </button>
 
-      <div id="result" role="status" aria-live="polite"></div>
+      <div id="message" role="status" aria-live="polite"></div>
+
     </form>
   </section>
 
 </div>
 
 <footer>
-  <p>شركة رائد للتوصيل السريع</p>
-  <p>قسنطينة - الجزائر</p>
-  <p>© جميع الحقوق محفوظة 2026</p>
+  <p>شركة رائد للتوصيل — قسنطينة</p>
+  <p>خدمة الزبائن: 0798171593</p>
+  <p>© جميع الحقوق محفوظة</p>
 </footer>
 
 <script>
-const SUPABASE_URL =
-  "https://glpfxexmavtpiucikzfk.supabase.co";
-
-const SUPABASE_KEY =
-  "sb_publishable_ukUhvN6goAgYQzI6voj_pw_-5DcI0Di";
+const SUPABASE_URL = "https://glpfxexmavtpiucikzfk.supabase.co";
+const SUPABASE_KEY = "sb_publishable_ukUhvN6goAgYQzI6voj_pw_-5DcI0Di";
 
 const form = document.getElementById("deliveryForm");
-const result = document.getElementById("result");
 const button = document.getElementById("submitButton");
+const message = document.getElementById("message");
 
 form.addEventListener("submit", async function(event) {
   event.preventDefault();
 
+  message.textContent = "جارٍ إرسال طلبك...";
   button.disabled = true;
-  result.textContent = "جارٍ إرسال طلبك...";
 
   const order = {
-    customer_name: document.getElementById("customer").value.trim(),
-    phone: document.getElementById("phone").value.trim(),
-    wilaya: document.getElementById("wilaya").value,
-    address: document.getElementById("address").value.trim()
+    "اسم_العميل": document.getElementById("customer").value.trim(),
+    "هاتف": document.getElementById("phone").value.trim(),
+    "ولاية": document.getElementById("wilaya").value,
+    "عنوان": document.getElementById("address").value.trim()
   };
 
   try {
@@ -255,9 +226,9 @@ form.addEventListener("submit", async function(event) {
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
           "apikey": SUPABASE_KEY,
           "Authorization": "Bearer " + SUPABASE_KEY,
+          "Content-Type": "application/json",
           "Prefer": "return=minimal"
         },
         body: JSON.stringify(order)
@@ -266,20 +237,19 @@ form.addEventListener("submit", async function(event) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Supabase error:", errorText);
-      throw new Error("تعذر حفظ الطلب في قاعدة البيانات.");
+      throw new Error(errorText || "HTTP " + response.status);
     }
 
-    result.textContent =
-      "✅ تم إرسال طلبك بنجاح! سنراجع طلبك ونتواصل معك.";
+    message.textContent =
+      "✅ تم إرسال طلبك بنجاح! سنراجع بياناتك ونتواصل معك.";
 
     form.reset();
 
   } catch (error) {
-    result.textContent =
-      "❌ لم يتم إرسال الطلب. تحقق من اتصال الإنترنت وإعدادات قاعدة البيانات.";
-    console.error(error);
+    console.error("Order error:", error);
 
+    message.textContent =
+      "❌ لم يتم حفظ الطلب. التفاصيل التقنية: " + error.message;
   } finally {
     button.disabled = false;
   }
