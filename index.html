@@ -3,258 +3,431 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>شركة رائد للتوصيل | قسنطينة</title>
+<title>X NAS | إدارة الفنادق والحجوزات</title>
 
 <style>
-* {
-  box-sizing: border-box;
+:root {
+  --navy: #071a29;
+  --navy2: #102b40;
+  --gold: #e8bd65;
+  --white: #ffffff;
+  --bg: #f4f6f7;
+  --text: #182633;
 }
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #101010;
-  color: white;
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
 }
+a { text-decoration: none; color: inherit; }
+button, input, select, textarea { font: inherit; }
 
-header {
-  background: #000;
-  padding: 22px 12px;
+.topbar {
+  background: var(--navy);
+  color: var(--gold);
   text-align: center;
-  border-bottom: 3px solid #d4af37;
+  padding: 8px;
+  font-size: 13px;
 }
-
-header h1 {
-  color: #d4af37;
-  margin: 0 0 10px;
+header {
+  background: var(--navy);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid var(--gold);
 }
-
-header p {
-  margin: 0;
+.nav {
+  max-width: 1250px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
 }
-
-.adbar {
-  background: #d4af37;
-  color: #000;
-  padding: 12px;
-  white-space: nowrap;
-  overflow: hidden;
+.logo {
+  color: var(--gold);
+  font-size: 27px;
   font-weight: bold;
 }
-
-.adbar span {
-  display: inline-block;
-  animation: move 15s linear infinite;
-}
-
-@keyframes move {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(100%); }
-}
-
-.hero {
-  text-align: center;
-  padding: 35px 15px;
-  background: linear-gradient(135deg, #252525, #000);
-}
-
-.hero h2 {
-  color: #d4af37;
-  font-size: 27px;
-}
-
-.container {
-  max-width: 650px;
-  margin: 25px auto;
-  padding: 20px;
-}
-
-.card {
-  background: #1c1c1c;
-  padding: 22px;
-  margin-bottom: 20px;
-  border: 1px solid #9c7b19;
-  border-radius: 12px;
-}
-
-h3 {
-  color: #d4af37;
-  margin-top: 0;
-}
-
-label {
+.logo small {
   display: block;
-  margin: 14px 0 7px;
+  font-size: 10px;
+  color: white;
+  letter-spacing: 2px;
 }
-
-input, select, textarea {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid #777;
-  border-radius: 7px;
-  background: #fff;
-  color: #111;
-  font-size: 16px;
+nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
 }
+nav a:hover { color: var(--gold); }
 
-button {
-  width: 100%;
-  margin-top: 20px;
-  padding: 15px;
-  background: #d4af37;
-  color: #000;
-  border: none;
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  border: 0;
   border-radius: 7px;
-  font-size: 18px;
+  padding: 10px 19px;
   font-weight: bold;
   cursor: pointer;
 }
-
-button:disabled {
-  opacity: .6;
+.hero {
+  min-height: 450px;
+  color: white;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(3,16,28,.94), rgba(3,16,28,.40)),
+    url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+}
+.hero-content {
+  max-width: 1250px;
+  width: 100%;
+  margin: auto;
+  padding: 50px 25px;
+}
+.hero h1 {
+  font-size: clamp(30px, 5vw, 49px);
+  line-height: 1.5;
+  max-width: 720px;
+  margin: 12px 0;
+}
+.gold { color: var(--gold); }
+.hero p {
+  max-width: 650px;
+  color: #f0f0f0;
+}
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+.outline-btn {
+  border: 1px solid var(--gold);
+  color: white;
+  padding: 9px 18px;
+  border-radius: 7px;
 }
 
-#message {
-  margin-top: 15px;
-  line-height: 1.8;
-  overflow-wrap: anywhere;
+.container {
+  max-width: 1250px;
+  margin: auto;
+  padding: 45px 20px;
 }
-
-footer {
-  text-align: center;
+.section-title {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+.section-subtitle {
+  color: #687785;
+  margin-bottom: 25px;
+}
+.services {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 13px;
+}
+.card {
+  background: white;
+  border: 1px solid #e0e5e8;
+  border-radius: 9px;
+  padding: 20px 14px;
+  box-shadow: 0 3px 12px #102b4009;
+}
+.service-card { text-align: center; }
+.icon {
+  font-size: 32px;
+  color: var(--navy);
+}
+.card h3 { font-size: 17px; margin: 9px 0; }
+.card p {
+  color: #687785;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+.details {
+  color: #1c5375;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 13px;
+  font-size: 13px;
+}
+.promo-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 20px;
+  margin-top: 28px;
+}
+.promo {
+  background: var(--navy);
+  color: white;
+  border-radius: 12px;
   padding: 25px;
-  background: #000;
-  border-top: 2px solid #d4af37;
-  color: #ddd;
+}
+.promo h2 { color: var(--gold); }
+.promo p { color: #d6e0e7; }
+.why {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+}
+.why ul { padding-right: 20px; }
+.why li { margin-bottom: 7px; }
+
+.rooms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.room img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+.room { overflow: hidden; }
+.room .btn { margin-top: 12px; }
+
+.booking-section {
+  background: #e9eef1;
+}
+.booking-box {
+  max-width: 850px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 20px #071a2910;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccd5db;
+  border-radius: 6px;
+  background: white;
+}
+.full { grid-column: 1 / -1; }
+.notice { color: #6c7780; font-size: 12px; }
+#result {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #155e35;
+}
+footer {
+  background: var(--navy);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+footer strong { color: var(--gold); }
+
+@media(max-width: 950px) {
+  .services { grid-template-columns: repeat(2, 1fr); }
+  .nav { justify-content: center; }
+  nav { justify-content: center; }
+}
+@media(max-width: 650px) {
+  .promo-grid, .rooms, .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .full { grid-column: auto; }
+  .hero { min-height: 400px; }
+  .section-title { font-size: 24px; }
 }
 </style>
 </head>
 
 <body>
 
+<div class="topbar">
+  X NAS — حلول رقمية متكاملة للفنادق والمرافق السياحية
+</div>
+
 <header>
-  <h1>شركة رائد للتوصيل</h1>
-  <p>خدمات التوصيل في قسنطينة وضواحيها</p>
+  <div class="nav">
+    <a href="#home" class="logo">
+      X NAS
+      <small>HOTEL DIGITAL SERVICES</small>
+    </a>
+
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#services">الخدمات</a>
+      <a href="#rooms">الغرف والحجوزات</a>
+      <a href="#hotels">للفنادق</a>
+      <a href="#booking">طلب حجز</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+
+    <a href="#booking" class="btn">احجز الآن</a>
+  </div>
 </header>
 
-<div class="adbar">
-  <span>★ شركة رائد للتوصيل ★ السرعة والأمان والثقة ★ اطلب خدمة التوصيل الآن ★</span>
-</div>
+<main>
 
-<section class="hero">
-  <h2>توصيل سريع وآمن</h2>
-  <p>نستقبل طلباتكم ونعمل على توصيلها بكل عناية.</p>
-  <p>📍 قسنطينة، الجزائر</p>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="gold">منصتكم الرقمية لإدارة وتطوير فندقكم</div>
+
+    <h1>
+      حلول رقمية متكاملة
+      <br>
+      <span class="gold">للفنادق والمرافق السياحية</span>
+    </h1>
+
+    <p>
+      نساعدك على عرض خدماتك وإدارة حجوزاتك والتواصل مع عملائك،
+      مع توفير تجربة استخدام سهلة لموقعك الإلكتروني.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#services" class="btn">اكتشف خدماتنا ←</a>
+      <a href="#hotels" class="outline-btn">خدمات أصحاب الفنادق</a>
+    </div>
+  </div>
 </section>
 
-<div class="container">
+<section class="container" id="services">
+  <h2 class="section-title">خدماتنا للفنادق</h2>
+  <p class="section-subtitle">
+    كل ما يحتاجه فندقك لتطوير حضوره الرقمي.
+  </p>
 
-  <section class="card">
-    <h3>خدماتنا</h3>
-    <p>🚚 توصيل الطلبيات</p>
-    <p>📦 نقل وتسليم المنتجات</p>
-    <p>🏙️ خدمات التوصيل داخل قسنطينة</p>
-  </section>
+  <div class="services">
 
-  <section class="card">
-    <h3>اطلب خدمة التوصيل</h3>
+    <article class="card service-card">
+      <div class="icon">▣</div>
+      <h3>إنشاء موقع احترافي</h3>
+      <p>تصميم موقع يعرض الفندق والغرف والخدمات ومعلومات الاتصال.</p>
+      <a class="details" href="#hotels">تفاصيل الخدمة ←</a>
+    </article>
 
-    <form id="deliveryForm">
+    <article class="card service-card">
+      <div class="icon">⚙</div>
+      <h3>إدارة الموقع</h3>
+      <p>تحديث المحتوى والصور والخدمات والعروض الخاصة بالفندق.</p>
+      <a class="details" href="#hotels">تفاصيل الخدمة ←</a>
+    </article>
 
-      <label for="customer">الاسم واللقب</label>
-      <input id="customer" name="customer"
-             type="text" required
-             placeholder="أدخل اسمك الكامل">
+    <article class="card service-card">
+      <div class="icon">📷</div>
+      <h3>التصوير الاحترافي</h3>
+      <p>عرض صور الغرف والمرافق بطريقة جذابة عند توفير الصور.</p>
+      <a class="details" href="#contact">تفاصيل الخدمة ←</a>
+    </article>
 
-      <label for="phone">رقم الهاتف</label>
-      <input id="phone" name="phone"
-             type="tel" required
-             placeholder="أدخل رقم هاتفك">
+    <article class="card service-card">
+      <div class="icon">📢</div>
+      <h3>التسويق الرقمي</h3>
+      <p>تنظيم محتوى الموقع والعروض للتعريف بخدمات الفندق.</p>
+      <a class="details" href="#contact">تفاصيل الخدمة ←</a>
+    </article>
 
-      <label for="wilaya">الولاية</label>
-      <select id="wilaya" name="wilaya" required>
-        <option value="">اختر الولاية</option>
-        <option value="قسنطينة">قسنطينة</option>
-      </select>
+    <article class="card service-card">
+      <div class="icon">🛡</div>
+      <h3>الصيانة والدعم</h3>
+      <p>مساعدة في صيانة الموقع ومتابعة التحديثات المطلوبة.</p>
+      <a class="details" href="#contact">تفاصيل الخدمة ←</a>
+    </article>
 
-      <label for="address">العنوان بالتفصيل</label>
-      <textarea id="address" name="address"
-                rows="3" required
-                placeholder="البلدية والحي والعنوان"></textarea>
+  </div>
 
-      <button id="submitButton" type="submit">
-        إرسال طلب التوصيل
-      </button>
+  <div class="promo-grid">
+    <div class="promo">
+      <h2>موقعك الإلكتروني يفتح لك أبوابًا جديدة</h2>
+      <p>
+        نساعدك على تقديم غرف الفندق وخدماته على الإنترنت
+        بطريقة منظمة ومتوافقة مع الهواتف والحواسيب.
+      </p>
+      <a href="#contact" class="btn">اطلب موقعك الآن ←</a>
+    </div>
 
-      <div id="message" role="status" aria-live="polite"></div>
+    <div class="why" id="hotels">
+      <h2>لماذا تختار X NAS؟</h2>
+      <p>حلول رقمية مصممة حسب احتياجات منشأتك الفندقية.</p>
+      <ul>
+        <li>تصميم متجاوب مع الهاتف والحاسوب.</li>
+        <li>عرض الغرف والخدمات والصور.</li>
+        <li>نموذج لطلبات حجز الغرف.</li>
+        <li>إمكانية تطوير لوحة لإدارة الطلبات.</li>
+        <li>تخصيص التصميم باسم فندقك وشعاره.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    </form>
-  </section>
+<section class="container" id="rooms">
+  <h2 class="section-title">أنواع الغرف</h2>
+  <p class="section-subtitle">
+    أمثلة توضيحية لأنواع الإقامة. الأسعار والتوفر يحددهما الفندق.
+  </p>
 
-</div>
+  <div class="rooms">
 
-<footer>
-  <p>شركة رائد للتوصيل — قسنطينة</p>
-  <p>خدمة الزبائن: 0798171593</p>
-  <p>© جميع الحقوق محفوظة</p>
-</footer>
+    <article class="card room">
+      <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=80" alt="غرفة مزدوجة">
+      <h3>غرفة مزدوجة</h3>
+      <p>إقامة مريحة لشخصين حسب تجهيزات الفندق.</p>
+      <a href="#booking" class="btn">اطلب الحجز</a>
+    </article>
 
-<script>
-const SUPABASE_URL = "https://glpfxexmavtpiucikzfk.supabase.co";
-const SUPABASE_KEY = "sb_publishable_ukUhvN6goAgYQzI6voj_pw_-5DcI0Di";
+    <article class="card room">
+      <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80" alt="جناح فاخر">
+      <h3>جناح فاخر</h3>
+      <p>خيار راقٍ للباحثين عن مساحة وتجهيزات إضافية.</p>
+      <a href="#booking" class="btn">اطلب الحجز</a>
+    </article>
 
-const form = document.getElementById("deliveryForm");
-const button = document.getElementById("submitButton");
-const message = document.getElementById("message");
+    <article class="card room">
+      <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=900&q=80" alt="غرفة عائلية">
+      <h3>غرفة عائلية</h3>
+      <p>خيار للعائلات وفق السعة المتوفرة في الفندق.</p>
+      <a href="#booking" class="btn">اطلب الحجز</a>
+    </article>
 
-form.addEventListener("submit", async function(event) {
-  event.preventDefault();
+  </div>
+</section>
 
-  message.textContent = "جارٍ إرسال طلبك...";
-  button.disabled = true;
+<section class="booking-section" id="booking">
+  <div class="container">
+    <h2 class="section-title">طلب حجز غرفة</h2>
+    <p class="section-subtitle">
+      أدخل بياناتك وتواريخ الإقامة لإعداد طلب الحجز.
+    </p>
 
-  const order = {
-    "اسم_العميل": document.getElementById("customer").value.trim(),
-    "هاتف": document.getElementById("phone").value.trim(),
-    "ولاية": document.getElementById("wilaya").value,
-    "عنوان": document.getElementById("address").value.trim()
-  };
+    <form class="booking-box" id="bookingForm">
+      <div class="form-grid">
 
-  try {
-    const response = await fetch(
-      SUPABASE_URL + "/rest/v1/delivery_orders",
-      {
-        method: "POST",
-        headers: {
-          "apikey": SUPABASE_KEY,
-          "Authorization": "Bearer " + SUPABASE_KEY,
-          "Content-Type": "application/json",
-          "Prefer": "return=minimal"
-        },
-        body: JSON.stringify(order)
-      }
-    );
+        <div>
+          <label for="name">الاسم الكامل *</label>
+          <input id="name" name="name" required placeholder="الاسم واللقب">
+        </div>
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(errorText || "HTTP " + response.status);
-    }
+        <div>
+          <label for="phone">رقم الهاتف *</label>
+          <input id="phone" name="phone" type="tel" required placeholder="رقم الهاتف">
+        </div>
 
-    message.textContent =
-      "✅ تم إرسال طلبك بنجاح! سنراجع بياناتك ونتواصل معك.";
-
-    form.reset();
-
-  } catch (error) {
-    console.error("Order error:", error);
-
-    message.textContent =
-      "❌ لم يتم حفظ الطلب. التفاصيل التقنية: " + error.message;
-  } finally {
-    button.disabled = false;
-  }
-});
-</script>
-
-</body>
-  </html>
+        <div
