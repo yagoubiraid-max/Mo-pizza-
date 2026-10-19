@@ -2,151 +2,183 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>X NAS | خدمات الفنادق والحجوزات</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X NAS | خدمات الفنادق</title>
 
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;background:#0b0b0b;color:#fff;
- font-family:Arial,Tahoma,sans-serif;line-height:1.8
+  margin:0;
+  font-family:Arial,Tahoma,sans-serif;
+  background:#0b0b0b;
+  color:white;
 }
 header{
- background:#111;padding:20px;text-align:center;
- border-bottom:2px solid #d4af37
+  background:#050505;
+  border-bottom:2px solid #d4af37;
+  padding:22px 12px;
+  text-align:center;
 }
-.logo{font-size:36px;color:#d4af37;font-weight:bold}
-header p{margin:0;color:#ddd}
-nav{padding:12px;text-align:center;background:#171717}
-nav a{color:#d4af37;text-decoration:none;margin:0 10px}
+.logo{
+  color:#e5c45a;
+  font-size:42px;
+  font-weight:bold;
+  letter-spacing:3px;
+}
+header p{color:#ddd}
 .hero{
- padding:65px 20px;text-align:center;
- background:linear-gradient(#000b,#000c),
- url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=80') center/cover
+  text-align:center;
+  padding:55px 18px;
+  background:linear-gradient(135deg,#111,#423511,#090909);
 }
-.hero h1{font-size:34px;color:#e3c45a}
-.hero p{max-width:650px;margin:15px auto}
-.btn{
- display:inline-block;background:#d4af37;color:#111;
- padding:12px 24px;border-radius:6px;text-decoration:none;
- font-weight:bold;border:0;cursor:pointer
+.hero h1{color:#e5c45a;font-size:30px}
+.hero p{line-height:2}
+.btn,button{
+  display:inline-block;
+  padding:14px 22px;
+  background:#d4af37;
+  color:#111;
+  border:0;
+  border-radius:7px;
+  font-weight:bold;
+  text-decoration:none;
+  cursor:pointer;
 }
-section{padding:35px 18px;max-width:1100px;margin:auto}
-h2{text-align:center;color:#d4af37}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#171717;border:1px solid #57491d;border-radius:10px;overflow:hidden}
-.card img{width:100%;height:170px;object-fit:cover}
-.card div{padding:15px}
-.card h3{color:#d4af37}
-form{max-width:650px;margin:auto;background:#171717;padding:22px;border-radius:10px;border:1px solid #57491d}
-label{display:block;margin-top:12px;color:#e3c45a}
+section{max-width:950px;margin:auto;padding:30px 15px}
+h2{text-align:center;color:#e5c45a}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:15px;
+}
+.card{
+  padding:22px;
+  text-align:center;
+  border:1px solid #a78b32;
+  border-radius:10px;
+  background:#191919;
+}
+.card h3{color:#e5c45a}
+.card p{line-height:1.8;color:#ddd}
+form{
+  max-width:600px;
+  margin:auto;
+  padding:20px;
+  border:1px solid #d4af37;
+  background:#171717;
+  border-radius:10px;
+}
+label{display:block;margin-top:15px;color:#e5c45a}
 input,select,textarea{
- width:100%;padding:12px;margin-top:5px;border-radius:5px;
- border:1px solid #555;background:#0d0d0d;color:white;font-size:16px
+  display:block;
+  width:100%;
+  margin-top:7px;
+  padding:12px;
+  border-radius:6px;
+  border:1px solid #555;
+  background:#080808;
+  color:white;
+  font-size:16px;
 }
-textarea{min-height:100px}
-form button{width:100%;margin-top:20px;font-size:17px}
-#result{text-align:center;margin-top:15px}
-footer{text-align:center;background:#111;padding:25px;border-top:2px solid #d4af37;color:#ccc}
-.small{font-size:13px;color:#aaa}
+textarea{min-height:90px}
+form button{width:100%;margin-top:20px}
+#message{text-align:center;line-height:1.8;margin-top:15px}
+footer{
+  background:#050505;
+  border-top:1px solid #d4af37;
+  padding:22px;
+  text-align:center;
+  color:#e5c45a;
+}
 </style>
 </head>
 
 <body>
 
 <header>
- <div class="logo">X NAS</div>
- <p>حلول رقمية احترافية للفنادق والحجوزات</p>
+  <div class="logo">X NAS</div>
+  <p>حلول رقمية احترافية للفنادق والإقامات السياحية</p>
 </header>
 
-<nav>
- <a href="#home">الرئيسية</a>
- <a href="#services">خدماتنا</a>
- <a href="#request">إرسال طلب</a>
-</nav>
-
-<div class="hero" id="home">
- <h1>ارتقِ بفندقك إلى المستوى التالي</h1>
- <p>نساعد الفنادق على تطوير حضورها الرقمي وتسهيل استقبال طلبات الحجز والتواصل مع العملاء.</p>
- <a href="#request" class="btn">اطلب خدمتنا الآن</a>
+<div class="hero">
+  <h1>مرحبًا بكم في X NAS</h1>
+  <p>
+    خدمات رقمية للفنادق والإقامات السياحية.<br>
+    أرسل طلبك بسهولة من خلال موقعنا.
+  </p>
+  <a href="#request" class="btn">أرسل طلبك</a>
 </div>
 
-<section id="services">
- <h2>خدمات X NAS</h2>
- <div class="cards">
-  <article class="card">
-   <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=700&q=80" alt="فندق فاخر">
-   <div><h3>مواقع الفنادق</h3><p>تصميم مواقع احترافية لعرض الفندق وخدماته.</p></div>
-  </article>
-  <article class="card">
-   <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=700&q=80" alt="غرفة فندقية">
-   <div><h3>طلبات الحجز</h3><p>نموذج إلكتروني لاستقبال طلبات الحجز من العملاء.</p></div>
-  </article>
-  <article class="card">
-   <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=700&q=80" alt="استقبال فندق">
-   <div><h3>الحلول الرقمية</h3><p>تحسين تجربة العملاء وتنظيم طلبات الخدمات.</p></div>
-  </article>
- </div>
+<section>
+  <h2>خدماتنا</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>🌐 تصميم مواقع الفنادق</h3>
+      <p>مواقع احترافية لعرض الفندق والغرف والخدمات.</p>
+    </div>
+    <div class="card">
+      <h3>🛏️ طلبات حجز الغرف</h3>
+      <p>إرسال طلبات الحجز إلكترونيًا.</p>
+    </div>
+    <div class="card">
+      <h3>📱 الحلول الرقمية</h3>
+      <p>خدمات تساعد المؤسسات السياحية على التطور.</p>
+    </div>
+  </div>
 </section>
 
 <section id="request">
- <h2>أرسل طلبك</h2>
- <p style="text-align:center">املأ البيانات التالية وسنتلقى طلبك عند نجاح الاتصال بقاعدة البيانات.</p>
+  <h2>نموذج إرسال الطلب</h2>
 
- <form id="bookingForm">
-  <label for="firstName">الاسم</label>
-  <input id="firstName" required maxlength="100" autocomplete="given-name">
+  <form id="requestForm">
+    <label for="firstName">الاسم</label>
+    <input id="firstName" required maxlength="100">
 
-  <label for="lastName">اللقب</label>
-  <input id="lastName" required maxlength="100" autocomplete="family-name">
+    <label for="lastName">اللقب</label>
+    <input id="lastName" required maxlength="100">
 
-  <label for="phone">رقم الهاتف</label>
-  <input id="phone" type="tel" required maxlength="30" autocomplete="tel">
+    <label for="phone">رقم الهاتف</label>
+    <input id="phone" type="tel" required maxlength="30">
 
-  <label for="requestType">نوع الطلب</label>
-  <select id="requestType" required>
-   <option value="">اختر نوع الطلب</option>
-   <option value="إنشاء موقع فندق">إنشاء موقع فندق</option>
-   <option value="طلب حجز غرفة">طلب حجز غرفة</option>
-   <option value="إدارة موقع فندق">إدارة موقع فندق</option>
-   <option value="خدمة رقمية أخرى">خدمة رقمية أخرى</option>
-  </select>
+    <label for="requestType">نوع الخدمة</label>
+    <select id="requestType" required>
+      <option value="">اختر الخدمة</option>
+      <option value="تصميم موقع فندق">تصميم موقع فندق</option>
+      <option value="طلب حجز غرفة">طلب حجز غرفة</option>
+      <option value="خدمة رقمية أخرى">خدمة رقمية أخرى</option>
+    </select>
 
-  <label for="hotelName">اسم الفندق (اختياري)</label>
-  <input id="hotelName" maxlength="150">
+    <label for="hotelName">اسم الفندق (اختياري)</label>
+    <input id="hotelName" maxlength="150">
 
-  <label for="notes">تفاصيل إضافية (اختياري)</label>
-  <textarea id="notes" maxlength="2000"></textarea>
+    <label for="notes">تفاصيل الطلب</label>
+    <textarea id="notes" maxlength="2000"></textarea>
 
-  <button class="btn" id="submitButton" type="submit">إرسال الطلب</button>
-  <div id="result" role="status"></div>
- </form>
+    <button id="submitButton" type="submit">إرسال الطلب</button>
+    <div id="message" role="status"></div>
+  </form>
 </section>
 
 <footer>
- <strong style="color:#d4af37">X NAS</strong>
- <p>حلول رقمية للفنادق والحجوزات</p>
- <p class="small">يتم إرسال البيانات إلى قاعدة البيانات عند ضبط الاتصال بنجاح.</p>
+  X NAS © 2026 — جميع الحقوق محفوظة
 </footer>
 
 <script>
-const SUPABASE_URL = "https://glpfxexmavtpiucikzfk.supabase.co";
+const SUPABASE_URL =
+  "https://glpfxexmavtpiucikzfk.supabase.co";
 
-/*
-  استبدل النص التالي بمفتاح Publishable العام من إعدادات Supabase.
-  لا تضع service_role أو أي مفتاح سري في موقعك.
-*/
-const SUPABASE_KEY = "ضع_مفتاح_Publishable_هنا";
-
-const form = document.getElementById("bookingForm");
-const result = document.getElementById("result");
+/* ضع مفتاح Publishable الخاص بك بين علامتي التنصيص */
+const SUPABASE_KEY = "_Publishable_هنا";
+sb_publishable_ukUhvN6goAgYQzI6voj_pw_-5DcI0Di
+const form = document.getElementById("requestForm");
+const message = document.getElementById("message");
 const button = document.getElementById("submitButton");
 
 form.addEventListener("submit", async function(event) {
   event.preventDefault();
 
   if (SUPABASE_KEY === "ضع_مفتاح_Publishable_هنا") {
-    result.textContent = "الاتصال لم يكتمل بعد: يجب إضافة مفتاح Publishable من Supabase.";
+    message.textContent = "يجب إعداد مفتاح قاعدة البيانات أولًا.";
     return;
   }
 
@@ -160,7 +192,7 @@ form.addEventListener("submit", async function(event) {
   };
 
   button.disabled = true;
-  result.textContent = "جارٍ إرسال الطلب...";
+  message.textContent = "جارٍ إرسال الطلب...";
 
   try {
     const response = await fetch(
@@ -168,9 +200,9 @@ form.addEventListener("submit", async function(event) {
       {
         method: "POST",
         headers: {
+          "Content-Type": "application/json",
           "apikey": SUPABASE_KEY,
           "Authorization": "Bearer " + SUPABASE_KEY,
-          "Content-Type": "application/json",
           "Prefer": "return=minimal"
         },
         body: JSON.stringify(data)
@@ -178,18 +210,15 @@ form.addEventListener("submit", async function(event) {
     );
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error("Supabase error:", errorText);
-      result.textContent = "لم يُحفظ الطلب. تحقق من إعدادات الجدول والصلاحيات.";
-      return;
+      throw new Error("تعذّر حفظ الطلب");
     }
 
-    result.textContent = "تم إرسال الطلب بنجاح!";
+    message.textContent = "✅ تم إرسال طلبك بنجاح!";
     form.reset();
 
   } catch (error) {
-    console.error(error);
-    result.textContent = "تعذر الاتصال بالإنترنت. حاول مرة أخرى.";
+    message.textContent =
+      "❌ لم يُحفظ الطلب. تحقق من اتصال قاعدة البيانات وإعداداتها.";
   } finally {
     button.disabled = false;
   }
