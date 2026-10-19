@@ -1,142 +1,59 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>X NAS | إدارة الفنادق والحجوزات</title>
+<script>
+const SUPABASE_URL = "https://glpfxexmavtpiucikzfk.supabase.co";
 
-<style>
-* {
-  box-sizing: border-box;
+// ضع هنا مفتاح Publishable الخاص بمشروعك في Supabase
+const SUPABASE_KEY = "ضع_مفتاح_Publishable_هنا";
+
+const form = document.getElementById("bookingForm");
+
+if (form) {
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const data = {
+      first_name: document.getElementById("firstName").value.trim(),
+      last_name: document.getElementById("lastName").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      request_type: document.getElementById("requestType").value,
+      hotel_name: document.getElementById("hotelName")?.value.trim() || "",
+      notes: document.getElementById("notes")?.value.trim() || ""
+    };
+
+    if (!data.first_name || !data.last_name ||
+        !data.phone || !data.request_type) {
+      alert("يرجى ملء الاسم واللقب والهاتف ونوع الطلب.");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `${SUPABASE_URL}/rest/v1/xnas_requests`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": SUPABASE_KEY,
+            "Authorization": `Bearer ${SUPABASE_KEY}`,
+            "Prefer": "return=minimal"
+          },
+          body: JSON.stringify(data)
+        }
+      );
+
+      if (!response.ok) {
+        const error = await response.text();
+        console.error(error);
+        alert("لم يُحفظ الطلب. تحقق من المفتاح وصلاحيات الجدول.");
+        return;
+      }
+
+      alert("تم إرسال طلبك بنجاح!");
+      form.reset();
+
+    } catch (error) {
+      console.error(error);
+      alert("تعذر الاتصال. حاول مرة أخرى.");
+    }
+  });
 }
-
-body {
-  margin: 0;
-  font-family: Tahoma, Arial, sans-serif;
-  background: #101010;
-  color: white;
-  line-height: 1.8;
-}
-
-header {
-  background: #080808;
-  border-bottom: 2px solid #d6b35a;
-  padding: 15px;
-  text-align: center;
-}
-
-.logo {
-  font-size: 36px;
-  font-weight: bold;
-  color: #d6b35a;
-}
-
-header p {
-  margin: 0;
-  color: #ddd;
-}
-
-nav {
-  margin-top: 15px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 8px;
-}
-
-nav a:hover {
-  color: #d6b35a;
-}
-
-.hero {
-  padding: 65px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #171717, #302515);
-}
-
-.hero h1 {
-  color: #e5c16a;
-  font-size: 36px;
-}
-
-.hero p {
-  max-width: 700px;
-  margin: auto;
-  color: #ddd;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #d6b35a;
-  color: #111;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-section {
-  padding: 40px 18px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-h2 {
-  color: #d6b35a;
-  text-align: center;
-  font-size: 28px;
-}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  background: #1c1c1c;
-  border: 1px solid #66552e;
-  border-radius: 10px;
-  padding: 22px;
-  text-align: center;
-}
-
-.card h3 {
-  color: #e5c16a;
-}
-
-.card p {
-  color: #ddd;
-}
-
-.hotel-image {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-form {
-  background: #1a1a1a;
-  padding: 22px;
-  border: 1px solid #66552e;
-  border-radius: 10px;
-  max-width: 650px;
-  margin: auto;
-}
-
-label {
-  display: block;
-  margin-top: 12px;
-  color: #e5c16a;
-}
-
-input, select, textarea {
-  width: 100%;
-  padding: 12px
+</script>
