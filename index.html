@@ -3,92 +3,210 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>X NAS | خدمات الفنادق</title>
+<title>الإقامة الفاخرة | غرف وشقق وديكور</title>
 
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,Tahoma,sans-serif;
-  background:#0b0b0b;
-  color:white;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-header{
-  background:#050505;
-  border-bottom:2px solid #d4af37;
-  padding:22px 12px;
-  text-align:center;
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f5f0;
+    color: #222;
+    line-height: 1.8;
 }
-.logo{
-  color:#e5c45a;
-  font-size:42px;
-  font-weight:bold;
-  letter-spacing:3px;
+
+header {
+    background: #151515;
+    color: #d9b56d;
+    padding: 25px 15px;
+    text-align: center;
 }
-header p{color:#ddd}
-.hero{
-  text-align:center;
-  padding:55px 18px;
-  background:linear-gradient(135deg,#111,#423511,#090909);
+
+header h1 {
+    font-size: 30px;
 }
-.hero h1{color:#e5c45a;font-size:30px}
-.hero p{line-height:2}
-.btn,button{
-  display:inline-block;
-  padding:14px 22px;
-  background:#d4af37;
-  color:#111;
-  border:0;
-  border-radius:7px;
-  font-weight:bold;
-  text-decoration:none;
-  cursor:pointer;
+
+header p {
+    color: white;
 }
-section{max-width:950px;margin:auto;padding:30px 15px}
-h2{text-align:center;color:#e5c45a}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:15px;
+
+nav {
+    background: #282828;
+    padding: 12px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
-.card{
-  padding:22px;
-  text-align:center;
-  border:1px solid #a78b32;
-  border-radius:10px;
-  background:#191919;
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
 }
-.card h3{color:#e5c45a}
-.card p{line-height:1.8;color:#ddd}
-form{
-  max-width:600px;
-  margin:auto;
-  padding:20px;
-  border:1px solid #d4af37;
-  background:#171717;
-  border-radius:10px;
+
+.banner {
+    min-height: 380px;
+    background:
+    linear-gradient(#0007, #0008),
+    url("https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1400&q=85")
+    center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 30px;
 }
-label{display:block;margin-top:15px;color:#e5c45a}
-input,select,textarea{
-  display:block;
-  width:100%;
-  margin-top:7px;
-  padding:12px;
-  border-radius:6px;
-  border:1px solid #555;
-  background:#080808;
-  color:white;
-  font-size:16px;
+
+.banner h2 {
+    font-size: 35px;
+    color: #f0cc82;
 }
-textarea{min-height:90px}
-form button{width:100%;margin-top:20px}
-#message{text-align:center;line-height:1.8;margin-top:15px}
-footer{
-  background:#050505;
-  border-top:1px solid #d4af37;
-  padding:22px;
-  text-align:center;
-  color:#e5c45a;
+
+.banner p {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.button {
+    display: inline-block;
+    background: #c5a15c;
+    color: #171717;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+section {
+    padding: 45px 18px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 27px;
+    color: #9b7635;
+}
+
+.intro {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px #00000012;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 18px;
+}
+
+.card h3 {
+    color: #9b7635;
+    margin-bottom: 8px;
+}
+
+.price {
+    color: #16734a;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.booking {
+    background: #ece5d8;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 90px;
+}
+
+form button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.notice {
+    font-size: 13px;
+    color: #666;
+    margin-top: 12px;
+}
+
+footer {
+    background: #151515;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer span {
+    color: #d9b56d;
+}
+
+@media(max-width: 600px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .banner h2 {
+        font-size: 27px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
 }
 </style>
 </head>
@@ -96,132 +214,244 @@ footer{
 <body>
 
 <header>
-  <div class="logo">X NAS</div>
-  <p>حلول رقمية احترافية للفنادق والإقامات السياحية</p>
+    <h1>الإقامة الفاخرة</h1>
+    <p>غرف • شقق • استقبال • ديكور</p>
 </header>
 
-<div class="hero">
-  <h1>مرحبًا بكم في X NAS</h1>
-  <p>
-    خدمات رقمية للفنادق والإقامات السياحية.<br>
-    أرسل طلبك بسهولة من خلال موقعنا.
-  </p>
-  <a href="#request" class="btn">أرسل طلبك</a>
+<nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#rooms">الغرف</a>
+    <a href="#apartments">الشقق</a>
+    <a href="#reception">الاستقبال والديكور</a>
+    <a href="#booking">احجز الآن</a>
+</nav>
+
+<div class="banner" id="home">
+    <div>
+        <h2>اكتشف الراحة والفخامة</h2>
+        <p>غرف أنيقة وشقق مريحة وتصاميم استقبال راقية</p>
+        <a class="button" href="#booking">اطلب حجزك الآن</a>
+    </div>
 </div>
 
 <section>
-  <h2>خدماتنا</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>🌐 تصميم مواقع الفنادق</h3>
-      <p>مواقع احترافية لعرض الفندق والغرف والخدمات.</p>
-    </div>
-    <div class="card">
-      <h3>🛏️ طلبات حجز الغرف</h3>
-      <p>إرسال طلبات الحجز إلكترونيًا.</p>
-    </div>
-    <div class="card">
-      <h3>📱 الحلول الرقمية</h3>
-      <p>خدمات تساعد المؤسسات السياحية على التطور.</p>
-    </div>
-  </div>
+    <h2 class="section-title">مرحبًا بكم في موقعنا</h2>
+    <p class="intro">
+        اكتشفوا أجمل الغرف والشقق وصور الاستقبال والديكور.
+        يمكنكم الاطلاع على الصور واختيار الخدمة المناسبة
+        وإرسال طلب الحجز بسهولة من هاتفكم.
+    </p>
 </section>
 
-<section id="request">
-  <h2>نموذج إرسال الطلب</h2>
+<section id="rooms">
+    <h2 class="section-title">🛏️ غرف النوم والفنادق</h2>
 
-  <form id="requestForm">
-    <label for="firstName">الاسم</label>
-    <input id="firstName" required maxlength="100">
+    <div class="cards">
 
-    <label for="lastName">اللقب</label>
-    <input id="lastName" required maxlength="100">
+        <article class="card">
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80"
+                 alt="غرفة نوم فاخرة">
+            <div class="card-content">
+                <h3>غرفة فاخرة</h3>
+                <p>غرفة أنيقة بأجواء هادئة ومريحة.</p>
+                <p class="price">السعر: يُحدد عند الحجز</p>
+                <button class="button" onclick="choose('غرفة فاخرة')">احجز هذه الغرفة</button>
+            </div>
+        </article>
 
-    <label for="phone">رقم الهاتف</label>
-    <input id="phone" type="tel" required maxlength="30">
+        <article class="card">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80"
+                 alt="غرفة نوم بتصميم عصري">
+            <div class="card-content">
+                <h3>غرفة بتصميم عصري</h3>
+                <p>تصميم جميل وأثاث أنيق.</p>
+                <p class="price">السعر: يُحدد عند الحجز</p>
+                <button class="button" onclick="choose('غرفة بتصميم عصري')">احجز هذه الغرفة</button>
+            </div>
+        </article>
 
-    <label for="requestType">نوع الخدمة</label>
-    <select id="requestType" required>
-      <option value="">اختر الخدمة</option>
-      <option value="تصميم موقع فندق">تصميم موقع فندق</option>
-      <option value="طلب حجز غرفة">طلب حجز غرفة</option>
-      <option value="خدمة رقمية أخرى">خدمة رقمية أخرى</option>
-    </select>
+        <article class="card">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80"
+                 alt="غرفة نوم مريحة">
+            <div class="card-content">
+                <h3>غرفة مريحة</h3>
+                <p>مساحة مريحة مناسبة للاسترخاء.</p>
+                <p class="price">السعر: يُحدد عند الحجز</p>
+                <button class="button" onclick="choose('غرفة مريحة')">احجز هذه الغرفة</button>
+            </div>
+        </article>
 
-    <label for="hotelName">اسم الفندق (اختياري)</label>
-    <input id="hotelName" maxlength="150">
+    </div>
+</section>
 
-    <label for="notes">تفاصيل الطلب</label>
-    <textarea id="notes" maxlength="2000"></textarea>
+<section id="apartments">
+    <h2 class="section-title">🏠 الشقق للإيجار</h2>
 
-    <button id="submitButton" type="submit">إرسال الطلب</button>
-    <div id="message" role="status"></div>
-  </form>
+    <div class="cards">
+
+        <article class="card">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80"
+                 alt="شقة عصرية">
+            <div class="card-content">
+                <h3>شقة عصرية</h3>
+                <p>شقة بتصميم عصري وأثاث أنيق.</p>
+                <p class="price">السعر: يُحدد عند الحجز</p>
+                <button class="button" onclick="choose('شقة عصرية')">اطلب حجز الشقة</button>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+                 alt="شقة فاخرة">
+            <div class="card-content">
+                <h3>شقة فاخرة</h3>
+                <p>ديكور راقٍ ومساحة مريحة.</p>
+                <p class="price">السعر: يُحدد عند الحجز</p>
+                <button class="button" onclick="choose('شقة فاخرة')">اطلب حجز الشقة</button>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80"
+                 alt="صالون داخل شقة">
+            <div class="card-content">
+                <h3>شقة عائلية</h3>
+                <p>مساحة مناسبة للإقامة العائلية.</p>
+                <p class="price">السعر: يُحدد عند الحجز</p>
+                <button class="button" onclick="choose('شقة عائلية')">اطلب حجز الشقة</button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section id="reception">
+    <h2 class="section-title">🛋️ صور الاستقبال والديكور</h2>
+
+    <div class="cards">
+
+        <article class="card">
+            <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=800&q=80"
+                 alt="صالون استقبال فاخر">
+            <div class="card-content">
+                <h3>صالون استقبال فاخر</h3>
+                <p>تصميم أنيق بأثاث مريح ولمسات فاخرة.</p>
+                <button class="button" onclick="choose('صالون استقبال فاخر')">اطلب معلومات</button>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=800&q=80"
+                 alt="ديكور استقبال عصري">
+            <div class="card-content">
+                <h3>استقبال عصري</h3>
+                <p>ديكور عصري بألوان متناسقة.</p>
+                <button class="button" onclick="choose('ديكور استقبال عصري')">اطلب معلومات</button>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80"
+                 alt="ديكور داخلي راقٍ">
+            <div class="card-content">
+                <h3>ديكور داخلي راقٍ</h3>
+                <p>أفكار جميلة لتزيين المساحات الداخلية.</p>
+                <button class="button" onclick="choose('ديكور داخلي راقٍ')">اطلب معلومات</button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section class="booking" id="booking">
+    <h2 class="section-title">📅 طلب حجز أو استفسار</h2>
+
+    <form id="bookingForm">
+
+        <label for="customer">الاسم واللقب</label>
+        <input id="customer" type="text" required
+               placeholder="أدخل اسمك الكامل">
+
+        <label for="phone">رقم الهاتف</label>
+        <input id="phone" type="tel" required
+               placeholder="أدخل رقم هاتفك">
+
+        <label for="service">الخدمة المطلوبة</label>
+        <select id="service" required>
+            <option value="">اختر الخدمة</option>
+            <option>غرفة فاخرة</option>
+            <option>غرفة بتصميم عصري</option>
+            <option>غرفة مريحة</option>
+            <option>شقة عصرية</option>
+            <option>شقة فاخرة</option>
+            <option>شقة عائلية</option>
+            <option>صالون استقبال فاخر</option>
+            <option>ديكور استقبال عصري</option>
+            <option>ديكور داخلي راقٍ</option>
+            <option>خدمة أخرى</option>
+        </select>
+
+        <label for="date">تاريخ الوصول أو موعد الخدمة</label>
+        <input id="date" type="date" required>
+
+        <label for="city">الولاية والمدينة</label>
+        <input id="city" type="text" required
+               placeholder="مثال: قسنطينة">
+
+        <label for="details">تفاصيل إضافية</label>
+        <textarea id="details"
+                  placeholder="عدد الأشخاص، مدة الإقامة أو تفاصيل الديكور..."></textarea>
+
+        <button class="button" type="submit">إرسال طلب الحجز</button>
+
+        <p class="notice">
+            ملاحظة: هذا النموذج يجهز الطلب لإرساله عبر تطبيق البريد الإلكتروني.
+            لا يتم حفظ الطلبات في قاعدة بيانات الموقع تلقائيًا.
+        </p>
+
+    </form>
 </section>
 
 <footer>
-  X NAS © 2026 — جميع الحقوق محفوظة
+    <p>الإقامة الفاخرة | غرف وشقق واستقبال وديكور</p>
+    <p><span>الراحة والأناقة في مكان واحد</span></p>
+    <p>© جميع الحقوق محفوظة</p>
 </footer>
 
 <script>
-const SUPABASE_URL =
-  "https://glpfxexmavtpiucikzfk.supabase.co";
+function choose(service) {
+    document.getElementById("service").value = service;
+    document.getElementById("booking").scrollIntoView({
+        behavior: "smooth"
+    });
+}
 
-/* ضع مفتاح Publishable الخاص بك بين علامتي التنصيص */
-const SUPABASE_KEY = "_Publishable_هنا";
-sb_publishable_ukUhvN6goAgYQzI6voj_pw_-5DcI0Di
-const form = document.getElementById("requestForm");
-const message = document.getElementById("message");
-const button = document.getElementById("submitButton");
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-form.addEventListener("submit", async function(event) {
-  event.preventDefault();
+    const data = {
+        name: document.getElementById("customer").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        service: document.getElementById("service").value,
+        date: document.getElementById("date").value,
+        city: document.getElementById("city").value.trim(),
+        details: document.getElementById("details").value.trim()
+    };
 
-  if (SUPABASE_KEY === "ضع_مفتاح_Publishable_هنا") {
-    message.textContent = "يجب إعداد مفتاح قاعدة البيانات أولًا.";
-    return;
-  }
-
-  const data = {
-    first_name: document.getElementById("firstName").value.trim(),
-    last_name: document.getElementById("lastName").value.trim(),
-    phone: document.getElementById("phone").value.trim(),
-    request_type: document.getElementById("requestType").value,
-    hotel_name: document.getElementById("hotelName").value.trim() || null,
-    notes: document.getElementById("notes").value.trim() || null
-  };
-
-  button.disabled = true;
-  message.textContent = "جارٍ إرسال الطلب...";
-
-  try {
-    const response = await fetch(
-      SUPABASE_URL + "/rest/v1/xnas_requests",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "apikey": SUPABASE_KEY,
-          "Authorization": "Bearer " + SUPABASE_KEY,
-          "Prefer": "return=minimal"
-        },
-        body: JSON.stringify(data)
-      }
+    const subject = encodeURIComponent("طلب حجز جديد من الموقع");
+    const body = encodeURIComponent(
+        "طلب حجز جديد\n\n" +
+        "الاسم: " + data.name + "\n" +
+        "الهاتف: " + data.phone + "\n" +
+        "الخدمة: " + data.service + "\n" +
+        "التاريخ: " + data.date + "\n" +
+        "المدينة: " + data.city + "\n" +
+        "التفاصيل: " + data.details
     );
 
-    if (!response.ok) {
-      throw new Error("تعذّر حفظ الطلب");
-    }
-
-    message.textContent = "✅ تم إرسال طلبك بنجاح!";
-    form.reset();
-
-  } catch (error) {
-    message.textContent =
-      "❌ لم يُحفظ الطلب. تحقق من اتصال قاعدة البيانات وإعداداتها.";
-  } finally {
-    button.disabled = false;
-  }
+    window.location.href =
+        "mailto:yagoubiraid@gmail.com?subject=" + subject +
+        "&body=" + body;
 });
 </script>
 
