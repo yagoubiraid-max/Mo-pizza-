@@ -1,41 +1,44 @@
-<!-- إعلان تجاري كبير -->
-<section class="main-ad">
-  <a href="https://www.djezzy.dz/" target="_blank" rel="noopener noreferrer">
-    <img
-      src="1000059200.jpg"
-      alt="إعلان Djezzy Legend"
-      loading="eager"
-    >
-  </a>
-  <div class="ad-label">إعلان تجاري</div>
-</section>
+<!-- شريط إعلانات سوق رحبا المتحرك -->
+<div class="moving-ad">
+  <div class="moving-track">
+    <span>📢 سوق رحبا — سوق قسنطينة الإلكتروني</span>
+    <span>⭐ انشر إعلانك بسهولة</span>
+    <span>📱 بيع واشري في قسنطينة</span>
+    <span>💼 أعلن عن نشاطك التجاري معنا</span>
+    <span>🚀 اجعل إعلانك يصل إلى زبائن جدد</span>
+  </div>
+</div>
 
 <style>
-.main-ad {
+.moving-ad {
   width: 100%;
-  margin: 15px 0 25px;
-  position: relative;
   overflow: hidden;
-  border-radius: 15px;
-  background: #eee;
-  box-shadow: 0 5px 18px #0002;
+  background: #102c24;
+  color: #f4d47e;
+  padding: 15px 0;
+  white-space: nowrap;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
-.main-ad a {
-  display: block;
+
+.moving-track {
+  display: flex;
+  width: max-content;
+  animation: moveAds 28s linear infinite;
 }
-.main-ad img {
-  width: 100%;
-  height: auto;
-  display: block;
+
+.moving-track span {
+  padding: 0 30px;
+  font-size: 15px;
+  font-weight: bold;
 }
-.ad-label {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #111c;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 12px;
+
+.moving-ad:hover .moving-track {
+  animation-play-state: paused;
+}
+
+@keyframes moveAds {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 </style>
