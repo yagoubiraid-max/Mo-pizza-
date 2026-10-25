@@ -3,457 +3,451 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الإقامة الفاخرة | غرف وشقق وديكور</title>
-
+<title>سوق رحبة | قسنطينة</title>
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+  --dark: #102820;
+  --green: #176b4d;
+  --gold: #d5ad55;
+  --bg: #f5f6f2;
+  --white: #ffffff;
 }
-
+* { box-sizing: border-box; }
 body {
-    font-family: Arial, sans-serif;
-    background: #f7f5f0;
-    color: #222;
-    line-height: 1.8;
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: #202923;
 }
-
 header {
-    background: #151515;
-    color: #d9b56d;
-    padding: 25px 15px;
-    text-align: center;
+  background: var(--dark);
+  color: white;
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
 }
-
-header h1 {
-    font-size: 30px;
+.logo { font-size: 25px; font-weight: bold; }
+.logo span { color: var(--gold); }
+header small { color: #dce7df; display: block; margin-top: 5px; }
+.header-btn, .main-btn {
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 18px;
+  background: var(--gold);
+  color: #18251c;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
 }
-
-header p {
-    color: white;
+.hero {
+  background: linear-gradient(120deg, #102820, #236b4f);
+  color: white;
+  text-align: center;
+  padding: 45px 15px;
 }
-
-nav {
-    background: #282828;
-    padding: 12px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+.hero h1 { font-size: 32px; margin: 0 0 12px; }
+.hero p { color: #e0eae3; line-height: 1.9; }
+.search-box {
+  max-width: 650px;
+  display: flex;
+  margin: 22px auto 0;
+  gap: 8px;
 }
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 14px;
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+  border: 0;
+  border-radius: 9px;
+  font-size: 15px;
 }
-
-.banner {
-    min-height: 380px;
-    background:
-    linear-gradient(#0007, #0008),
-    url("https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1400&q=85")
-    center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 30px;
-}
-
-.banner h2 {
-    font-size: 35px;
-    color: #f0cc82;
-}
-
-.banner p {
-    font-size: 18px;
-    margin: 15px 0;
-}
-
-.button {
-    display: inline-block;
-    background: #c5a15c;
-    color: #171717;
-    padding: 12px 25px;
-    border-radius: 6px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-section {
-    padding: 45px 18px;
-}
-
+.container { max-width: 1150px; margin: auto; padding: 25px 15px; }
 .section-title {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 27px;
-    color: #9b7635;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
 }
-
-.intro {
-    text-align: center;
-    max-width: 800px;
-    margin: auto;
+.section-title h2 { margin: 0; }
+.badge {
+  background: #e2eee6;
+  color: #176b4d;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 13px;
 }
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 22px;
-    max-width: 1200px;
-    margin: auto;
+.categories {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 5px 0 20px;
 }
-
+.category {
+  border: 1px solid #dfe5de;
+  background: white;
+  border-radius: 25px;
+  padding: 11px 17px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.category.active, .category:hover {
+  background: var(--dark);
+  color: white;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
 .card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px #00000012;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e6e9e3;
+  box-shadow: 0 4px 15px #18251c0a;
 }
-
 .card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: #e8ece7;
 }
-
-.card-content {
-    padding: 18px;
+.card-body { padding: 15px; }
+.card h3 { margin: 0 0 10px; font-size: 18px; }
+.price { color: var(--green); font-size: 20px; font-weight: bold; }
+.location { color: #68746c; font-size: 13px; margin: 10px 0; }
+.description { color: #59635c; line-height: 1.7; font-size: 14px; }
+.call-btn {
+  display: block;
+  text-align: center;
+  background: var(--green);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 14px;
 }
-
-.card h3 {
-    color: #9b7635;
-    margin-bottom: 8px;
+.call-btn:hover { background: var(--dark); }
+.empty { text-align: center; padding: 40px 10px; color: #68746c; }
+.form-section {
+  background: white;
+  border-radius: 15px;
+  padding: 22px;
+  margin-top: 35px;
+  border: 1px solid #e3e8e1;
 }
-
-.price {
-    color: #16734a;
-    font-weight: bold;
-    margin: 10px 0;
+.form-section h2 { margin-top: 0; }
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
-
-.booking {
-    background: #ece5d8;
-}
-
-form {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-}
-
-label {
-    display: block;
-    margin-top: 12px;
-    font-weight: bold;
-}
-
+label { display: block; font-weight: bold; font-size: 14px; }
 input, select, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
+  width: 100%;
+  padding: 13px;
+  margin-top: 8px;
+  border: 1px solid #d7ded6;
+  border-radius: 8px;
+  font: inherit;
+  background: white;
 }
-
-textarea {
-    min-height: 90px;
-}
-
-form button {
-    width: 100%;
-    margin-top: 20px;
-}
-
-.notice {
-    font-size: 13px;
-    color: #666;
-    margin-top: 12px;
-}
-
+textarea { resize: vertical; min-height: 95px; }
+.full { grid-column: 1 / -1; }
+.form-note { font-size: 13px; line-height: 1.8; color: #657168; }
 footer {
-    background: #151515;
-    color: white;
-    text-align: center;
-    padding: 25px;
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 35px;
+  line-height: 2;
 }
-
-footer span {
-    color: #d9b56d;
+footer span { color: var(--gold); }
+@media(max-width:750px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .card img { height: 145px; }
+  .card-body { padding: 11px; }
+  .card h3 { font-size: 15px; }
+  .price { font-size: 17px; }
+  .hero h1 { font-size: 25px; }
 }
-
-@media(max-width: 600px) {
-    header h1 {
-        font-size: 24px;
-    }
-
-    .banner h2 {
-        font-size: 27px;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 5px;
-    }
+@media(max-width:450px) {
+  .grid { grid-template-columns: 1fr; }
+  .card img { height: 210px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .full { grid-column: auto; }
 }
 </style>
 </head>
-
 <body>
 
 <header>
-    <h1>الإقامة الفاخرة</h1>
-    <p>غرف • شقق • استقبال • ديكور</p>
+  <div>
+    <div class="logo">سوق <span>رحبة</span></div>
+    <small>السوق الإلكتروني لولاية قسنطينة</small>
+  </div>
+  <a class="header-btn" href="#add">＋ أضف إعلانك</a>
 </header>
 
-<nav>
-    <a href="#home">الرئيسية</a>
-    <a href="#rooms">الغرف</a>
-    <a href="#apartments">الشقق</a>
-    <a href="#reception">الاستقبال والديكور</a>
-    <a href="#booking">احجز الآن</a>
-</nav>
-
-<div class="banner" id="home">
-    <div>
-        <h2>اكتشف الراحة والفخامة</h2>
-        <p>غرف أنيقة وشقق مريحة وتصاميم استقبال راقية</p>
-        <a class="button" href="#booking">اطلب حجزك الآن</a>
-    </div>
-</div>
-
-<section>
-    <h2 class="section-title">مرحبًا بكم في موقعنا</h2>
-    <p class="intro">
-        اكتشفوا أجمل الغرف والشقق وصور الاستقبال والديكور.
-        يمكنكم الاطلاع على الصور واختيار الخدمة المناسبة
-        وإرسال طلب الحجز بسهولة من هاتفكم.
-    </p>
+<section class="hero">
+  <h1>بيع واشري في قسنطينة بكل سهولة</h1>
+  <p>منصة محلية للإعلانات المبوبة. اعرض سلعتك واكتشف عروض البائعين بالقرب منك.</p>
+  <div class="search-box">
+    <input id="search" type="search" placeholder="ابحث عن سيارة، هاتف، أثاث..." oninput="renderAds()">
+    <button class="main-btn" onclick="renderAds()">بحث</button>
+  </div>
 </section>
 
-<section id="rooms">
-    <h2 class="section-title">🛏️ غرف النوم والفنادق</h2>
+<main class="container">
+  <div class="section-title">
+    <h2>تصفح الإعلانات</h2>
+    <span class="badge">📍 قسنطينة فقط</span>
+  </div>
 
-    <div class="cards">
+  <div class="categories">
+    <button class="category active" onclick="setCategory('الكل',this)">الكل</button>
+    <button class="category" onclick="setCategory('سيارات',this)">🚗 سيارات</button>
+    <button class="category" onclick="setCategory('هواتف',this)">📱 هواتف</button>
+    <button class="category" onclick="setCategory('عقارات',this)">🏠 عقارات</button>
+    <button class="category" onclick="setCategory('أثاث',this)">🛋️ أثاث</button>
+    <button class="category" onclick="setCategory('أخرى',this)">📦 أخرى</button>
+  </div>
 
-        <article class="card">
-            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80"
-                 alt="غرفة نوم فاخرة">
-            <div class="card-content">
-                <h3>غرفة فاخرة</h3>
-                <p>غرفة أنيقة بأجواء هادئة ومريحة.</p>
-                <p class="price">السعر: يُحدد عند الحجز</p>
-                <button class="button" onclick="choose('غرفة فاخرة')">احجز هذه الغرفة</button>
-            </div>
-        </article>
+  <div id="ads" class="grid"></div>
 
-        <article class="card">
-            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80"
-                 alt="غرفة نوم بتصميم عصري">
-            <div class="card-content">
-                <h3>غرفة بتصميم عصري</h3>
-                <p>تصميم جميل وأثاث أنيق.</p>
-                <p class="price">السعر: يُحدد عند الحجز</p>
-                <button class="button" onclick="choose('غرفة بتصميم عصري')">احجز هذه الغرفة</button>
-            </div>
-        </article>
+  <section id="add" class="form-section">
+    <h2>أضف إعلانك مجانًا</h2>
+    <p>املأ المعلومات التالية لعرض سلعتك في السوق.</p>
 
-        <article class="card">
-            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80"
-                 alt="غرفة نوم مريحة">
-            <div class="card-content">
-                <h3>غرفة مريحة</h3>
-                <p>مساحة مريحة مناسبة للاسترخاء.</p>
-                <p class="price">السعر: يُحدد عند الحجز</p>
-                <button class="button" onclick="choose('غرفة مريحة')">احجز هذه الغرفة</button>
-            </div>
-        </article>
+    <form id="adForm">
+      <div class="form-grid">
+        <label>
+          اسم السلعة
+          <input id="title" required maxlength="80" placeholder="مثال: هاتف سامسونغ">
+        </label>
 
-    </div>
-</section>
+        <label>
+          السعر بالدينار الجزائري
+          <input id="price" type="number" min="0" required placeholder="مثال: 25000">
+        </label>
 
-<section id="apartments">
-    <h2 class="section-title">🏠 الشقق للإيجار</h2>
+        <label>
+          التصنيف
+          <select id="category">
+            <option>هواتف</option>
+            <option>سيارات</option>
+            <option>عقارات</option>
+            <option>أثاث</option>
+            <option>أخرى</option>
+          </select>
+        </label>
 
-    <div class="cards">
+        <label>
+          رقم هاتف البائع
+          <input id="phone" type="tel" required placeholder="05 أو 06 أو 07">
+        </label>
 
-        <article class="card">
-            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80"
-                 alt="شقة عصرية">
-            <div class="card-content">
-                <h3>شقة عصرية</h3>
-                <p>شقة بتصميم عصري وأثاث أنيق.</p>
-                <p class="price">السعر: يُحدد عند الحجز</p>
-                <button class="button" onclick="choose('شقة عصرية')">اطلب حجز الشقة</button>
-            </div>
-        </article>
+        <label class="full">
+          وصف السلعة
+          <textarea id="description" required maxlength="500" placeholder="اكتب تفاصيل السلعة وحالتها..."></textarea>
+        </label>
 
-        <article class="card">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
-                 alt="شقة فاخرة">
-            <div class="card-content">
-                <h3>شقة فاخرة</h3>
-                <p>ديكور راقٍ ومساحة مريحة.</p>
-                <p class="price">السعر: يُحدد عند الحجز</p>
-                <button class="button" onclick="choose('شقة فاخرة')">اطلب حجز الشقة</button>
-            </div>
-        </article>
+        <label class="full">
+          صورة السلعة
+          <input id="photo" type="file" accept="image/*" required>
+        </label>
+      </div>
 
-        <article class="card">
-            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80"
-                 alt="صالون داخل شقة">
-            <div class="card-content">
-                <h3>شقة عائلية</h3>
-                <p>مساحة مناسبة للإقامة العائلية.</p>
-                <p class="price">السعر: يُحدد عند الحجز</p>
-                <button class="button" onclick="choose('شقة عائلية')">اطلب حجز الشقة</button>
-            </div>
-        </article>
+      <p class="form-note">
+        تنبيه: هذه النسخة التجريبية تحفظ الإعلانات في المتصفح الحالي فقط.
+        لا ترفع صورك أو بياناتك الحساسة في النسخة التجريبية.
+      </p>
 
-    </div>
-</section>
-
-<section id="reception">
-    <h2 class="section-title">🛋️ صور الاستقبال والديكور</h2>
-
-    <div class="cards">
-
-        <article class="card">
-            <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=800&q=80"
-                 alt="صالون استقبال فاخر">
-            <div class="card-content">
-                <h3>صالون استقبال فاخر</h3>
-                <p>تصميم أنيق بأثاث مريح ولمسات فاخرة.</p>
-                <button class="button" onclick="choose('صالون استقبال فاخر')">اطلب معلومات</button>
-            </div>
-        </article>
-
-        <article class="card">
-            <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=800&q=80"
-                 alt="ديكور استقبال عصري">
-            <div class="card-content">
-                <h3>استقبال عصري</h3>
-                <p>ديكور عصري بألوان متناسقة.</p>
-                <button class="button" onclick="choose('ديكور استقبال عصري')">اطلب معلومات</button>
-            </div>
-        </article>
-
-        <article class="card">
-            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80"
-                 alt="ديكور داخلي راقٍ">
-            <div class="card-content">
-                <h3>ديكور داخلي راقٍ</h3>
-                <p>أفكار جميلة لتزيين المساحات الداخلية.</p>
-                <button class="button" onclick="choose('ديكور داخلي راقٍ')">اطلب معلومات</button>
-            </div>
-        </article>
-
-    </div>
-</section>
-
-<section class="booking" id="booking">
-    <h2 class="section-title">📅 طلب حجز أو استفسار</h2>
-
-    <form id="bookingForm">
-
-        <label for="customer">الاسم واللقب</label>
-        <input id="customer" type="text" required
-               placeholder="أدخل اسمك الكامل">
-
-        <label for="phone">رقم الهاتف</label>
-        <input id="phone" type="tel" required
-               placeholder="أدخل رقم هاتفك">
-
-        <label for="service">الخدمة المطلوبة</label>
-        <select id="service" required>
-            <option value="">اختر الخدمة</option>
-            <option>غرفة فاخرة</option>
-            <option>غرفة بتصميم عصري</option>
-            <option>غرفة مريحة</option>
-            <option>شقة عصرية</option>
-            <option>شقة فاخرة</option>
-            <option>شقة عائلية</option>
-            <option>صالون استقبال فاخر</option>
-            <option>ديكور استقبال عصري</option>
-            <option>ديكور داخلي راقٍ</option>
-            <option>خدمة أخرى</option>
-        </select>
-
-        <label for="date">تاريخ الوصول أو موعد الخدمة</label>
-        <input id="date" type="date" required>
-
-        <label for="city">الولاية والمدينة</label>
-        <input id="city" type="text" required
-               placeholder="مثال: قسنطينة">
-
-        <label for="details">تفاصيل إضافية</label>
-        <textarea id="details"
-                  placeholder="عدد الأشخاص، مدة الإقامة أو تفاصيل الديكور..."></textarea>
-
-        <button class="button" type="submit">إرسال طلب الحجز</button>
-
-        <p class="notice">
-            ملاحظة: هذا النموذج يجهز الطلب لإرساله عبر تطبيق البريد الإلكتروني.
-            لا يتم حفظ الطلبات في قاعدة بيانات الموقع تلقائيًا.
-        </p>
-
+      <button class="main-btn" type="submit">نشر الإعلان</button>
+      <p id="message" role="status"></p>
     </form>
-</section>
+  </section>
+</main>
 
 <footer>
-    <p>الإقامة الفاخرة | غرف وشقق واستقبال وديكور</p>
-    <p><span>الراحة والأناقة في مكان واحد</span></p>
-    <p>© جميع الحقوق محفوظة</p>
+  <div class="logo">سوق <span>رحبة</span></div>
+  منصة إعلانات محلية تخدم سكان قسنطينة.
+  <br>© <span id="year"></span> سوق رحبة — جميع الحقوق محفوظة.
 </footer>
 
 <script>
-function choose(service) {
-    document.getElementById("service").value = service;
-    document.getElementById("booking").scrollIntoView({
-        behavior: "smooth"
-    });
+const demoAds = [
+  {
+    id: "demo1",
+    title: "هاتف ذكي للبيع",
+    price: 32000,
+    category: "هواتف",
+    phone: "0550000000",
+    description: "مثال تجريبي لهاتف بحالة جيدة.",
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
+    demo: true
+  },
+  {
+    id: "demo2",
+    title: "سيارة مستعملة",
+    price: 1450000,
+    category: "سيارات",
+    phone: "0660000000",
+    description: "إعلان تجريبي. تحقق من معلومات السيارة قبل الشراء.",
+    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80",
+    demo: true
+  },
+  {
+    id: "demo3",
+    title: "أثاث منزلي",
+    price: 45000,
+    category: "أثاث",
+    phone: "0770000000",
+    description: "مثال تجريبي لطقم أثاث منزلي.",
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80",
+    demo: true
+  }
+];
+
+let selectedCategory = "الكل";
+
+function getUserAds() {
+  try {
+    return JSON.parse(localStorage.getItem("souqRahbaAds") || "[]");
+  } catch {
+    return [];
+  }
 }
 
-document.getElementById("bookingForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+function setCategory(category, button) {
+  selectedCategory = category;
+  document.querySelectorAll(".category").forEach(b => b.classList.remove("active"));
+  button.classList.add("active");
+  renderAds();
+}
 
-    const data = {
-        name: document.getElementById("customer").value.trim(),
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, ch => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[ch]);
+}
+
+function renderAds() {
+  const query = document.getElementById("search").value.trim().toLowerCase();
+  const allAds = [...getUserAds(), ...demoAds];
+
+  const filtered = allAds.filter(ad => {
+    const matchesCategory = selectedCategory === "الكل" || ad.category === selectedCategory;
+    const matchesQuery = (ad.title + " " + ad.description + " " + ad.category)
+      .toLowerCase().includes(query);
+    return matchesCategory && matchesQuery;
+  });
+
+  const container = document.getElementById("ads");
+
+  if (!filtered.length) {
+    container.innerHTML = '<div class="empty" style="grid-column:1/-1">لا توجد إعلانات مطابقة. جرّب البحث بكلمة أخرى.</div>';
+    return;
+  }
+
+  container.innerHTML = filtered.map(ad => {
+    const phone = String(ad.phone || "").replace(/[^\d+]/g, "");
+    const validPhone = /^\+?\d{8,15}$/.test(phone);
+    return `
+      <article class="card">
+        <img src="${escapeHTML(ad.image)}" alt="${escapeHTML(ad.title)}" loading="lazy">
+        <div class="card-body">
+          <span class="badge">${escapeHTML(ad.category)}</span>
+          <h3>${escapeHTML(ad.title)}</h3>
+          <div class="price">${Number(ad.price).toLocaleString("fr-DZ")} دج</div>
+          <div class="location">📍 قسنطينة</div>
+          <p class="description">${escapeHTML(ad.description)}</p>
+          ${ad.demo ? '<p class="form-note">إعلان تجريبي — ليس عرضًا حقيقيًا.</p>' : ''}
+          ${validPhone
+            ? `<a class="call-btn" href="tel:${phone}">📞 الاتصال بالبائع</a>`
+            : '<span class="form-note">رقم الهاتف غير صالح</span>'}
+        </div>
+      </article>`;
+  }).join("");
+}
+
+document.getElementById("adForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const photo = document.getElementById("photo").files[0];
+  const message = document.getElementById("message");
+
+  if (!photo) {
+    message.textContent = "اختر صورة للسلعة أولًا.";
+    return;
+  }
+
+  if (!photo.type.startsWith("image/")) {
+    message.textContent = "الرجاء اختيار ملف صورة صحيح.";
+    return;
+  }
+
+  if (photo.size > 700 * 1024) {
+    message.textContent = "حجم الصورة كبير. اختر صورة أقل من 700 كيلوبايت.";
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function() {
+    try {
+      const newAd = {
+        id: String(Date.now()),
+        title: document.getElementById("title").value.trim(),
+        price: Number(document.getElementById("price").value),
+        category: document.getElementById("category").value,
         phone: document.getElementById("phone").value.trim(),
-        service: document.getElementById("service").value,
-        date: document.getElementById("date").value,
-        city: document.getElementById("city").value.trim(),
-        details: document.getElementById("details").value.trim()
-    };
+        description: document.getElementById("description").value.trim(),
+        image: reader.result,
+        demo: false
+      };
 
-    const subject = encodeURIComponent("طلب حجز جديد من الموقع");
-    const body = encodeURIComponent(
-        "طلب حجز جديد\n\n" +
-        "الاسم: " + data.name + "\n" +
-        "الهاتف: " + data.phone + "\n" +
-        "الخدمة: " + data.service + "\n" +
-        "التاريخ: " + data.date + "\n" +
-        "المدينة: " + data.city + "\n" +
-        "التفاصيل: " + data.details
-    );
+      if (!newAd.title || !newAd.description || !newAd.phone ||
+          !Number.isFinite(newAd.price) || newAd.price < 0) {
+        message.textContent = "تحقق من المعلومات المدخلة.";
+        return;
+      }
 
-    window.location.href =
-        "mailto:yagoubiraid@gmail.com?subject=" + subject +
-        "&body=" + body;
+      const existing = getUserAds();
+      existing.unshift(newAd);
+      localStorage.setItem("souqRahbaAds", JSON.stringify(existing));
+
+      message.textContent = "تمت إضافة الإعلان في هذا المتصفح بنجاح.";
+      document.getElementById("adForm").reset();
+      selectedCategory = "الكل";
+      document.querySelectorAll(".category").forEach(b => b.classList.remove("active"));
+      document.querySelector(".category").classList.add("active");
+      renderAds();
+      document.getElementById("ads").scrollIntoView({behavior:"smooth"});
+    } catch (error) {
+      message.textContent = "تعذر الحفظ. جرّب صورة أصغر أو احذف بعض الإعلانات التجريبية.";
+    }
+  };
+
+  reader.onerror = function() {
+    message.textContent = "تعذر قراءة الصورة. جرّب صورة أخرى.";
+  };
+
+  reader.readAsDataURL(photo);
 });
-</script>
 
+document.getElementById("year").textContent = new Date().getFullYear();
+renderAds();
+</script>
 </body>
-</html>
+                            </html>
